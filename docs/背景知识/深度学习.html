@@ -300,7 +300,90 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h1 id="transformer">Transformer</h1>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501192731840.png" alt="image-20210501192731840"></p>
+<h2 id="encoder">Encoder</h2>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501192855493.png" alt="1"></p>
+<h3 id="1-&#x8F93;&#x5165;&#x90E8;&#x5206;">1 &#x8F93;&#x5165;&#x90E8;&#x5206;</h3>
+<h4 id="embedding">Embedding</h4>
+<p>word2vec</p>
+<p>&#x81EA;&#x52A8;&#x521D;&#x59CB;&#x5316;</p>
+<h4 id="&#x4F4D;&#x7F6E;&#x7F16;&#x7801;"><strong>&#x4F4D;&#x7F6E;&#x7F16;&#x7801;</strong></h4>
+<p>RNN&#xFF1A;&#x6240;&#x6709;&#x7684;time steps&#x5171;&#x4EAB;&#x4E00;&#x5957;&#x53C2;&#x6570;&#xFF0C;&#x53EA;&#x66F4;&#x65B0;&#x4E00;&#x5957;UWV</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501211804128.png" alt="image-20210501211804128" style="zoom:67%;"></p>
+<p>RNN&#x7684;&#x68AF;&#x5EA6;&#x6D88;&#x5931;&#xFF1A;&#x603B;&#x68AF;&#x5EA6;&#x548C;&#x88AB;&#x8FD1;&#x8DDD;&#x79BB;&#x68AF;&#x5EA6;&#x4E3B;&#x5BFC;&#xFF0C;&#x88AB;&#x8FDC;&#x8DDD;&#x79BB;&#x68AF;&#x5EA6;&#x5FFD;&#x7565;&#x4E0D;&#x8BA1;</p>
+<p>&#x5929;&#x7136;&#x7684;&#x65F6;&#x5E8F;&#x5173;&#x7CFB;&#x975E;&#x5E38;&#x7B26;&#x5408;</p>
+<p>Transformer&#x662F;&#x53EF;&#x4EE5;&#x5E76;&#x884C;&#x5316;&#x7684;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x5355;&#x8BCD;&#x4E00;&#x8D77;&#x5904;&#x7406;&#xFF0C;&#x4E0D;&#x8003;&#x8651;&#x65F6;&#x5E8F;&#x5173;&#x7CFB;&#xFF0C;&#x589E;&#x52A0;&#x4E86;&#x901F;&#x5EA6;&#xFF0C;&#x5FFD;&#x7565;&#x4E86;&#x987A;&#x5E8F;&#x5173;&#x7CFB;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x4F4D;&#x7F6E;&#x7F16;&#x7801;</p>
+<p><strong>&#x4F4D;&#x7F6E;&#x7F16;&#x7801;&#x516C;&#x5F0F;</strong></p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501212146963.png" alt="image-20210501212146963" style="zoom:67%;"></p>
+<p>&#x5076;&#x6570;&#x4F4D;&#x7F6E;&#x4F7F;&#x7528;sin&#xFF0C;&#x5947;&#x6570;&#x4F4D;&#x7F6E;&#x4F7F;&#x7528;cos</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501212328290.png" alt="image-20210501212328290"></p>
+<p><strong>&#x62D3;&#x5C55;</strong></p>
+<p>&#x4F4D;&#x7F6E;&#x5D4C;&#x5165;&#x7684;&#x4F5C;&#x7528;</p>
+<p>&#x540C;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;&#x4F7F;&#x7528;sin&#x548C;cos&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x7EDD;&#x5BF9;&#x4F4D;&#x7F6E;&#xFF0C;&#x7EDD;&#x5BF9;&#x4F4D;&#x7F6E;&#x5411;&#x91CF;&#x4FE1;&#x606F;&#x4E2D;&#x5305;&#x542B;&#x7740;&#x76F8;&#x5BF9;&#x4F4D;&#x7F6E;&#x5411;&#x91CF;&#x4FE1;&#x606F;</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501212501854.png" alt="image-20210501212501854"></p>
+<h3 id="2-&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;">2 &#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;</h3>
+<h4 id="&#x57FA;&#x672C;&#x7684;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;">&#x57FA;&#x672C;&#x7684;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;</h4>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501212809366.png" alt="image-20210501212809366" style="zoom:67%;"></p>
+<p>&#x4EBA;&#x7C7B;&#x5728;&#x89C2;&#x5BDF;&#x4E00;&#x5F20;&#x56FE;&#x7247;&#x65F6;&#xFF0C;&#x80AF;&#x5B9A;&#x4F1A;&#x6709;&#x6CE8;&#x610F;&#x529B;&#x7684;&#x5DEE;&#x522B;&#xFF0C;&#x5982;&#x56FE;&#x989C;&#x8272;&#x8D8A;&#x6DF1;&#x4EE3;&#x8868;&#x5BF9;&#x6B64;&#x90E8;&#x5206;&#x7684;&#x6CE8;&#x610F;&#x529B;&#x8D8A;&#x5927;&#xFF0C;&#x66F4;&#x52A0;&#x5173;&#x6CE8;&#x8BE5;&#x533A;&#x57DF;</p>
+<p>&#x6BD4;&#x5982;&#x8BF4;&#x63D0;&#x51FA;&#x95EE;&#x9898;&#x201C;<strong>&#x5A74;&#x513F;&#x5728;&#x5E72;&#x561B;</strong>&#x201D;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x63D0;&#x53D6;&#x56FE;&#x7247;&#x4E2D;&#x548C;&#x8BE5;&#x95EE;&#x9898;&#x6709;&#x5173;&#x7684;&#x4FE1;&#x606F;</p>
+<p><strong>&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;&#x516C;&#x5F0F;</strong></p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501213056462.png" alt="image-20210501213056462"></p>
+<p>QKV&#x4E09;&#x4E2A;&#x77E9;&#x9635;&#x6700;&#x5173;&#x952E;&#xFF0C;Q&#xFF08;Query&#xFF1A;&#x67E5;&#x8BE2;&#x5411;&#x91CF;&#xFF09;K&#xFF08;Key&#xFF1A;&#x952E;&#x5411;&#x91CF;&#xFF09;V&#xFF08;Value&#xFF1A;&#x503C;&#x5411;&#x91CF;&#xFF09;</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501213423400.png" alt="image-20210501213423400" style="zoom:67%;"></p>
+<p><strong>&#x7B2C;&#x4E00;&#x6B65;</strong>&#xFF1A;Q&#x548C;K&#x505A;&#x70B9;&#x4E58;&#xFF0C;&#x5F97;&#x5230;s</p>
+<p>&#x76F8;&#x4F3C;&#x5EA6;&#x8BA1;&#x7B97;&#xFF1A;&#x70B9;&#x4E58;&#xFF0C;MLP&#xFF08;&#x7F51;&#x7EDC;&#xFF09;&#xFF0C;cos&#x76F8;&#x4F3C;&#x6027;</p>
+<p>&#x70B9;&#x4E58;&#xFF1A;&#x4E00;&#x4E2A;&#x5411;&#x91CF;&#x5728;&#x53E6;&#x4E00;&#x4E2A;&#x5411;&#x91CF;&#x4E0A;&#x6295;&#x5F71;&#x7684;&#x957F;&#x5EA6;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x53CD;&#x6620;&#x4E24;&#x4E2A;&#x5411;&#x91CF;&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#xFF0C;&#x70B9;&#x4E58;&#x7ED3;&#x679C;&#x8D8A;&#x5927;&#x8BF4;&#x660E;&#x8DDD;&#x79BB;&#x8D8A;&#x8FD1;&#x8D8A;&#x76F8;&#x4F3C;&#x66F4;&#x5173;&#x6CE8;</p>
+<p><strong>&#x7B2C;&#x4E8C;&#x6B65;</strong>&#xFF1A;&#x5BF9;s&#x8FDB;&#x884C;&#x7C7B;Softmax()&#x5F52;&#x4E00;&#x5316;&#xFF0C;&#x751F;&#x6210;a&#xFF08;&#x76F8;&#x4F3C;&#x5EA6;&#xFF0C;&#x76F8;&#x52A0;&#x4E3A;&#x4E00;&#xFF09;</p>
+<p><strong>&#x7B2C;&#x4E09;&#x6B65;</strong>&#xFF1A;&#x5BF9;V&#x8FDB;&#x884C;&#x52A0;&#x6743;&#x5E73;&#x5747;&#xFF0C;&#x76F8;&#x52A0;&#x76F8;&#x4E58;&#xFF0C;&#x5F97;&#x5230;&#x6700;&#x7EC8;&#x7ED3;&#x679C;Attention value</p>
+<h4 id="transformer&#x4E2D;&#x7684;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;">Transformer&#x4E2D;&#x7684;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;</h4>
+<p><strong>&#x5982;&#x4F55;&#x83B7;&#x53D6;QKV</strong></p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501214412368.png" alt="image-20210501214412368"></p>
+<p>&#x521D;&#x59CB;&#x7684;&#x8BCD;&#x5411;&#x91CF;X&#xFF0C;&#x4E0E;&#x5BF9;&#x5E94;&#x7684;W&#x77E9;&#x9635;&#xFF08;&#x6743;&#x91CD;&#x77E9;&#x9635;&#xFF0C;&#x53EF;&#x4EE5;&#x968F;&#x673A;&#x521D;&#x59CB;&#x5316;&#x8FED;&#x4EE3;&#x66F4;&#x65B0;&#xFF09;&#x76F8;&#x4E58;&#xFF0C;&#x83B7;&#x53D6;QKV&#x4E09;&#x4E2A;&#x5411;&#x91CF;</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501214650247.png" alt="image-20210501214650247"></p>
+<p>Divide by 8 &#x6839;&#x53F7;&#x4E0B;dk &#xFF1A;&#x7531;&#x4E8E;<strong>Softmax&#x672C;&#x8EAB;&#x68AF;&#x5EA6;&#x5F88;&#x5C0F;</strong>&#xFF0C;&#x4F46;&#x662F;S&#x503C;&#x5F88;&#x5927;&#xFF0C;&#x6240;&#x4EE5;&#x5BB9;&#x6613;&#x53D1;&#x751F;<strong>&#x68AF;&#x5EA6;&#x6D88;&#x5931;</strong>&#xFF0C;&#x624D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x6B64;&#x5904;&#x7406;</p>
+<p>&#x5B9E;&#x9645;&#x4EE3;&#x7801;&#x4F7F;&#x7528;&#x77E9;&#x9635;&#x8FDB;&#x884C;&#x5E76;&#x884C;&#x64CD;&#x4F5C;</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501215031067.png" alt="image-20210501215031067" style="zoom: 67%;"></p>
+<p><strong>&#x591A;&#x5934;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;</strong></p>
+<p> <img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501215213404.png" alt="image-20210501215213404"></p>
+<p>&#x76F8;&#x5F53;&#x4E8E;&#x5C06;&#x539F;&#x59CB;&#x6570;&#x636E;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x53C2;&#x6570;&#x5728;&#x591A;&#x4E2A;&#x7A7A;&#x95F4;&#x5185;&#x8FDB;&#x884C;&#x5E76;&#x884C;&#x8BA1;&#x7B97;&#xFF0C;</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501215304463.png" alt="image-20210501215304463"></p>
+<p>&#x6700;&#x540E;&#x5C06;&#x591A;&#x4E2A;head &#x7684;&#x591A;&#x4E2A;&#x8F93;&#x51FA;Z&#x5171;&#x540C;&#x8F93;&#x51FA;</p>
+<h3 id="&#x6B8B;&#x5DEE;&#x548C;laynorm">&#x6B8B;&#x5DEE;&#x548C;LayNorm</h3>
+<p> <img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501215527588.png" alt="image-20210501215527588"></p>
+<p>&#x5904;&#x7406;&#x6D41;&#x7A0B;&#xFF1A;&#x5C06;&#x8BCD;&#x5411;&#x91CF;x&#x8FDB;&#x884C;&#x4F4D;&#x7F6E;&#x7F16;&#x7801;&#xFF0C;&#x751F;&#x6210;&#x65B0;&#x7684;&#x8BCD;&#x5411;&#x91CF;X&#xFF0C;&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#xFF0C;&#x7ECF;&#x8FC7;self-attention&#x5904;&#x7406;&#xFF0C;&#x8F93;&#x51FA;Z&#xFF0C;&#x7136;&#x540E;&#x7528;Z&#x548C;X&#x8FDB;&#x884C;&#x5BF9;&#x4F4D;&#x76F8;&#x52A0;&#x4F5C;&#x4E3A;&#x6B8B;&#x5DEE;&#x7ED3;&#x679C;&#xFF0C;&#x518D;&#x8FDB;&#x884C;LayerNorm()&#x5904;&#x7406;</p>
+<p><strong>&#x6B8B;&#x5DEE;</strong></p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501215847277.png" alt="image-20210501215847277" style="zoom:67%;"></p>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x6B8B;&#x5DEE;&#x7ED3;&#x6784;&#x4F1A;&#x6709;&#x7528;&#xFF1F;</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501220435397.png" alt="image-20210501220435397" style="zoom:67%;"></p>
+<p>&#x8FDE;&#x4E58;&#x5E94;&#x4E3A;1+ (&#x306E;Xc/&#x306E;Xb)*(&#x306E;Xb/&#x306E;Xaout)</p>
+<p>&#x786E;&#x4FDD;&#x4E86;&#x68AF;&#x5EA6;&#x4E0D;&#x4F1A;&#x4E3A;&#x96F6;&#xFF0C;<strong>&#x7F13;&#x89E3;&#x68AF;&#x5EA6;&#x6D88;&#x5931;</strong>&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7F51;&#x7EDC;&#x52A0;&#x6DF1;</p>
+<h4 id="layer-normalization"><strong>Layer Normalization</strong></h4>
+<p>&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;LN&#x800C;&#x4E0D;&#x4F7F;&#x7528;BN&#xFF1F;</p>
+<p>BatchNormlization&#xFF1A;BN&#x5728;NLP&#x4EFB;&#x52A1;&#x4E2D;&#x6548;&#x679C;&#x5F88;&#x5DEE;&#xFF0C;BN&#x672C;&#x8EAB;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x5728;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x7279;&#x5F81;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5BF9;&#x591A;&#x4E2A;&#x7279;&#x5F81;&#x8FDB;&#x884C;&#x5F52;&#x4E00;&#x5316;&#x4F7F;&#x5176;&#x80FD;&#x8FC5;&#x901F;&#x6536;&#x655B;&#xFF0C;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x5185;&#x90E8;&#x534F;&#x53D8;&#x91CF;&#x504F;&#x79FB;&#xFF0C;&#x7F13;&#x89E3;&#x4E86;&#x68AF;&#x5EA6;&#x9971;&#x548C;&#x95EE;&#x9898;&#xFF0C;&#x52A0;&#x5FEB;&#x6536;&#x655B;</p>
+<p>BN&#x9488;&#x5BF9;&#x4E00;&#x4E2A;batch&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6837;&#x672C;&#x7684;&#x6240;&#x6709;&#x7279;&#x5F81;&#x8FDB;&#x884C;Normliaze&#xFF0C;&#x6BCF;&#x4E2A;&#x7279;&#x5F81;&#x90FD;&#x662F;&#x5BF9;&#x5E94;&#x7684;&#xFF0C;</p>
+<p>&#x7F3A;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>batch_size&#x8F83;&#x5C0F;&#x65F6;&#xFF0C;&#x6548;&#x679C;&#x5DEE;&#xFF0C;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;batch&#x4E2D;&#x6240;&#x6709;&#x6837;&#x672C;&#x7684;&#x5747;&#x503C;&#x548C;&#x65B9;&#x5DEE;&#x6765;&#x6A21;&#x62DF;&#x6574;&#x4F53;&#x7684;&#x5747;&#x503C;&#x548C;&#x65B9;&#x5DEE;&#xFF0C;&#x4F46;&#x662F;&#x5982;&#x679C;&#x6837;&#x672C;&#x5F88;&#x5C0F;&#x4E0D;&#x5177;&#x6709;&#x4EE3;&#x8868;&#x6027;</li>
+<li>&#x5728;NLP&#x4E2D;&#xFF0C;RNN&#x7684;&#x8F93;&#x5165;&#x662F;&#x52A8;&#x6001;&#x7684;&#xFF0C;&#x4E0E;&#x65F6;&#x5E8F;&#x6709;&#x5173;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x4E00;&#x4E2A;1*20&#x7684;&#x5411;&#x91CF;&#xFF0C;&#x5C31;&#x4E0D;&#x80FD;&#x7528;&#x5F88;&#x5C0F;&#x7684;batch&#x6765;&#x4EE3;&#x8868;&#x6574;&#x4F53;</li>
+</ul>
+<p>LayerNormalization&#xFF1A;&#x9488;&#x5BF9;&#x4E00;&#x4E2A;&#x6837;&#x672C;&#x7684;&#x6240;&#x6709;&#x5355;&#x8BCD;&#x505A;&#x7F29;&#x653E;&#xFF08;&#x5747;&#x503C;&#x65B9;&#x5DEE;&#xFF09;&#xFF0C;BN&#x662F;&#x9488;&#x5BF9;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x7684;&#x4E0D;&#x540C;&#x7279;&#x5F81;&#x8FDB;&#x884C;&#x7F29;&#x653E;&#xFF0C;&#x4E0D;&#x9002;&#x5408;NLP </p>
+<p><a href="https://academic.oup.com/bib/" target="_blank">https://academic.oup.com/bib/</a></p>
+<h3 id="3-feed-forward&#x524D;&#x9988;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;">3 Feed Forward&#x524D;&#x9988;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;</h3>
+<p>&#x4E24;&#x5C42;&#x7684;&#x5168;&#x8FDE;&#x63A5; &#xFF0B; &#x6B8B;&#x5DEE;LN</p>
+<h2 id="decoder">Decoder</h2>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501222359782.png" alt="image-20210501222359782"></p>
+<h3 id="1-masked-multi-head-attention">1 Masked Multi-Head Attention</h3>
+<p>&#x9700;&#x8981;&#x5BF9;&#x5F53;&#x524D;&#x5355;&#x8BCD;&#x548C;&#x4E4B;&#x540E;&#x7684;&#x5355;&#x8BCD;&#x505A;Mask&#xFF08;&#x63A9;&#x76D6;&#xFF09;</p>
+<p><strong>&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;Mask&#xFF1F;</strong></p>
+<p>&#x5982;&#x679C;&#x4E0D;&#x8FDB;&#x884C;mask&#xFF0C;&#x5728;&#x8FDB;&#x884C;&#x8BAD;&#x7EC3;&#x65F6;&#xFF0C;&#x662F;&#x7531;&#x6240;&#x6709;&#x7684;&#x5355;&#x8BCD;&#x5171;&#x540C;&#x63D0;&#x4F9B;&#x7684;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#xFF0C;&#x4F46;&#x662F;&#x9884;&#x6D4B;&#x65F6;&#x4E0D;&#x80FD;&#x770B;&#x5230;&#x672A;&#x6765;&#x65F6;&#x523B;&#x7684;&#x5355;&#x8BCD;&#xFF0C;&#x4F1A;&#x4EA7;&#x751F;&#x8BAD;&#x7EC3;&#x548C;&#x9884;&#x6D4B;&#x7684;gap&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x63A9;&#x76D6;&#x540E;&#x9762;&#x7684;&#x4E24;&#x4E2A;&#x5355;&#x8BCD;&#x63D0;&#x4F9B;&#x7684;&#x4FE1;&#x606F;</p>
+<p>  <img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501222726779.png" alt="image-20210501222726779"></p>
+<h3 id="2-&#x4EA4;&#x4E92;&#x5C42;">2 &#x4EA4;&#x4E92;&#x5C42;</h3>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501223053694.png" alt="image-20210501223053694"></p>
+<p>&#x6240;&#x6709;&#x7684;Encoder&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#xFF0C;&#x7136;&#x540E;&#x8FD9;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#x5BF9;&#x6BCF;&#x4E2A;Decoder&#x8FDB;&#x884C;&#x4EA4;&#x4E92;</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210501223154302.png" alt="image-20210501223154302"></p>
+<p>Encoder&#x751F;&#x6210;KV&#x77E9;&#x9635;&#xFF0C;Decoder&#x751F;&#x6210;Q&#x77E9;&#x9635;&#xFF0C;&#x4EA4;&#x4E92;&#x5C42;Q&#x77E9;&#x9635;&#x6765;&#x81EA;&#x4E8E;&#x672C;&#x8EAB;&#xFF0C;KV&#x77E9;&#x9635;&#x6765;&#x81EA;&#x4E8E;Encoders&#xFF0C;&#x8FDB;&#x884C;&#x591A;&#x5934;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;</p>
+
                                 
                                 </section>
                             
@@ -339,7 +422,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"深度学习","level":"1.5.2","depth":2,"previous":{"title":"生物学","level":"1.5.1","depth":2,"path":"背景知识/生物.md","ref":"背景知识/生物.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"背景知识/深度学习.md","mtime":"2021-05-05T07:02:54.010Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-05T08:36:40.018Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"深度学习","level":"1.5.2","depth":2,"previous":{"title":"生物学","level":"1.5.1","depth":2,"path":"背景知识/生物.md","ref":"背景知识/生物.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"背景知识/深度学习.md","mtime":"2021-05-05T13:28:48.111Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-05T13:30:45.201Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

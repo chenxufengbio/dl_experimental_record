@@ -303,8 +303,9 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="&#x6570;&#x636E;&#x83B7;&#x53D6;&#x4E0E;&#x9884;&#x5904;&#x7406;">&#x6570;&#x636E;&#x83B7;&#x53D6;&#x4E0E;&#x9884;&#x5904;&#x7406;</h2>
+<p>[TOC]</p>
 <h3 id="&#x6570;&#x636E;&#x547D;&#x540D;&#x89C4;&#x5219;&#x548C;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;">&#x6570;&#x636E;&#x547D;&#x540D;&#x89C4;&#x5219;&#x548C;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;</h3>
-<p>/public/home/xwli/xwzhang/deeplearningDATA/data</p>
+<p>/public/home/xwli/xwzhang/deeplearningDATA/rice/data/</p>
 <table>
 <thead>
 <tr>
@@ -356,17 +357,18 @@
 </tr>
 <tr>
 <td>DeepSEA</td>
-<td></td>
-<td></td>
+<td>dataset_rice1.npz</td>
+<td>/DeepSEA</td>
 </tr>
 <tr>
 <td>DeepHistone</td>
-<td></td>
-<td></td>
+<td>dataset_rice2.npz</td>
+<td>/DeepHistone</td>
 </tr>
 <tr>
 <td>Transformer</td>
-<td></td>
+<td>dataset_rice3.npz</td>
+<td>/Transformer</td>
 </tr>
 </tbody>
 </table>
@@ -482,6 +484,34 @@
 </ol>
 <p><img src="https://img.imgdb.cn/item/604b63c15aedab222cd617f4.png" alt="image-20210303165719055"></p>
 <h4 id="npynpz">.npy/.npz</h4>
+<p>npy&#x6587;&#x4EF6;&#x662F;Numpy&#x4E13;&#x7528;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x683C;&#x5F0F;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4FDD;&#x5B58;numpy.array</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-comment"># &#x5C06;&#x6570;&#x7EC4;&#x4EE5;&#x4E8C;&#x8FDB;&#x5236;&#x683C;&#x5F0F;&#x4FDD;&#x5B58;&#x5230;&#x78C1;&#x76D8;</span>
+arr=np.arange(<span class="hljs-number">5</span>)
+np.save(<span class="hljs-string">&apos;test&apos;</span>,arr)
+<span class="hljs-comment"># &#x8BFB;&#x53D6;&#x6570;&#x7EC4;</span>
+print(np.load(<span class="hljs-string">&apos;test.npy&apos;</span>))
+</code></pre>
+<p>npz&#x6587;&#x4EF6;&#x662F;Numpy&#x7684;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x591A;&#x4E2A;&#x6570;&#x7EC4;&#x538B;&#x7F29;&#x4FDD;&#x5B58;&#x5230;&#x540C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-comment"># &#x5C06;&#x591A;&#x4E2A;&#x6570;&#x7EC4;&#x4FDD;&#x5B58;&#x5230;&#x78C1;&#x76D8;</span>
+a = np.arange(<span class="hljs-number">5</span>)
+b = np.arange(<span class="hljs-number">6</span>)
+c = np.arange(<span class="hljs-number">7</span>)
+np.savez(<span class="hljs-string">&apos;test&apos;</span>, a, b, c_array=c)  <span class="hljs-comment"># c_array&#x662F;&#x6570;&#x7EC4;c&#x7684;&#x547D;&#x540D;</span>
+<span class="hljs-comment"># &#x8BFB;&#x53D6;&#x6570;&#x7EC4;</span>
+data = np.load(<span class="hljs-string">&apos;test.npz&apos;</span>)  <span class="hljs-comment">#&#x7C7B;&#x4F3C;&#x4E8E;&#x5B57;&#x5178;{&#x2018;arr_0&#x2019;:a,&#x2019;arr_1&#x2019;:b,&#x2019;c_array&#x2019;:c}</span>
+print(<span class="hljs-string">&apos;arr_0 : &apos;</span>, data[<span class="hljs-string">&apos;arr_0&apos;</span>])
+print(<span class="hljs-string">&apos;arr_1 : &apos;</span>, data[<span class="hljs-string">&apos;arr_1&apos;</span>])
+print(<span class="hljs-string">&apos;c_array : &apos;</span>, data[<span class="hljs-string">&apos;c_array&apos;</span>])
+
+--------------------------------------------------------------------------------
+arr_0 :  [<span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span>]
+arr_1 :  [<span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span>]
+c_array :  [<span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span>]
+</code></pre>
 <h3 id="&#x751F;&#x6210;&#x6570;&#x636E;&#x96C6;">&#x751F;&#x6210;&#x6570;&#x636E;&#x96C6;</h3>
 <p>&#x672C;&#x90E8;&#x5206;&#x5305;&#x542B;&#x6570;&#x636E;&#x5904;&#x7406;&#x811A;&#x672C;&#x7684;&#x5168;&#x90E8;&#x66F4;&#x65B0;&#x8FC7;&#x7A0B;&#xFF0C;&#x60F3;&#x67E5;&#x770B;&#x6700;&#x65B0;&#x7248;&#x672C;&#x6570;&#x636E;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x8BF7;&#x8DF3;&#x8F6C;&#x81F3;<strong><a href="###&#x751F;&#x6210;&#x6570;&#x636E;&#x96C6;&#x603B;&#x6D41;&#x7A0B;&#xFF08;bash&#x811A;&#x672C;&#xFF09;">&#x751F;&#x6210;&#x6570;&#x636E;&#x96C6;&#x603B;&#x6D41;&#x7A0B;&#xFF08;bash&#x811A;&#x672C;&#xFF09;</a></strong></p>
 <h4 id="&#x53C2;&#x8003;&#x57FA;&#x56E0;&#x7EC4;&#x4E0B;&#x8F7D;">&#x53C2;&#x8003;&#x57FA;&#x56E0;&#x7EC4;&#x4E0B;&#x8F7D;</h4>
@@ -932,8 +962,9 @@ optional arguments:
 <td>data/target</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>.txt   (2.0)</td>
+<td>onehot&#x6807;&#x7B7E;1-5</td>
+<td>da</td>
 </tr>
 </tbody>
 </table>
@@ -1472,6 +1503,9 @@ np.save(<span class="hljs-string">&apos;one_hot&apos;</span>,one_hot_matrix)
 one = np.load(<span class="hljs-string">&apos;./one_hot.npy&apos;</span>,allow_pickle=<span class="hljs-keyword">True</span>)
 one.shape
 </code></pre>
+<p><strong>OneHotEncoder2.0.py</strong></p>
+<p>1.&#x52A0;&#x5165;argparse&#x63A5;&#x53E3;&#xFF0C;&#x65B9;&#x4FBF;&#x547D;&#x4EE4;&#x884C;&#x4F7F;&#x7528;</p>
+<p>2.&#x6539;&#x4E3A;&#x53CC;&#x529F;&#x80FD;&#x51FD;&#x6570;&#xFF0C;check&#xFF1A;&#x5BF9;&#x6570;&#x636E;&#x96C6;&#x8FDB;&#x884C;&#x6E05;&#x7406;&#xFF0C;&#x5220;&#x9664;&#x4E0D;&#x7B26;&#x5408;&#x7F16;&#x7801;&#x89C4;&#x5219;&#x7684;&#x6837;&#x672C;&#xFF1B;make&#xFF1A;&#x5BF9;&#x6570;&#x636E;&#x96C6;&#x8FDB;&#x884C;onehot&#x7F16;&#x7801;</p>
 <pre><code class="lang-python"><span class="hljs-comment">#OneHotEncoder2.0.py</span>
 <span class="hljs-comment">#coding: utf-8</span>
 
@@ -1570,11 +1604,9 @@ index_to_delete = []
     <span class="hljs-keyword">else</span>:
         print(<span class="hljs-string">&apos;There is no choice&apos;</span>)
 </code></pre>
-<p>OneHotEncoder3.0</p>
+<p><strong>OneHotEncoder3.0</strong></p>
 <p>1.&#x8F93;&#x51FA;npz&#x6587;&#x4EF6;&#x5305;&#x542B;[&apos;keys&apos;, &apos;DNAseq&apos;, &apos;labels&apos;]  --make save() ,&#x4FDD;&#x8BC1;&#x4E09;&#x8005;&#x7684;shape&#xFF0C;&#x5E76;&#x4E14;&#x80FD;&#x591F;&#x8F93;&#x51FA;&#x68C0;&#x67E5;</p>
-<ol>
-<li>labels&#x7684;onehot &#x7F16;&#x7801;&#x51FD;&#x6570;&#xFF0C;&#x6309;&#x7167;&#x6570;&#x5B57;&#x8FDB;&#x884C;&#x7F16;&#x7801;</li>
-</ol>
+<p>2.labels&#x7684;onehot &#x7F16;&#x7801;&#x51FD;&#x6570;&#xFF0C;&#x6309;&#x7167;&#x6570;&#x5B57;&#x8FDB;&#x884C;onehot&#x7F16;&#x7801;</p>
 <p>3.&#x5BFC;&#x5165;target&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;keys&#x548C;labels&#x5206;&#x5F00;</p>
 <p>4.np.delete(labels,0,2)&#x5220;&#x9664;&#x6807;&#x7B7E;onehot&#x7B2C;&#x4E00;&#x5217;&#xFF08;0&#xFF09;</p>
 <pre><code class="lang-python"><span class="hljs-comment"># coding: utf-8</span>
@@ -1803,7 +1835,7 @@ W306
     <span class="hljs-keyword">done</span>
 <span class="hljs-keyword">done</span>
 </code></pre>
-<p>seq&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x65E0;&quot;&gt;&quot;</p>
+<p>data/seq&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x65E0;&quot;&gt;&quot;</p>
 <h5 id="&#x6570;&#x636E;&#x9884;&#x5904;&#x7406;check">&#x6570;&#x636E;&#x9884;&#x5904;&#x7406;(check)</h5>
 <pre><code class="lang-bash">bsub -q high <span class="hljs-_">-e</span> check.err -o check.out <span class="hljs-string">&apos;python3 scripts/py_scripts/OneHotEncoder3.0.py -i dataset_rice_raw -c check&apos;</span>
 awk <span class="hljs-string">&apos;{print $1,$3}&apos;</span> 
@@ -1815,6 +1847,9 @@ bsub -q high <span class="hljs-string">&apos;shuf -n243105 dataset_0.txt &gt;&gt
 <pre><code class="lang-shell">bsub -q high -e make.err -o make.out &apos;python3 OneHotEncoder3.0.py -i dataset_rice_all -c make&apos;
 </code></pre>
 <h5 id="&#x751F;&#x6210;transformer&#x6570;&#x636E;&#x96C6;">&#x751F;&#x6210;Transformer&#x6570;&#x636E;&#x96C6;</h5>
+<p>&#x63D0;&#x53D6;$1&#x548C;$3&#xFF0C;&#x7136;&#x540E;&#x4E0E;&#x7B49;&#x6570;&#x91CF;&#x7684;&#x9634;&#x6027;&#x6837;&#x672C;&#x8FDE;&#x63A5;</p>
+<pre><code class="lang-python">awk <span class="hljs-string">&apos;{print $1,$3}&apos;</span> dataset_rice_all.txt &gt; dataser_trans.txt
+</code></pre>
 
                                 
                                 </section>
@@ -1858,7 +1893,7 @@ bsub -q high <span class="hljs-string">&apos;shuf -n243105 dataset_0.txt &gt;&gt
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据获取与预处理","level":"1.2.2","depth":2,"next":{"title":"构建模型","level":"1.2.3","depth":2,"path":"实验流程/构建模型.md","ref":"实验流程/构建模型.md","articles":[]},"previous":{"title":"实验流程概述","level":"1.2.1","depth":2,"path":"实验流程/实验流程概述.md","ref":"实验流程/实验流程概述.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"实验流程/数据获取与预处理.md","mtime":"2021-05-05T08:34:41.206Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-05T08:36:40.018Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数据获取与预处理","level":"1.2.2","depth":2,"next":{"title":"构建模型","level":"1.2.3","depth":2,"path":"实验流程/构建模型.md","ref":"实验流程/构建模型.md","articles":[]},"previous":{"title":"实验流程概述","level":"1.2.1","depth":2,"path":"实验流程/实验流程概述.md","ref":"实验流程/实验流程概述.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"实验流程/数据获取与预处理.md","mtime":"2021-05-05T13:14:56.783Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-05T13:30:45.201Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
