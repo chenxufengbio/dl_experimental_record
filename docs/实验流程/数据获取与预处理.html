@@ -302,7 +302,1520 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="&#x6570;&#x636E;&#x83B7;&#x53D6;&#x4E0E;&#x9884;&#x5904;&#x7406;">&#x6570;&#x636E;&#x83B7;&#x53D6;&#x4E0E;&#x9884;&#x5904;&#x7406;</h2>
+<h3 id="&#x6570;&#x636E;&#x547D;&#x540D;&#x89C4;&#x5219;&#x548C;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;">&#x6570;&#x636E;&#x547D;&#x540D;&#x89C4;&#x5219;&#x548C;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;</h3>
+<p>/public/home/xwli/xwzhang/deeplearningDATA/data</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>name</th>
+<th>location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x5E8F;&#x5217;&#x6587;&#x4EF6;</td>
+<td>C^^^_C^^^.fasta</td>
+<td>/sequence</td>
+</tr>
+<tr>
+<td>&#x6CE8;&#x91CA;&#x6587;&#x4EF6;</td>
+<td>C^^^_C^^^.fasta.fai</td>
+<td>/faidx</td>
+</tr>
+<tr>
+<td>&#x4FE1;&#x53F7;&#x533A;&#x57DF;&#x5904;&#x7406;&#x540E;</td>
+<td>sort_C^^^.bed</td>
+<td>/signal_area</td>
+</tr>
+<tr>
+<td>&#x5355;&#x54C1;&#x79CD;&#x6807;&#x7B7E;</td>
+<td>target_C^^^.txt</td>
+<td>/target</td>
+</tr>
+<tr>
+<td>&#x5355;&#x54C1;&#x79CD;&#x6570;&#x636E;&#x96C6;</td>
+<td>data_C^^^.xlsx</td>
+<td>/dataset</td>
+</tr>
+<tr>
+<td>&#x6570;&#x636E;&#x96C6;&#xFF08;data<em>(&#x6570;&#x636E;&#x91CF;)</em>&#xFF08;&#x968F;&#x673A;&#xFF09;&#xFF09;</td>
+<td>data_10w_sh.xlsx</td>
+<td>/dataset</td>
+</tr>
+<tr>
+<td>onehot&#x7F16;&#x7801;</td>
+<td>one_hot_10w_sh.npy</td>
+<td>/onehot</td>
+</tr>
+<tr>
+<td>&#x6570;&#x636E;&#x96C6;&#x5BF9;&#x5E94;&#x6807;&#x7B7E;</td>
+<td>labels_10w_sh.txt</td>
+<td>/label</td>
+</tr>
+<tr>
+<td>DeepSEA</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DeepHistone</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Transformer</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x6570;&#x636E;&#x683C;&#x5F0F;">&#x6570;&#x636E;&#x683C;&#x5F0F;</h3>
+<h4 id="fasta">fasta</h4>
+<p>&#x5728;&#x751F;&#x7269;&#x4FE1;&#x606F;&#x5B66;&#x4E2D;&#xFF0C;FASTA&#x683C;&#x5F0F;&#xFF08;&#x53C8;&#x79F0;&#x4E3A;Pearson&#x683C;&#x5F0F;&#xFF09;&#x662F;&#x4E00;&#x79CD;&#x57FA;&#x4E8E;&#x6587;&#x672C;&#x7684;&#x3001;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x6838;&#x82F7;&#x9178;&#x5E8F;&#x5217;&#x6216;&#x6C28;&#x57FA;&#x9178;&#x5E8F;&#x5217;&#x7684;&#x683C;&#x5F0F;&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x683C;&#x5F0F;&#x4E2D;&#x78B1;&#x57FA;&#x5BF9;&#x6216;&#x6C28;&#x57FA;&#x9178;&#x7528;&#x5355;&#x4E2A;&#x5B57;&#x6BCD;&#x6765;&#x8868;&#x793A;&#xFF0C;&#x4E14;&#x5141;&#x8BB8;&#x5728;&#x5E8F;&#x5217;&#x524D;&#x6DFB;&#x52A0;&#x5E8F;&#x5217;&#x540D;&#x53CA;&#x6CE8;&#x91CA;&#x3002;</p>
+<p>FASTA&#x6587;&#x4EF6;&#x4EE5;&#x5E8F;&#x5217;&#x8868;&#x793A;&#x548C;&#x5E8F;&#x5217;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x5355;&#x5143;&#xFF0C;&#x5404;&#x884C;&#x8BB0;&#x5F55;&#x4FE1;&#x606F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x884C;&#x662F;&#x7531;&#x5927;&#x4E8E;&#x53F7;&quot;&gt;&quot;&#x5F00;&#x5934;&#x7684;&#x4EFB;&#x610F;&#x6587;&#x5B57;&#x8BF4;&#x660E;&#xFF0C;&#x7528;&#x4E8E;&#x5E8F;&#x5217;&#x6807;&#x8BB0;&#xFF0C;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x540E;&#x7EED;&#x5206;&#x6790;&#x8F6F;&#x4EF6;&#x80FD;&#x591F;&#x533A;&#x5206;&#x6BCF;&#x6761;&#x5E8F;&#x5217;&#xFF0C;&#x5355;&#x4E2A;&#x5E8F;&#x5217;&#x7684;&#x6807;&#x8BC6;&#x5FC5;&#x987B;&#x5177;&#x6709;&#x552F;&#x4E00;&#x6027;&#x3002;&#xFF1B;</li>
+<li>&#x4ECE;&#x7B2C;&#x4E8C;&#x884C;&#x5F00;&#x59CB;&#x4E3A;&#x5E8F;&#x5217;&#x672C;&#x8EAB;&#xFF0C;&#x53EA;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x65E2;&#x5B9A;&#x7684;&#x6838;&#x82F7;&#x9178;&#x6216;&#x6C28;&#x57FA;&#x9178;&#x7F16;&#x7801;&#x7B26;&#x53F7;&#x3002;&#x901A;&#x5E38;&#x6838;&#x82F7;&#x9178;&#x7B26;&#x53F7;&#x5927;&#x5C0F;&#x5199;&#x5747;&#x53EF;&#xFF0C;&#x800C;&#x6C28;&#x57FA;&#x9178;&#x5E38;&#x7528;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x3002;&#x4F7F;&#x7528;&#x65F6;&#x5E94;&#x6CE8;&#x610F;&#x6709;&#x4E9B;&#x7A0B;&#x5E8F;&#x5BF9;&#x5927;&#x5C0F;&#x5199;&#x6709;&#x660E;&#x786E;&#x8981;&#x6C42;&#x3002;&#x6587;&#x4EF6;&#x6BCF;&#x884C;&#x7684;&#x5B57;&#x6BCD;&#x4E00;&#x822C;&#x4E0D;&#x5E94;&#x8D85;&#x8FC7;80&#x4E2A;&#x5B57;&#x7B26;&#x3002;</li>
+</ul>
+<p><strong>IRGSP-1.0_genome.fasta</strong></p>
+<p><img src="https://img.imgdb.cn/item/604b63c15aedab222cd617e3.png" alt="image-20210303162337240"></p>
+<h4 id="vcf">vcf</h4>
+<p>VCF&#x683C;&#x5F0F;&#xFF1A;Variant Call Format&#xFF0C;&#x7528;&#x4E8E;&#x8BB0;&#x5F55;variants (SNP / InDel)&#x7684;&#x6587;&#x4EF6;&#x683C;&#x5F0F;</p>
+<p>&#x6C34;&#x7A3B;12&#x6761;&#x67D3;&#x8272;&#x4F53;&#x7684;&#x53D8;&#x5F02;&#x4FE1;&#x606F;</p>
+<p>SNP&#x6C47;&#x603B;&#xFF1A; <strong>nip_total.vcf</strong></p>
+<p><strong>&#x6CE8;&#x91CA;&#x90E8;&#x5206;</strong></p>
+<p>#</p>
+<p>vcf&#x7248;&#x672C;</p>
+<p>&#x65E5;&#x671F;</p>
+<p>&#x6C34;&#x7A3B;12&#x6761;&#x67D3;&#x8272;&#x4F53;&#x7684;&#x957F;&#x5EA6;</p>
+<p><strong>&#x4E3B;&#x4F53;&#x90E8;&#x5206;</strong> </p>
+<p>CHROM &#xFF1A; &#x53C2;&#x8003;&#x5E8F;&#x5217;&#x540D;&#x79F0;</p>
+<p>POS &#xFF1A; variant&#x6240;&#x5728;&#x7684;left-most&#x4F4D;&#x7F6E;(1-base position)&#xFF08;&#x53D1;&#x751F;&#x53D8;&#x5F02;&#x7684;&#x4F4D;&#x7F6E;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x78B1;&#x57FA;&#x6240;&#x5728;&#x7684;&#x4F4D;&#x7F6E;&#xFF09;</p>
+<p>ID &#xFF1A; variant&#x7684;ID&#x3002;&#x540C;&#x65F6;&#x5BF9;&#x5E94;&#x7740;dbSNP&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;ID&#xFF0C;&#x82E5;&#x6CA1;&#x6709;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x2018;.&#x2019;</p>
+<p>REF &#xFF1A; &#x53C2;&#x8003;&#x5E8F;&#x5217;&#x7684;Allele&#xFF0C;&#xFF08;&#x7B49;&#x4F4D;&#x78B1;&#x57FA;&#xFF0C;&#x5373;&#x53C2;&#x8003;&#x5E8F;&#x5217;&#x8BE5;&#x4F4D;&#x7F6E;&#x7684;&#x78B1;&#x57FA;&#x7C7B;&#x578B;&#x53CA;&#x78B1;&#x57FA;&#x6570;&#x91CF;&#xFF09;</p>
+<p>ALT &#xFF1A; variant&#x7684;Allele&#xFF0C;<strong>&#x82E5;&#x6709;&#x591A;&#x4E2A;&#xFF0C;&#x5219;&#x4F7F;&#x7528;&#x9017;&#x53F7;&#x5206;&#x9694;</strong>&#xFF0C;&#xFF08;&#x53D8;&#x5F02;&#x6240;&#x652F;&#x6301;&#x7684;&#x78B1;&#x57FA;&#x7C7B;&#x578B;&#x53CA;&#x78B1;&#x57FA;&#x6570;&#x91CF;&#xFF09;&#x8FD9;&#x91CC;&#x7684;&#x78B1;&#x57FA;&#x7C7B;&#x578B;&#x548C;&#x78B1;&#x57FA;&#x6570;&#x91CF;&#xFF0C;&#x5BF9;&#x4E8E;SNP&#x6765;&#x8BF4;&#x662F;&#x5355;&#x4E2A;&#x78B1;&#x57FA;&#x7C7B;&#x578B;&#x7684;&#x7F16;&#x53F7;&#xFF0C;&#x800C;&#x5BF9;&#x4E8E;Indel&#x6765;&#x8BF4;&#x662F;&#x6307;&#x78B1;&#x57FA;&#x4E2A;&#x6570;&#x7684;&#x6DFB;&#x52A0;&#x6216;&#x7F3A;&#x5931;&#xFF0C;&#x4EE5;&#x53CA;&#x78B1;&#x57FA;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x5316;</p>
+<p>QUAL &#xFF1A; variants&#x7684;&#x8D28;&#x91CF;&#x3002;Phred&#x683C;&#x5F0F;&#x7684;&#x6570;&#x503C;&#xFF0C;&#x4EE3;&#x8868;&#x7740;&#x6B64;&#x4F4D;&#x70B9;&#x662F;<strong>&#x7EAF;&#x5408;&#x7684;&#x6982;&#x7387;</strong>&#xFF0C;<strong>&#x6B64;&#x503C;&#x8D8A;&#x5927;</strong>&#xFF0C;&#x5219;&#x6982;&#x7387;&#x8D8A;&#x4F4E;&#xFF0C;&#x4EE3;&#x8868;&#x7740;&#x6B21;&#x4F4D;&#x70B9;&#x662F;<strong>variants&#x7684;&#x53EF;&#x80FD;&#x6027;&#x8D8A;&#x5927;</strong>&#x3002;&#xFF08;&#x8868;&#x793A;&#x53D8;&#x5F02;&#x78B1;&#x57FA;&#x7684;&#x53EF;&#x80FD;&#x6027;&#xFF09;</p>
+<p>FILTER &#xFF1A; &#x6B21;&#x4F4D;&#x70B9;&#x662F;&#x5426;&#x8981;&#x88AB;&#x8FC7;&#x6EE4;&#x6389;&#x3002;<strong>&#x5982;&#x679C;&#x662F;PASS&#xFF0C;&#x5219;&#x8868;&#x793A;&#x6B64;&#x4F4D;&#x70B9;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x4E3A;variant&#x3002;</strong></p>
+<p>INFO &#xFF1A; variant&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;</p>
+<p>FORMAT &#xFF1A; variants&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982;GT:AD:DP:GQ:PL</p>
+<p>SAMPLES &#xFF1A; &#x5404;&#x4E2A;Sample&#x7684;&#x503C;&#xFF0C;&#x7531;BAM&#x6587;&#x4EF6;&#x4E2D;&#x7684;@RG&#x4E0B;&#x7684;SM&#x6807;&#x7B7E;&#x6240;&#x51B3;&#x5B9A;&#xFF0C;&#x8FD9;&#x4E9B;&#x503C;&#x5BF9;&#x5E94;&#x7740;&#x7B2C;9&#x5217;&#x7684;&#x5404;&#x4E2A;&#x683C;&#x5F0F;&#xFF0C;&#x4E0D;&#x540C;&#x683C;&#x5F0F;&#x7684;&#x503C;&#x7528;&#x5192;&#x53F7;&#x5206;&#x5F00;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;sample&#x5BF9;&#x5E94;&#x7740;1&#x5217;&#xFF1B;&#x591A;&#x4E2A;samples&#x5219;&#x5BF9;&#x5E94;&#x7740;&#x591A;&#x5217;&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x5217;&#x7684;&#x6570;&#x591A;&#x4F59;10&#x5217;&#x3002;</p>
+<p><strong>nip_total.vcf</strong></p>
+<p><img src="https://img.imgdb.cn/item/604b63c15aedab222cd617e7.png" alt="image-20210303163008087"></p>
+<h4 id="narrowpeak">narrowPeak</h4>
+<p>ChIP-seq&#x4EA7;&#x751F;&#x7684;&#x6570;&#x636E;&#x683C;&#x5F0F;</p>
+<p>*narrowPeak&#x6587;&#x4EF6;&#x662F;BED6+4&#x683C;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0A;&#x4F20;&#x5230;UCSC&#x6D4F;&#x89C8;&#x3002;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x6BCF;&#x5217;&#x4FE1;&#x606F;&#x5206;&#x522B;&#x5305;&#x542B;&#xFF1A;</p>
+<ul>
+<li><p>1&#xFF1B;&#x67D3;&#x8272;&#x4F53;&#x53F7;</p>
+</li>
+<li><p>2&#xFF1A;peak&#x8D77;&#x59CB;&#x4F4D;&#x70B9;</p>
+</li>
+<li><p>3&#xFF1A;&#x7ED3;&#x675F;&#x4F4D;&#x70B9;</p>
+</li>
+<li><p>4&#xFF1A;peak name</p>
+</li>
+<li><p>5&#xFF1A;int(-10*log10qvalue)</p>
+</li>
+<li><p>6 &#xFF1A;&#x6B63;&#x8D1F;&#x94FE;</p>
+</li>
+<li><p>7&#xFF1A;fold change</p>
+</li>
+<li><p>8&#xFF1A;-log10pvalue</p>
+</li>
+<li><p>9&#xFF1A;-log10qvalue</p>
+</li>
+<li><p>10&#xFF1A;relative summit position to peak start&#xFF08;&#xFF1F;&#xFF09;</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/8242255-836a2990e5c80537.png?imageMogr2/auto-orient/strip|imageView2/2/w/1022/format/webp" alt="img"></p>
+</li>
+</ul>
+<p><img src="https://img.imgdb.cn/item/604b63c15aedab222cd617ea.png" alt="image-20210303164143130"></p>
+<h4 id="fai">fai</h4>
+<p>fasta&#x662F;&#x5E38;&#x7528;&#x7684;&#x5E8F;&#x5217;&#x5B58;&#x50A8;&#x683C;&#x5F0F;&#xFF0C;&#x8F6F;&#x4EF6;&#x5BF9;&#x5E8F;&#x5217;&#x8FDB;&#x884C;&#x5FEB;&#x901F;&#x67E5;&#x627E;&#x7684;&#x65F6;&#x5019;&#x901A;&#x5E38;&#x9700;&#x8981;&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;&#x6587;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982;&#x5728;GATK&#x3001;IGV&#x7B49;&#x8F6F;&#x4EF6;&#x4E2D;&#x5BFC;&#x5165;&#x5E8F;&#x5217;&#x7684;&#x65F6;&#x5019;&#x90FD;&#x9700;&#x8981;&#x5EFA;&#x7ACB;&#x7D22;&#x5F15;&#x3002;fasta&#x683C;&#x5F0F;&#x6587;&#x4EF6;&#x7684;&#x4E00;&#x79CD;&#x7D22;&#x5F15;&#x4E3A;fai&#x7ED3;&#x5C3E;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;samtools faidx&#x547D;&#x4EE4;&#x521B;&#x5EFA;&#xFF0C;&#x5177;&#x4F53;&#x7528;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x7528;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-shell">samtools faidx input.fa
+</code></pre>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x5BF9;&#x8F93;&#x5165;&#x7684;fasta&#x5E8F;&#x5217;&#x6709;&#x4E00;&#x5B9A;&#x8981;&#x6C42;&#xFF1A;&#x5BF9;&#x4E8E;&#x6BCF;&#x6761;&#x5E8F;&#x5217;&#xFF0C;&#x9664;&#x4E86;&#x6700;&#x540E;&#x4E00;&#x884C;&#x5916;&#xFF0C; &#x5176;&#x4ED6;&#x884C;&#x7684;&#x957F;&#x5EA6;&#x5FC5;&#x987B;&#x76F8;&#x540C;</p>
+<p>&#x7B2C;&#x4E00;&#x5217; NAME  :  &#x5E8F;&#x5217;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x53EA;&#x4FDD;&#x7559;&#x201C;&gt;&#x201D;&#x540E;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x7A7A;&#x767D;&#x4E4B;&#x524D;&#x7684;&#x5185;&#x5BB9;&#xFF1B;</p>
+<p>&#x7B2C;&#x4E8C;&#x5217; LENGTH:  &#x5E8F;&#x5217;&#x7684;&#x957F;&#x5EA6;&#xFF0C; &#x5355;&#x4F4D;&#x4E3A;bp&#xFF1B;</p>
+<p>&#x7B2C;&#x4E09;&#x5217; OFFSET :  &#x7B2C;&#x4E00;&#x4E2A;&#x78B1;&#x57FA;&#x7684;&#x504F;&#x79FB;&#x91CF;&#xFF0C; &#x4ECE;0&#x5F00;&#x59CB;&#x8BA1;&#x6570;&#xFF0C;&#x6362;&#x884C;&#x7B26;&#x4E5F;&#x7EDF;&#x8BA1;&#x8FDB;&#x884C;&#xFF1B;</p>
+<p>&#x7B2C;&#x56DB;&#x5217; LINEBASES : &#x9664;&#x4E86;&#x6700;&#x540E;&#x4E00;&#x884C;&#x5916;&#xFF0C; &#x5176;&#x4ED6;&#x4EE3;&#x8868;&#x5E8F;&#x5217;&#x7684;&#x884C;&#x7684;&#x78B1;&#x57FA;&#x6570;&#xFF0C; &#x5355;&#x4F4D;&#x4E3A;bp&#xFF1B;</p>
+<p>&#x7B2C;&#x4E94;&#x5217; LINEWIDTH : &#x884C;&#x5BBD;&#xFF0C; &#x9664;&#x4E86;&#x6700;&#x540E;&#x4E00;&#x884C;&#x5916;&#xFF0C; &#x5176;&#x4ED6;&#x4EE3;&#x8868;&#x5E8F;&#x5217;&#x7684;&#x884C;&#x7684;&#x957F;&#x5EA6;&#xFF0C; &#x5305;&#x62EC;&#x6362;&#x884C;&#x7B26;&#xFF0C; &#x5728;windows&#x7CFB;&#x7EDF;&#x4E2D;&#x6362;&#x884C;&#x7B26;&#x4E3A;\r\n, &#x8981;&#x5728;&#x5E8F;&#x5217;&#x957F;&#x5EA6;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x52A0;2&#xFF1B;</p>
+<p><img src="https://img.imgdb.cn/item/604b63c15aedab222cd617ee.png" alt="image-20210303164442136"></p>
+<h4 id="bed">bed</h4>
+<blockquote>
+<p>BED (Browser Extensible Data)&#x683C;&#x5F0F;&#x6587;&#x4EF6;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x89C4;&#x5B9A;&#x884C;&#x7684;&#x5185;&#x5BB9;&#x6765;&#x5C55;&#x793A;&#x6CE8;&#x91CA;&#x4FE1;&#x606F;</p>
+</blockquote>
+<ul>
+<li>BED&#x6587;&#x4EF6;&#x6BCF;&#x884C;&#x81F3;&#x5C11;&#x5305;&#x62EC;<strong>chrom</strong>&#xFF0C;<strong>chromStart</strong>&#xFF0C;<strong>chromEnd</strong>&#x4E09;&#x5217;&#xFF1B;&#x53E6;&#x5916;&#x8FD8;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x989D;&#x5916;&#x7684;9&#x5217;&#xFF0C;&#x8FD9;&#x4E9B;&#x5217;&#x7684;&#x987A;&#x5E8F;&#x662F;&#x56FA;&#x5B9A;&#x7684;&#x3002;</li>
+<li>&#x5728;&#x81EA;&#x5B9A;&#x4E49;BED&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x524D;&#x9762;&#x53EF;&#x4EE5;&#x6709;&#x6CE8;&#x91CA;&#x884C;&#xFF0C;&#x4EE5;&#x201C;browser&#x201D;&#x6216;&#x201C;track&#x201D;&#x5F00;&#x5934;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E00;&#x4E9B;&#x53C2;&#x6570;&#x4FBF;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#x66F4;&#x597D;&#x5C55;&#x793A;BED&#x6587;&#x4EF6;&#x4FE1;&#x606F;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x4E0B;&#x6E38;&#x7684;&#x4E00;&#x4E9B;&#x5206;&#x6790;&#x5DE5;&#x5177;&#xFF0C;&#x4F8B;&#x5982;bedToBigBed&#xFF0C;&#x662F;&#x4E0D;&#x63A5;&#x53D7;&#x6709;&#x6CE8;&#x91CA;&#x7684;BED&#x6587;&#x4EF6;&#x7684;&#x3002;</li>
+</ul>
+<hr>
+<p><strong># BED&#x6587;&#x4EF6;&#x5FC5;&#x987B;&#x7684;3&#x5217;:</strong></p>
+<ol>
+<li><strong>chrom</strong> - &#x67D3;&#x8272;&#x4F53;&#x53F7;; &#x4F8B;&#x5982;&#xFF0C;chr1&#xFF0C;chrX&#x3002;&#x3002;&#x3002;&#x3002;&#x3002;&#x3002;&#x3002;</li>
+<li><strong>chromStart</strong> - feature&#x5728;&#x67D3;&#x8272;&#x4F53;&#x4E0A;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;. &#x4ECE;0&#x5F00;&#x59CB;&#x7B97;&#xFF0C;&#x67D3;&#x8272;&#x4F53;&#x4E0A;&#x7B2C;&#x4E00;&#x4E2A;&#x78B1;&#x57FA;&#x4F4D;&#x7F6E;&#x6807;&#x8BB0;&#x4E3A;0&#x3002;</li>
+<li><strong>chromEnd</strong> - feature&#x5728;&#x67D3;&#x8272;&#x4F53;&#x4E0A;&#x7EC8;&#x6B62;&#x4F4D;&#x7F6E;&#x3002;&#x67D3;&#x8272;&#x4F53;&#x4E0A;&#x524D;100&#x4E2A;&#x78B1;&#x57FA;&#x7247;&#x6BB5;&#x7684;&#x4F4D;&#x7F6E;&#x4F4D;&#x7F6E;&#x6807;&#x8BB0;&#x4E3A;&#xFF1A;chromStart=0, chromEnd=100&#x3002; &#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x7B2C;100&#x4E2A;&#x78B1;&#x57FA;&#x4E0D;&#x5C5E;&#x4E8E;&#x5F53;&#x524D;&#x7247;&#x6BB5;&#x4E2D;&#xFF0C;&#x5F53;&#x524D;&#x7247;&#x6BB5;&#x7684;&#x78B1;&#x57FA;&#x5E94;&#x8BE5;&#x662F;0-99&#x3002;&#x6240;&#x4EE5;&#x5728;BED&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x4ECE;0&#x5F00;&#x59CB;&#xFF0C;&#x7EC8;&#x6B62;&#x4F4D;&#x7F6E;&#x4ECE;1&#x5F00;&#x59CB;&#x3002;</li>
+</ol>
+<p><strong># BED&#x6587;&#x4EF6;&#x53EF;&#x9009;&#x7684;9&#x5217;:</strong></p>
+<ol>
+<li><strong>name</strong> - BED&#x884C;&#x540D;&#xFF0C;&#x5728;&#x57FA;&#x56E0;&#x7EC4;&#x6D4F;&#x89C8;&#x5668;&#x5DE6;&#x8FB9;&#x663E;&#x793A;&#xFF1B;</li>
+<li><strong>score</strong> - &#x5728;&#x57FA;&#x56E0;&#x7EC4;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x663E;&#x793A;&#x7684;&#x7070;&#x5EA6;&#x8BBE;&#x5B9A;&#xFF0C;&#x503C;&#x4ECB;&#x4E8E;0-1000&#xFF1B;</li>
+</ol>
+<p><img src="https:////upload-images.jianshu.io/upload_images/7493830-55e4e8eb76762cba.png?imageMogr2/auto-orient/strip|imageView2/2/w/789/format/webp" alt="img"></p>
+<p>gray score</p>
+<ol>
+<li><p><strong>strand</strong> - &#x6B63;&#x8D1F;&#x94FE;&#x6807;&#x8BB0;. Either &quot;.&quot; (=no strand) or &quot;+&quot; or &quot;-&quot;.</p>
+</li>
+<li><p><strong>thickStart</strong> - feature&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;(for example, the start codon in gene displays)&#x3002; When there is no thick part, thickStart and thickEnd are usually set to the chromStart position.</p>
+</li>
+<li><p><strong>thickEnd</strong> -  feature&#x7F16;&#x7801;&#x7EC8;&#x6B62;&#x4F4D;&#x7F6E; (for example the stop codon in gene displays).</p>
+</li>
+<li><p><strong>itemRgb</strong> - R,G,B (e.g. 255,0,0)&#x503C;&#xFF0C;&#x5F53;<em>itemRgb</em> &#x8BBE;&#x7F6E;&#x4E3A; &quot;On&quot;&#xFF0C;BED&#x7684;&#x884C;&#x4F1A;&#x663E;&#x793A;&#x989C;&#x8272;.</p>
+</li>
+<li><p><strong>blockCount</strong> - blocks (exons)&#x6570;&#x76EE;.</p>
+</li>
+<li><p><strong>blockSizes</strong> - blocks (exons)&#x5927;&#x5C0F;&#x5217;&#x8868;&#xFF0C;&#x9017;&#x53F7;&#x5206;&#x9694;&#xFF0C;&#x5BF9;&#x5E94;&#x4E8E;<em>blockCount</em>.</p>
+</li>
+<li><p><strong>blockStarts</strong> -blocks (exons)&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x5217;&#x8868;&#xFF0C;&#x9017;&#x53F7;&#x5206;&#x9694;&#xFF0C;&#x5BF9;&#x5E94;&#x4E8E;<em>blockCount</em>.&#xFF1B;&#x8FD9;&#x4E2A;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#x662F;&#x4E0E;<em>chromStart</em>&#x7684;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p><strong>sort_C019_peak.bed</strong></p>
+</li>
+</ol>
+<p><img src="https://img.imgdb.cn/item/604b63c15aedab222cd617f4.png" alt="image-20210303165719055"></p>
+<h4 id="npynpz">.npy/.npz</h4>
+<h3 id="&#x751F;&#x6210;&#x6570;&#x636E;&#x96C6;">&#x751F;&#x6210;&#x6570;&#x636E;&#x96C6;</h3>
+<p>&#x672C;&#x90E8;&#x5206;&#x5305;&#x542B;&#x6570;&#x636E;&#x5904;&#x7406;&#x811A;&#x672C;&#x7684;&#x5168;&#x90E8;&#x66F4;&#x65B0;&#x8FC7;&#x7A0B;&#xFF0C;&#x60F3;&#x67E5;&#x770B;&#x6700;&#x65B0;&#x7248;&#x672C;&#x6570;&#x636E;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x8BF7;&#x8DF3;&#x8F6C;&#x81F3;<strong><a href="###&#x751F;&#x6210;&#x6570;&#x636E;&#x96C6;&#x603B;&#x6D41;&#x7A0B;&#xFF08;bash&#x811A;&#x672C;&#xFF09;">&#x751F;&#x6210;&#x6570;&#x636E;&#x96C6;&#x603B;&#x6D41;&#x7A0B;&#xFF08;bash&#x811A;&#x672C;&#xFF09;</a></strong></p>
+<h4 id="&#x53C2;&#x8003;&#x57FA;&#x56E0;&#x7EC4;&#x4E0B;&#x8F7D;">&#x53C2;&#x8003;&#x57FA;&#x56E0;&#x7EC4;&#x4E0B;&#x8F7D;</h4>
+<p>&#x6C34;&#x7A3B;&#x65E5;&#x672C;&#x6674;&#x7B2C;&#x4E03;&#x7248;</p>
+<pre><code class="lang-shell">wget http://rapdb.dna.affrc.go.jp/download/archive/irgsp1/IRGSP-1.0_genome.fasta.gz
+gunzip IRGSP-1.0_genome.fasta.gz
+</code></pre>
+<p>&#x67E5;&#x770B;&#x57FA;&#x56E0;&#x7EC4;&#x7684;&#x5927;&#x5C0F;&#x548C;ID</p>
+<pre><code class="lang-shell">bioawk -c fastx &apos;{print $1 &quot;\t&quot; length($seq)}&apos; IRGSP-1.0_genome.fasta
+</code></pre>
+<p><img src="https://img.imgdb.cn/item/604b63b85aedab222cd611fc.png" alt="image-20210303152902570"></p>
+<h4 id="&#x751F;&#x6210;&#x54C1;&#x79CD;&#x57FA;&#x56E0;&#x578B;">&#x751F;&#x6210;&#x54C1;&#x79CD;&#x57FA;&#x56E0;&#x578B;</h4>
+<p>&#x4EE5;NIP&#x4E3A;&#x793A;&#x4F8B;&#xFF0C;&#x540E;&#x7EED;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x54C1;&#x79CD;&#x6269;&#x5927;&#x6570;&#x636E;&#x96C6;</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210317091915614.png" alt="image-20210317091915614"></p>
+<h5 id="python&#x811A;&#x672C;-genosubpy">python&#x811A;&#x672C; geno_sub.py</h5>
+<p><em>&#x76EE;&#x524D;&#x4F7F;&#x7528;&#x811A;&#x672C;geno_sub2.0.py, &#x89E3;&#x51B3;&#x517C;&#x5E76;&#x78B1;&#x57FA;&#x7684;&#x95EE;&#x9898;</em>&#xFF08;2021.3.28&#xFF09;</p>
+<p><em>&#x4F7F;&#x7528;bash&#x811A;&#x672C;&#x6279;&#x91CF;&#x5E76;&#x884C;&#x63D0;&#x4EA4;&#x4F5C;&#x4E1A;</em></p>
+<p>&#x6CE8;&#xFF1A;bash&#x811A;&#x672C;&#x5728;windows&#x4E0A;&#x7F16;&#x8F91;&#x540E;&#x5728;Linux&#x8FD0;&#x884C;&#x4F1A;&#x62A5;&#x9519;</p>
+<pre><code class="lang-txt">scripts/sh_scripts/geno_make.sh: line 4: syntax error near unexpected token `$&apos;do\r&apos;&apos;
+&apos;cripts/sh_scripts/geno_make.sh: line 4: `do
+</code></pre>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<p><a href="https://www.jianshu.com/p/55597646fa84" target="_blank">https://www.jianshu.com/p/55597646fa84</a></p>
+<pre><code class="lang-shell">sed &apos;s/\r//&apos; input.sh &gt; output.sh
+</code></pre>
+<pre><code class="lang-shell">#!/bin/bash
+#&#x751F;&#x6210;&#x54C1;&#x79CD;&#x57FA;&#x56E0;&#x578B;&#xFF0C;&#x53C2;&#x8003;&#x57FA;&#x56E0;&#x7EC4;&#x65E5;&#x672C;&#x6674;&#x7B2C;&#x4E03;&#x7248;
+for i in $(cat id1)
+do
+    bsub -q high -e ${i}.err -o ${i}.out &quot;python3 scripts/py_scripts/geno_sub.py -s data/vcf/sort.total.vcf -n ${i} -r data/ref/IRGSP-1.0_genome.fasta -l 500&quot;
+done
+</code></pre>
+<p><strong>python&#x811A;&#x672C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</strong></p>
+<pre><code class="lang-shell">$ python3 geno_sub.py  -h
+usage: geno_sub.py [-h] -s  -n  -r  [-l]
+
+New sample genome sequence based on snp data
+
+optional arguments:
+  -h, --help          show this help message and exit
+  -s , --snpfile      snp file in vcf format
+  -n , --samplename   sample name, which mest be in snpfile
+  -r , --reference    reference file
+  -l , --seqlen       seq length per line in output file
+</code></pre>
+<p><em>input</em></p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Description</th>
+<th>location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="####fasta">.fasta</a></td>
+<td>&#x65E5;&#x672C;&#x6674;&#x7B2C;&#x4E03;&#x7248;&#x53C2;&#x8003;&#x57FA;&#x56E0;&#x7EC4;&#xFF08;IRGSP-1.0_genome.fasta&#xFF09;</td>
+<td>data/ref</td>
+</tr>
+<tr>
+<td><a href="####vcf">.vcf</a></td>
+<td>&#x6C34;&#x7A3B;&#x53D8;&#x5F02;&#x4FE1;&#x606F;(vcf)</td>
+<td>data/vcf</td>
+</tr>
+</tbody>
+</table>
+<p><em>output</em></p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="####fasta">.fasta</a></td>
+<td>&#x6C34;&#x7A3B;&#x54C1;&#x79CD;&#x81EA;&#x5B9A;&#x4E49;&#x57FA;&#x56E0;&#x7EC4;&#xFF08;C^^^.fasta)</td>
+<td>data/sequence</td>
+</tr>
+<tr>
+<td>.fasta</td>
+<td>&#x6C34;&#x7A3B;&#x57FA;&#x56E0;&#x7EC4;&#xFF08;&#x65E0;&gt;,paste&#x65F6;&#x4F7F;&#x7528;)</td>
+<td>data/seq</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x793A;&#x4F8B;</strong></p>
+<pre><code class="lang-shell">bsub &apos;python3 scripts/geno_sub.py -s data/vcf/*.vcf -n C^^^ -r data/ref/*fasta -l 500&apos;
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment">#geno_sub.py</span>
+<span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> argparse
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> defaultdict
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">defaultdict_list</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> defaultdict(list)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">snpInfo</span><span class="hljs-params">(snp)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x5904;&#x7406;&#x4F4D;&#x70B9;&#x6587;&#x4EF6;&#xFF0C;&#x8BB0;&#x5F55;&#x6837;&#x672C;&#x53D1;&#x751F;&#x53D8;&#x5F02;&#x7684;&#x4F4D;&#x70B9;&#x5750;&#x6807;&#x4FE1;&#x606F;
+    &apos;&apos;&apos;</span>
+    snp_file = open(snp, <span class="hljs-string">&apos;r&apos;</span>)
+    snp_info = defaultdict(defaultdict_list)
+    snp_geno = defaultdict(defaultdict_list)
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> snp_file:
+        <span class="hljs-keyword">if</span> line.startswith(<span class="hljs-string">&apos;##&apos;</span>) <span class="hljs-keyword">or</span> re.search(<span class="hljs-string">&apos;^$&apos;</span>,line.strip()):
+            <span class="hljs-keyword">continue</span>
+        <span class="hljs-keyword">elif</span> line.startswith(<span class="hljs-string">&apos;#CHROM&apos;</span>):
+            line_info = line.strip().split(<span class="hljs-string">&apos;\t&apos;</span>)
+            sample_list = line_info[<span class="hljs-number">9</span>:]
+        <span class="hljs-keyword">else</span>:
+            line_info = line.strip().split(<span class="hljs-string">&apos;\t&apos;</span>)
+            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(sample_list)):
+                <span class="hljs-keyword">if</span>  line_info[i+<span class="hljs-number">9</span>]!=<span class="hljs-string">&apos;0|0&apos;</span>:
+                    snp_info[sample_list[i]][line_info[<span class="hljs-number">0</span>]].append(int(line_info[<span class="hljs-number">1</span>]))
+                    snp_geno[sample_list[i]][line_info[<span class="hljs-number">0</span>]].append([line_info[<span class="hljs-number">3</span>], line_info[<span class="hljs-number">4</span>]])
+    snp_file.close()
+    <span class="hljs-keyword">return</span> snp_info, snp_geno
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">genomePar</span><span class="hljs-params">(genome)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x89E3;&#x6790;&#x57FA;&#x56E0;&#x7EC4;&#x6587;&#x4EF6;
+    &apos;&apos;&apos;</span>
+    genome_file = open(genome, <span class="hljs-string">&apos;r&apos;</span>)
+    seq = <span class="hljs-string">&apos;&apos;</span>
+    seq_name = <span class="hljs-string">&apos;&apos;</span>
+    seq_info = {}
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> genome_file:
+        <span class="hljs-keyword">if</span> line.startswith(<span class="hljs-string">&apos;&gt;&apos;</span>) <span class="hljs-keyword">and</span> seq == <span class="hljs-string">&apos;&apos;</span>:
+            seq_name = re.sub(<span class="hljs-string">&apos;chr0|chr&apos;</span>, <span class="hljs-string">&apos;&apos;</span>,line.strip()[<span class="hljs-number">1</span>:])
+        <span class="hljs-keyword">elif</span> line.startswith(<span class="hljs-string">&apos;&gt;&apos;</span>) <span class="hljs-keyword">and</span> seq != <span class="hljs-string">&apos;&apos;</span>:
+            seq_info[seq_name] = seq
+            seq_name = re.sub(<span class="hljs-string">&apos;chr0|chr&apos;</span>, <span class="hljs-string">&apos;&apos;</span>,line.strip()[<span class="hljs-number">1</span>:])
+            seq = <span class="hljs-string">&apos;&apos;</span>
+        <span class="hljs-keyword">else</span>:
+            seq += line.strip()
+    seq_info[seq_name] = seq
+    genome_file.close()
+    <span class="hljs-keyword">return</span> seq_info
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">seqFormat</span><span class="hljs-params">(seq, lenset=<span class="hljs-number">60</span>)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x6309;&#x6307;&#x5B9A;&#x957F;&#x5EA6;&#x66FF;&#x6362;&#x6570;&#x636E;
+    &apos;&apos;&apos;</span>
+    format_seq = <span class="hljs-string">&apos;&apos;</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, len(seq)+<span class="hljs-number">1</span>):
+        <span class="hljs-keyword">if</span> i % lenset == <span class="hljs-number">0</span>:
+            format_seq += seq[i<span class="hljs-number">-1</span>]+<span class="hljs-string">&quot;\n&quot;</span>
+        <span class="hljs-keyword">else</span>:
+            format_seq += seq[i<span class="hljs-number">-1</span>]
+    <span class="hljs-keyword">return</span> format_seq
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">faOut</span><span class="hljs-params">(snppos, snpgeno, fasta, sample, lenset=<span class="hljs-number">60</span>)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x6839;&#x636E;snppos&#x5185;&#x50A8;&#x5B58;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5BF9;&#x57FA;&#x56E0;&#x7EC4;&#x4E2D;&#x7684;&#x78B1;&#x57FA;&#x8FDB;&#x884C;&#x66FF;&#x6362;
+    &apos;&apos;&apos;</span>
+    out_fasta = open(f<span class="hljs-string">&apos;{sample}.fasta&apos;</span>, <span class="hljs-string">&apos;w&apos;</span>)
+    <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> fasta:
+        n = <span class="hljs-number">1</span>
+        seq = <span class="hljs-string">&apos;&apos;</span>
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> fasta[key]:
+            <span class="hljs-keyword">if</span> len(snppos[sample][key])!=<span class="hljs-number">0</span> <span class="hljs-keyword">and</span> n==snppos[sample][key][<span class="hljs-number">0</span>]:
+                <span class="hljs-keyword">try</span>:
+                    ref_index = snpgeno[sample][key][<span class="hljs-number">0</span>].index(i.upper())
+                    <span class="hljs-comment">#print (ref_index, snpgeno[sample][key][0])</span>
+                    <span class="hljs-keyword">if</span> ref_index == <span class="hljs-number">0</span>:
+                        seq += snpgeno[sample][key][<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]
+                    <span class="hljs-keyword">else</span>:
+                        seq += snpgeno[sample][key][<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]
+                <span class="hljs-keyword">except</span>:
+                    <span class="hljs-keyword">print</span> (f<span class="hljs-string">&apos;chr {key} in pos {n} for sample {sample} is wrong: the ref is {i}, but geno is {snpgeno[sample][key][0]}&apos;</span>)
+                    seq += i
+                <span class="hljs-keyword">finally</span>:
+                    snppos[sample][key].pop(<span class="hljs-number">0</span>)
+                    snpgeno[sample][key].pop(<span class="hljs-number">0</span>)
+            <span class="hljs-keyword">else</span>:
+                seq += i
+            n += <span class="hljs-number">1</span>
+        chr_id = <span class="hljs-string">&apos;chr{:0&gt;2d}&apos;</span>.format(int(key))
+        seq = seqFormat(seq, lenset)
+        out_fasta.write(f<span class="hljs-string">&apos;&gt;{chr_id}\n{seq}\n&apos;</span>)
+    out_fasta.close()
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    parser = argparse.ArgumentParser(description=<span class="hljs-string">&quot;New sample genome sequence based on snp data&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-s&quot;</span>, <span class="hljs-string">&quot;--snpfile&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;snp file in vcf format&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-n&quot;</span>, <span class="hljs-string">&quot;--samplename&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;sample name, which mest be in snpfile&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-r&quot;</span>, <span class="hljs-string">&quot;--reference&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;reference file&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-l&quot;</span>, <span class="hljs-string">&quot;--seqlen&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, default=<span class="hljs-number">60</span>, type=int, help=<span class="hljs-string">&quot;seq length per line in output file&quot;</span>)
+    args = parser.parse_args()
+    <span class="hljs-comment"># &#x89E3;&#x6790;&#x53D8;&#x5F02;&#x4FE1;&#x606F;&#x6587;&#x4EF6;</span>
+    snppos, snpgeno = snpInfo(args.snpfile)
+    <span class="hljs-comment"># &#x89E3;&#x6790;&#x57FA;&#x56E0;&#x7EC4;&#x6587;&#x4EF6;</span>
+    fasta = genomePar(args.reference)
+    <span class="hljs-comment"># &#x8F93;&#x51FA;&#x66FF;&#x6362;&#x7684;&#x7ED3;&#x679C;</span>
+    faOut(snppos, snpgeno, fasta, args.samplename, args.seqlen)
+</code></pre>
+<pre><code class="lang-shell">#&#x5220;&#x9664;&#x542B;&#x6709;N&#xFF08;n&#xFF09;&#x7684;&#x884C;
+sed -i &apos;/N/d&apos; C^^^.fasta | sed -i &apos;/n/d&apos;
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment">#geno_sub2.0.py</span>
+<span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> argparse
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> defaultdict
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">defaultdict_list</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">return</span> defaultdict(list)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">snpInfo</span><span class="hljs-params">(snp)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x5904;&#x7406;&#x4F4D;&#x70B9;&#x6587;&#x4EF6;&#xFF0C;&#x8BB0;&#x5F55;&#x6837;&#x672C;&#x53D1;&#x751F;&#x53D8;&#x5F02;&#x7684;&#x4F4D;&#x70B9;&#x5750;&#x6807;&#x4FE1;&#x606F;
+    &apos;&apos;&apos;</span>
+    degeneration = {<span class="hljs-string">&apos;AG&apos;</span>:<span class="hljs-string">&apos;R&apos;</span>,<span class="hljs-string">&apos;GA&apos;</span>:<span class="hljs-string">&apos;R&apos;</span>,<span class="hljs-string">&apos;CT&apos;</span>:<span class="hljs-string">&apos;Y&apos;</span>,<span class="hljs-string">&apos;TC&apos;</span>:<span class="hljs-string">&apos;Y&apos;</span>,
+                    <span class="hljs-string">&apos;AC&apos;</span>:<span class="hljs-string">&apos;M&apos;</span>,<span class="hljs-string">&apos;CA&apos;</span>:<span class="hljs-string">&apos;M&apos;</span>,<span class="hljs-string">&apos;GT&apos;</span>:<span class="hljs-string">&apos;K&apos;</span>,<span class="hljs-string">&apos;TG&apos;</span>:<span class="hljs-string">&apos;K&apos;</span>,
+                    <span class="hljs-string">&apos;GC&apos;</span>:<span class="hljs-string">&apos;S&apos;</span>,<span class="hljs-string">&apos;CG&apos;</span>:<span class="hljs-string">&apos;S&apos;</span>,<span class="hljs-string">&apos;AT&apos;</span>:<span class="hljs-string">&apos;W&apos;</span>,<span class="hljs-string">&apos;TA&apos;</span>:<span class="hljs-string">&apos;W&apos;</span>}
+    snp_file = open(snp, <span class="hljs-string">&apos;r&apos;</span>)
+    snp_info = defaultdict(defaultdict_list)
+    snp_geno = defaultdict(defaultdict_list)
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> snp_file:
+        <span class="hljs-keyword">if</span> line.startswith(<span class="hljs-string">&apos;##&apos;</span>) <span class="hljs-keyword">or</span> re.search(<span class="hljs-string">&apos;^$&apos;</span>,line.strip()):
+            <span class="hljs-keyword">continue</span>
+        <span class="hljs-keyword">elif</span> line.startswith(<span class="hljs-string">&apos;#CHROM&apos;</span>):
+            line_info = line.strip().split(<span class="hljs-string">&apos;\t&apos;</span>)
+            sample_list = line_info[<span class="hljs-number">9</span>:]
+        <span class="hljs-keyword">else</span>:
+            line_info = line.strip().split(<span class="hljs-string">&apos;\t&apos;</span>)
+            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(sample_list)):
+                <span class="hljs-keyword">if</span> line_info[i+<span class="hljs-number">9</span>]!=<span class="hljs-string">&apos;&apos;</span> <span class="hljs-keyword">and</span> line_info[i+<span class="hljs-number">9</span>]!=<span class="hljs-string">&apos;0|0&apos;</span> <span class="hljs-keyword">and</span> line_info!=<span class="hljs-string">&quot;.|.&quot;</span>:
+                    sample_allele = list(set(line_info[i+<span class="hljs-number">9</span>].split(<span class="hljs-string">&apos;|&apos;</span>)))
+                    ref = line_info[<span class="hljs-number">3</span>]
+                    alts = [ref]
+                    alts.extend(line_info[<span class="hljs-number">4</span>].split(<span class="hljs-string">&apos;,&apos;</span>))
+                    <span class="hljs-keyword">if</span> len(ref) == <span class="hljs-number">1</span>:
+                        snp_info[sample_list[i]][line_info[<span class="hljs-number">0</span>]].append(int(line_info[<span class="hljs-number">1</span>]))
+                        <span class="hljs-keyword">if</span> len(sample_allele) == <span class="hljs-number">1</span>:
+                            snp_geno[sample_list[i]][line_info[<span class="hljs-number">0</span>]].append([alts[int(sample_allele[<span class="hljs-number">0</span>])]])
+                        <span class="hljs-keyword">else</span>:
+                            biallele = <span class="hljs-string">&apos;&apos;</span>.join([alts[int(sample_allele[<span class="hljs-number">0</span>])],alts[int(sample_allele[<span class="hljs-number">1</span>])]])
+                            <span class="hljs-keyword">if</span> len(biallele)!=<span class="hljs-number">2</span>:
+                                snp_geno[sample_list[i]][line_info[<span class="hljs-number">0</span>]].append(alts[int(sample_allele[<span class="hljs-number">1</span>])])
+                            <span class="hljs-keyword">else</span>:
+                                snp_geno[sample_list[i]][line_info[<span class="hljs-number">0</span>]].append(degeneration[biallele])
+                    <span class="hljs-keyword">else</span>:
+                        snp_info[sample_list[i]][line_info[<span class="hljs-number">0</span>]].append([int(line_info[<span class="hljs-number">1</span>]),int(line_info[<span class="hljs-number">1</span>])+len(alts[<span class="hljs-number">0</span>])<span class="hljs-number">-1</span>])
+                        <span class="hljs-keyword">if</span> len(sample_allele) == <span class="hljs-number">1</span>:
+                            snp_geno[sample_list[i]][line_info[<span class="hljs-number">0</span>]].append([alts[int(sample_allele[<span class="hljs-number">0</span>])]])
+                        <span class="hljs-keyword">else</span>:
+                            biallele = <span class="hljs-string">&apos;&apos;</span>.join([alts[int(sample_allele[<span class="hljs-number">0</span>])],alts[int(sample_allele[<span class="hljs-number">1</span>])]])
+                            snp_geno[sample_list[i]][line_info[<span class="hljs-number">0</span>]].append(alts[int(sample_allele[<span class="hljs-number">0</span>])])
+
+    snp_file.close()
+    <span class="hljs-keyword">return</span> snp_info, snp_geno
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">genomePar</span><span class="hljs-params">(genome)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x89E3;&#x6790;&#x57FA;&#x56E0;&#x7EC4;&#x6587;&#x4EF6;
+    &apos;&apos;&apos;</span>
+    genome_file = open(genome, <span class="hljs-string">&apos;r&apos;</span>)
+    seq = <span class="hljs-string">&apos;&apos;</span>
+    seq_name = <span class="hljs-string">&apos;&apos;</span>
+    seq_info = {}
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> genome_file:
+        <span class="hljs-keyword">if</span> line.startswith(<span class="hljs-string">&apos;&gt;&apos;</span>) <span class="hljs-keyword">and</span> seq == <span class="hljs-string">&apos;&apos;</span>:
+            seq_name = re.sub(<span class="hljs-string">&apos;chr0|chr&apos;</span>, <span class="hljs-string">&apos;&apos;</span>,line.strip()[<span class="hljs-number">1</span>:])
+        <span class="hljs-keyword">elif</span> line.startswith(<span class="hljs-string">&apos;&gt;&apos;</span>) <span class="hljs-keyword">and</span> seq != <span class="hljs-string">&apos;&apos;</span>:
+            seq_info[seq_name] = seq
+            seq_name = re.sub(<span class="hljs-string">&apos;chr0|chr&apos;</span>, <span class="hljs-string">&apos;&apos;</span>,line.strip()[<span class="hljs-number">1</span>:])
+            seq = <span class="hljs-string">&apos;&apos;</span>
+        <span class="hljs-keyword">else</span>:
+            seq += line.strip()
+    seq_info[seq_name] = seq
+    genome_file.close()
+    <span class="hljs-keyword">return</span> seq_info
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">seqFormat</span><span class="hljs-params">(seq, lenset=<span class="hljs-number">500</span>)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x6309;&#x6307;&#x5B9A;&#x957F;&#x5EA6;&#x66FF;&#x6362;&#x6570;&#x636E;
+    &apos;&apos;&apos;</span>
+    format_seq = <span class="hljs-string">&apos;&apos;</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>, len(seq)+<span class="hljs-number">1</span>):
+        <span class="hljs-keyword">if</span> i % lenset == <span class="hljs-number">0</span>:
+            format_seq += seq[i<span class="hljs-number">-1</span>]+<span class="hljs-string">&quot;\n&quot;</span>
+        <span class="hljs-keyword">else</span>:
+            format_seq += seq[i<span class="hljs-number">-1</span>]
+    <span class="hljs-keyword">return</span> format_seq
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">faOut</span><span class="hljs-params">(snppos, snpgeno, fasta, sample, lenset=<span class="hljs-number">60</span>)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x6839;&#x636E;snppos&#x5185;&#x50A8;&#x5B58;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5BF9;&#x57FA;&#x56E0;&#x7EC4;&#x4E2D;&#x7684;&#x78B1;&#x57FA;&#x8FDB;&#x884C;&#x66FF;&#x6362;
+    &apos;&apos;&apos;</span>
+    fasta_file = open(fasta, <span class="hljs-string">&apos;r&apos;</span>)
+    out_fasta = open(f<span class="hljs-string">&apos;{sample}.fasta&apos;</span>, <span class="hljs-string">&apos;w&apos;</span>)
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> fasta_file:
+        <span class="hljs-keyword">if</span> line.startswith(<span class="hljs-string">&apos;&gt;&apos;</span>):
+            <span class="hljs-comment">#print (line)</span>
+            seq_name = re.sub(<span class="hljs-string">&apos;chr0|chr&apos;</span>, <span class="hljs-string">&apos;&apos;</span>,line.strip()[<span class="hljs-number">1</span>:])
+            out_fasta.write(f<span class="hljs-string">&apos;&gt;{seq_name}\n&apos;</span>)
+            start = <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(line.strip())):
+                <span class="hljs-keyword">if</span> len(snppos[sample][seq_name]) == <span class="hljs-number">0</span>:
+                    out_fasta.write(line[i])
+                <span class="hljs-keyword">elif</span> i == snppos[sample][seq_name][<span class="hljs-number">0</span>]:
+                    out_fasta.write(snpgeno[sample][seq_name][<span class="hljs-number">0</span>])
+                    snppos[sample][seq_name].pop(<span class="hljs-number">0</span>)
+                    snpgeno[sample][seq_name].pop(<span class="hljs-number">0</span>)
+                <span class="hljs-keyword">elif</span> isinstance(snppos[sample][seq_name][<span class="hljs-number">0</span>], list) <span class="hljs-keyword">and</span> i <span class="hljs-keyword">in</span> snppos[sample][seq_name][<span class="hljs-number">0</span>]:
+                    out_fasta.write(snpgeno[sample][seq_name][<span class="hljs-number">0</span>])
+                    i = snppos[sample][seq_name][<span class="hljs-number">0</span>]
+                    snppos[sample][seq_name].pop(<span class="hljs-number">0</span>)
+                    snpgeno[sample][seq_name].pop(<span class="hljs-number">0</span>)
+                <span class="hljs-keyword">else</span>:
+                    out_fasta.write(line[i])
+            out_fasta.write(<span class="hljs-string">&apos;\n&apos;</span>)
+
+    <span class="hljs-string">&apos;&apos;&apos;
+    for key in fasta:
+        n = 1
+        seq = &apos;&apos;
+        for i in fasta[key]:
+            if len(snppos[sample][key])!=0 and n==snppos[sample][key][0]:
+                try:
+                    ref_index = snpgeno[sample][key][0].index(i.upper())
+                    #print (ref_index, snpgeno[sample][key][0])
+                    if ref_index == 0:
+                        seq += snpgeno[sample][key][0][1]
+                    else:
+                        seq += snpgeno[sample][key][0][0]
+                except:
+                    print (f&apos;chr {key} in pos {n} for sample {sample} is wrong: the ref is {i}, but geno is {snpgeno[sample][key][0]}&apos;)
+                    seq += i
+                finally:
+                    snppos[sample][key].pop(0)
+                    snpgeno[sample][key].pop(0)
+            else:
+                seq += i
+            n += 1
+        chr_id = &apos;chr{:0&gt;2d}&apos;.format(int(key))
+        seq = seqFormat(seq, lenset)
+        out_fasta.write(f&apos;&gt;{chr_id}\n{seq}\n&apos;)
+    out_fasta.close()
+    &apos;&apos;&apos;</span>
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    parser = argparse.ArgumentParser(description=<span class="hljs-string">&quot;New sample genome sequence based on snp data&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-s&quot;</span>, <span class="hljs-string">&quot;--snpfile&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;snp file in vcf format&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-n&quot;</span>, <span class="hljs-string">&quot;--samplename&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;sample name, which mest be in snpfile&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-r&quot;</span>, <span class="hljs-string">&quot;--reference&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;reference file&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-l&quot;</span>, <span class="hljs-string">&quot;--seqlen&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, default=<span class="hljs-number">60</span>, type=int, help=<span class="hljs-string">&quot;seq length per line in output file&quot;</span>)
+    args = parser.parse_args()
+    <span class="hljs-comment"># &#x89E3;&#x6790;&#x53D8;&#x5F02;&#x4FE1;&#x606F;&#x6587;&#x4EF6;</span>
+    snppos, snpgeno = snpInfo(args.snpfile)
+    <span class="hljs-comment"># &#x8F93;&#x51FA;&#x66FF;&#x6362;&#x7684;&#x7ED3;&#x679C;</span>
+    faOut(snppos, snpgeno, args.reference, args.samplename, args.seqlen)
+</code></pre>
+<h4 id="&#x751F;&#x6210;&#x7EC4;&#x86CB;&#x767D;&#x4FEE;&#x9970;&#x6807;&#x7B7E;">&#x751F;&#x6210;&#x7EC4;&#x86CB;&#x767D;&#x4FEE;&#x9970;&#x6807;&#x7B7E;</h4>
+<p><em>&#x76EE;&#x524D;&#x4F7F;&#x7528;bash&#x811A;&#x672C;&#x81EA;&#x52A8;&#x5316;&#x5E76;&#x884C;&#x5904;&#x7406;&#x6807;&#x7B7E;&#x751F;&#x6210;&#x4EFB;&#x52A1;(2021.3.28)</em></p>
+<p><strong>&#x5206;&#x522B;&#x63D0;&#x53D6;&#x7EC4;&#x86CB;&#x767D;&#x4FEE;&#x9970;&#x4FE1;&#x53F7;&#x533A;&#x57DF;</strong></p>
+<p><em>input</em> &#xFF1A;narrowPeak&#x6587;&#x4EF6;</p>
+<p><em>output</em>&#xFF1A;bed&#x6587;&#x4EF6;</p>
+<p>&#x7EC4;&#x86CB;&#x767D;&#x4FEE;&#x9970;<strong>H3K4me3, H3K27ac, H3K4me1, H3K27me3&#xFF0C; H3K9me2</strong></p>
+<pre><code class="lang-shell">awk &apos;{print $1,$2,$3}&apos; mapto*/*_seedlings/*C^^^_peaks.narrowPeak | sort -t &apos; &apos;  -k1.4nr &gt;&gt; C^^^.bed
+</code></pre>
+<p>`&#x6309;&#x7167;&#x67D3;&#x8272;&#x4F53;&#x987A;&#x5E8F;&#x6392;&#x5217;&#xFF0C;&#x5E76;&#x8BA1;&#x6570;</p>
+<pre><code class="lang-shell">sort -k1,1V -k2,2n -k3,3n C^^^.bed &gt; data/signal_area/sort_C^^^.bed
+rm -f C^^^.bed
+cat data/signal_area/sort_C^^^.bed | awk &apos;{print $1}&apos; | uniq -c
+</code></pre>
+<pre><code class="lang-shell">ls *fasta | while read id;do echo ${id%.*} &gt;&gt; id.txt;done
+#&#x63D0;&#x53D6;&#x54C1;&#x79CD;id
+
+#area_extract.sh
+#!/bin/bash
+for n in $(cat histone)
+do
+    for i in $(cat id.txt)
+    do
+      awk &apos;{print $1,$2,$3}&apos; mapto*/${n}_seedlings/*${i}_peaks.*Peak | sort -t &apos; &apos; -k1,4nr | sort -k1,1V -k2,2n -k3,3n &gt; data/signal_area/sort_${i}_${n}.bed
+      done
+done
+</code></pre>
+<p><strong>&#x751F;&#x6210;&#x81EA;&#x5B9A;&#x4E49;&#x57FA;&#x56E0;&#x7EC4;&#x7684;fai&#x6587;&#x4EF6;</strong></p>
+<pre><code class="lang-shell">samtools faidx data/sequence/C^^^.fasta
+</code></pre>
+<p><strong>&#x751F;&#x6210;&#x6807;&#x7B7E;</strong></p>
+<h5 id="python&#x811A;&#x672C;targetmarkpy">python&#x811A;&#x672C;target_mark.py</h5>
+<p><strong>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</strong></p>
+<pre><code class="lang-shell">$ python3 target_mark.py -h
+usage: 20210302_bin_count.py [-h] -f  -b  -o  [-w] [-l]
+
+bin data out
+
+optional arguments:
+  -h, --help       show this help message and exit
+  -f , --fai       reference index file in fai
+  -b , --bed       bed file
+  -o , --output    output file
+  -w , --window    window size
+  -l , --overlap   overlap size
+</code></pre>
+<p><em>input</em></p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="####narrowPeak">.narrowPeak</a></td>
+<td>20&#x4E2A;&#x6C34;&#x7A3B;&#x54C1;&#x79CD;&#x7684;ChIP-seq&#x7ED3;&#x679C;</td>
+<td>mapto_MSU7/*seedlings</td>
+</tr>
+<tr>
+<td><a href="####bed">.bed</a></td>
+<td>&#x7EC4;&#x86CB;&#x767D;&#x4FEE;&#x9970;&#x4FE1;&#x53F7;&#x533A;&#x57DF; sort_C^^^_C^^^.bed</td>
+<td>data/signal_area</td>
+</tr>
+<tr>
+<td><a href="####fai">.fai</a></td>
+<td>fasta&#x6587;&#x4EF6;&#x7684;&#x7D22;&#x5F15; C^^^_C^^^.fasta.fai</td>
+<td>data/faidx</td>
+</tr>
+</tbody>
+</table>
+<p><em>output</em></p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Description</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.txt&#xFF08;1.0&#xFF09;</td>
+<td>&#x6807;&#x7B7E;[0,1]</td>
+<td>data/target</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x793A;&#x4F8B;</strong></p>
+<pre><code class="lang-shell">bsub &apos;python3 scripts/target_mark.py -f data/faidx/C019_C019.fasta.fai -b data/signal_area/sort_C^^^.bed -o target_C^^^.bed&apos;
+bsub -e 11.err -o 11.out &apos;python3 target_mark3.0.py -f data/sequence/C019.fasta.fai -b data/signal_area/sort_C019_H3K4me3.bed -o target_C019_H3K4me3.bed -s C019 -m H3K4me3&apos;
+</code></pre>
+<pre><code class="lang-shell">#!/bin/bash
+for n in $(cat histone)
+do 
+    for i in $(cat id.txt)
+    do 
+    python3 scripts/py_scripts/target_mark3.0.py -f data/seq/${i}.fasta.fai -b data/signal_area/sort_${i}_${n}.bed -o target_${i}_${n}.bed &amp;&amp; awk &apos;{print $3}&apos; target_${i}_${n}.bed &gt; data/target/target_${i}_${n}.txt &amp;&amp; rm -f *bed
+    done
+done
+bsub -e 11.err -o 11.out &apos;python3 target_mark3.0.py -f data/sequence/C019.fasta.fai -b data/signal_area/sort_C019_H3K4me3.bed -o target_C019_H3K4me3.bed -s C019 -m H3K4me3&apos;
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> argparse
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> defaultdict
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getRefLen</span><span class="hljs-params">(fai)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x8BFB;&#x53D6;fai&#x6587;&#x4EF6;&#xFF0C;&#x83B7;&#x53D6;&#x57FA;&#x56E0;&#x7EC4;&#x957F;&#x5EA6;
+    &apos;&apos;&apos;</span>
+    fai_file = open(fai, <span class="hljs-string">&apos;r&apos;</span>)
+    ref_Length = {}
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> fai_file:
+        chr_id, seq_len, *other = line.strip().split(<span class="hljs-string">&apos;\t&apos;</span>)
+        ref_Length[re.sub(<span class="hljs-string">&apos;chr0|chr&apos;</span>,<span class="hljs-string">&apos;&apos;</span>,chr_id)] = int(seq_len)
+    <span class="hljs-keyword">return</span> ref_Length
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bedParse</span><span class="hljs-params">(bed)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x89E3;&#x6790;bed&#x6587;&#x4EF6;&#xFF0C;&#x5206;&#x67D3;&#x8272;&#x4F53;&#x8FD4;&#x56DE;&#x9884;&#x8BBE;&#x533A;&#x95F4;&#x4FE1;&#x606F;
+    &apos;&apos;&apos;</span>
+    region = defaultdict(list)
+    bed_info = open(bed, <span class="hljs-string">&apos;r&apos;</span>)
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> bed_info:
+        chr_id, start, end = re.split(<span class="hljs-string">&apos;\s&apos;</span>, line.strip())
+        chr_id = re.sub(<span class="hljs-string">&apos;chr0|chr&apos;</span>, <span class="hljs-string">&apos;&apos;</span>, chr_id)
+        region[chr_id].append((int(start), int(end)))
+    bed_info.close()
+    <span class="hljs-keyword">return</span> region
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">binCal</span><span class="hljs-params">(region, reflen, out, win=<span class="hljs-number">500</span>, overlap=<span class="hljs-number">250</span>)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x6839;&#x636E;&#x9884;&#x8BBE;&#x7684;region&#xFF0C;&#x904D;&#x5386;&#x57FA;&#x56E0;&#x7EC4;&#xFF0C;&#x7EDF;&#x8BA1;&#x6BCF;&#x7A97;&#x53E3;win&#x5185;&#x7684;&#x4EA4;&#x96C6;&#x7247;&#x6BB5;&#x5927;&#x5C0F;&#xFF0C;overlap&#x8D85;&#x8FC7;&#x4E00;&#x5B9A;&#x8303;&#x56F4;&#x540E;&#x8F93;&#x51FA;1&#xFF0C;&#x5426;&#x5219;&#x8F93;&#x51FA;0
+    &apos;&apos;&apos;</span>
+    out_file = open(out, <span class="hljs-string">&apos;w&apos;</span>)
+    bin = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> chr <span class="hljs-keyword">in</span> reflen:
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, reflen[chr]<span class="hljs-number">-500</span>, <span class="hljs-number">500</span>):
+            start_tmp = i
+            end_tmp = i+win
+            region_chr = region[chr]
+            <span class="hljs-keyword">for</span> start, end <span class="hljs-keyword">in</span> region_chr:
+
+                <span class="hljs-keyword">if</span> end_tmp &lt; start+overlap:
+                    bin = <span class="hljs-number">0</span>
+                    <span class="hljs-keyword">break</span>
+                <span class="hljs-keyword">elif</span> start&lt;=start_tmp&lt;=end:
+                    <span class="hljs-keyword">if</span> end_tmp&lt;=end :
+                        bin = <span class="hljs-number">1</span>
+                        <span class="hljs-keyword">break</span>
+                    <span class="hljs-keyword">else</span>:
+                        <span class="hljs-keyword">if</span> end-start_tmp&gt;overlap:
+                            bin = <span class="hljs-number">1</span>
+                        <span class="hljs-keyword">else</span>:
+                            bin = <span class="hljs-number">0</span>
+                        <span class="hljs-keyword">break</span>
+                <span class="hljs-keyword">elif</span> start_tmp&gt;=end:
+                    region[chr].remove((start, end))
+            out_file.write(f<span class="hljs-string">&apos;{chr}\t{i}\t{bin}\t{start}\t{end}\n&apos;</span>)
+    out_file.close()
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    parser = argparse.ArgumentParser(description=<span class="hljs-string">&quot;bin data out&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-f&quot;</span>, <span class="hljs-string">&quot;--fai&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;reference index file in fai&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-b&quot;</span>, <span class="hljs-string">&quot;--bed&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;bed file&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-o&quot;</span>, <span class="hljs-string">&quot;--output&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;output file&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-w&quot;</span>, <span class="hljs-string">&quot;--window&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, default=<span class="hljs-number">500</span>, type=int, help=<span class="hljs-string">&quot;window size&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-l&quot;</span>, <span class="hljs-string">&quot;--overlap&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, default=<span class="hljs-number">250</span>, type=int, help=<span class="hljs-string">&quot;overlap size&quot;</span>)
+    args = parser.parse_args()
+    <span class="hljs-comment"># &#x89E3;&#x6790;&#x7D22;&#x5F15;&#x6587;&#x4EF6;</span>
+    reflen = getRefLen(args.fai)
+    <span class="hljs-comment"># &#x89E3;&#x6790;bed&#x6587;&#x4EF6;</span>
+    region = bedParse(args.bed)
+    <span class="hljs-comment"># &#x8F93;&#x51FA;bin&#x7ED3;&#x679C;</span>
+    binCal(region, reflen, args.output, args.window, args.overlap)
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment">#target_mark2.0.py</span>
+<span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> argparse
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> defaultdict
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getRefLen</span><span class="hljs-params">(fai)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x8BFB;&#x53D6;fai&#x6587;&#x4EF6;&#xFF0C;&#x83B7;&#x53D6;&#x57FA;&#x56E0;&#x7EC4;&#x957F;&#x5EA6;
+    &apos;&apos;&apos;</span>
+    fai_file = open(fai, <span class="hljs-string">&apos;r&apos;</span>)
+    ref_Length = {}
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> fai_file:
+        chr_id, seq_len, *other = line.strip().split(<span class="hljs-string">&apos;\t&apos;</span>)
+        ref_Length[re.sub(<span class="hljs-string">&apos;chr0|chr&apos;</span>,<span class="hljs-string">&apos;&apos;</span>,chr_id)] = int(seq_len)
+    <span class="hljs-keyword">return</span> ref_Length
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bedParse</span><span class="hljs-params">(bed)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x89E3;&#x6790;bed&#x6587;&#x4EF6;&#xFF0C;&#x5206;&#x67D3;&#x8272;&#x4F53;&#x8FD4;&#x56DE;&#x9884;&#x8BBE;&#x533A;&#x95F4;&#x4FE1;&#x606F;
+    &apos;&apos;&apos;</span>
+    region = defaultdict(list)
+    bed_info = open(bed, <span class="hljs-string">&apos;r&apos;</span>)
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> bed_info:
+        chr_id, start, end = re.split(<span class="hljs-string">&apos;\s&apos;</span>, line.strip())
+        chr_id = re.sub(<span class="hljs-string">&apos;chr0|chr&apos;</span>, <span class="hljs-string">&apos;&apos;</span>, chr_id)
+        region[chr_id].append((int(start), int(end)))
+    bed_info.close()
+    <span class="hljs-keyword">return</span> region
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">binCal</span><span class="hljs-params">(region, reflen, out, win=<span class="hljs-number">500</span>, overlap=<span class="hljs-number">250</span>)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x6839;&#x636E;&#x9884;&#x8BBE;&#x7684;region&#xFF0C;&#x904D;&#x5386;&#x57FA;&#x56E0;&#x7EC4;&#xFF0C;&#x7EDF;&#x8BA1;&#x6BCF;&#x7A97;&#x53E3;win&#x5185;&#x7684;&#x4EA4;&#x96C6;&#x7247;&#x6BB5;&#x5927;&#x5C0F;&#xFF0C;overlap&#x8D85;&#x8FC7;&#x4E00;&#x5B9A;&#x8303;&#x56F4;&#x540E;&#x8F93;&#x51FA;1&#xFF0C;&#x5426;&#x5219;&#x8F93;&#x51FA;0
+    &apos;&apos;&apos;</span>
+    out_file = open(out, <span class="hljs-string">&apos;w&apos;</span>)
+    bin = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> chr <span class="hljs-keyword">in</span> reflen:
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, reflen[chr]<span class="hljs-number">-500</span>, <span class="hljs-number">500</span>):
+            start_tmp = i
+            end_tmp = i+win
+            region_chr = region[chr]
+            <span class="hljs-keyword">for</span> start, end <span class="hljs-keyword">in</span> region_chr:
+
+                <span class="hljs-keyword">if</span> end_tmp &lt; start+overlap:
+                    bin = <span class="hljs-number">0</span>
+                    <span class="hljs-keyword">break</span>
+                <span class="hljs-keyword">elif</span> start&lt;=start_tmp&lt;=end:
+                    <span class="hljs-keyword">if</span> end_tmp&lt;=end :
+                        bin = <span class="hljs-number">1</span>
+                        <span class="hljs-keyword">break</span>
+                    <span class="hljs-keyword">else</span>:
+                        <span class="hljs-keyword">if</span> end-start_tmp&gt;overlap:
+                            bin = <span class="hljs-number">1</span>
+                        <span class="hljs-keyword">else</span>:
+                            bin = <span class="hljs-number">0</span>
+                        <span class="hljs-keyword">break</span>
+                <span class="hljs-keyword">elif</span> start_tmp&gt;=end:
+                    region[chr].remove((start, end))
+            out_file.write(f<span class="hljs-string">&apos;{chr}\t{i}\t{bin}\t{start}\t{end}\n&apos;</span>)
+    out_file.close()
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    parser = argparse.ArgumentParser(description=<span class="hljs-string">&quot;bin data out&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-f&quot;</span>, <span class="hljs-string">&quot;--fai&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;reference index file in fai&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-b&quot;</span>, <span class="hljs-string">&quot;--bed&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;bed file&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-o&quot;</span>, <span class="hljs-string">&quot;--output&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;output file&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-w&quot;</span>, <span class="hljs-string">&quot;--window&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, default=<span class="hljs-number">500</span>, type=int, help=<span class="hljs-string">&quot;window size&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-l&quot;</span>, <span class="hljs-string">&quot;--overlap&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, default=<span class="hljs-number">250</span>, type=int, help=<span class="hljs-string">&quot;overlap size&quot;</span>)
+    args = parser.parse_args()
+    <span class="hljs-comment"># &#x89E3;&#x6790;&#x7D22;&#x5F15;&#x6587;&#x4EF6;</span>
+    reflen = getRefLen(args.fai)
+    <span class="hljs-comment"># &#x89E3;&#x6790;bed&#x6587;&#x4EF6;</span>
+    region = bedParse(args.bed)
+    <span class="hljs-comment"># &#x8F93;&#x51FA;bin&#x7ED3;&#x679C;</span>
+    binCal(region, reflen, args.output, args.window, args.overlap)
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment">#target_mark3.0.py</span>
+<span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> argparse
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> defaultdict
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getRefLen</span><span class="hljs-params">(fai)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x8BFB;&#x53D6;fai&#x6587;&#x4EF6;&#xFF0C;&#x83B7;&#x53D6;&#x57FA;&#x56E0;&#x7EC4;&#x957F;&#x5EA6;
+    &apos;&apos;&apos;</span>
+    fai_file = open(fai, <span class="hljs-string">&apos;r&apos;</span>)
+    ref_Length = {}
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> fai_file:
+        chr_id, seq_len, *other = line.strip().split(<span class="hljs-string">&apos;\t&apos;</span>)
+        ref_Length[re.sub(<span class="hljs-string">&apos;chr0|chr&apos;</span>,<span class="hljs-string">&apos;&apos;</span>,chr_id)] = int(seq_len)
+    <span class="hljs-keyword">return</span> ref_Length
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bedParse</span><span class="hljs-params">(bed)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x89E3;&#x6790;bed&#x6587;&#x4EF6;&#xFF0C;&#x5206;&#x67D3;&#x8272;&#x4F53;&#x8FD4;&#x56DE;&#x9884;&#x8BBE;&#x533A;&#x95F4;&#x4FE1;&#x606F;
+    &apos;&apos;&apos;</span>
+    region = defaultdict(list)
+    bed_info = open(bed, <span class="hljs-string">&apos;r&apos;</span>)
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> bed_info:
+        chr_id, start, end = re.split(<span class="hljs-string">&apos;\s&apos;</span>, line.strip())
+        chr_id = re.sub(<span class="hljs-string">&apos;chr0|chr&apos;</span>, <span class="hljs-string">&apos;&apos;</span>, chr_id)
+        region[chr_id].append((int(start), int(end)))
+    bed_info.close()
+    <span class="hljs-keyword">return</span> region
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">binCal</span><span class="hljs-params">(region, reflen, out, win=<span class="hljs-number">500</span>, overlap=<span class="hljs-number">250</span>,threshold = <span class="hljs-number">0.1</span>)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x6839;&#x636E;&#x9884;&#x8BBE;&#x7684;region&#xFF0C;&#x904D;&#x5386;&#x57FA;&#x56E0;&#x7EC4;&#xFF0C;&#x7EDF;&#x8BA1;&#x6BCF;&#x7A97;&#x53E3;win&#x5185;&#x7684;&#x4EA4;&#x96C6;&#x7247;&#x6BB5;&#x5927;&#x5C0F;&#xFF0C;overlap&#x8D85;&#x8FC7;&#x4E00;&#x5B9A;&#x8303;&#x56F4;&#x540E;&#x8F93;&#x51FA;1&#xFF0C;&#x5426;&#x5219;&#x8F93;&#x51FA;0
+    &apos;&apos;&apos;</span>
+    out_file = open(out, <span class="hljs-string">&apos;w&apos;</span>)
+    bin = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> chr <span class="hljs-keyword">in</span> reflen:
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, reflen[chr], <span class="hljs-number">500</span>):
+            <span class="hljs-keyword">if</span> chr == <span class="hljs-string">&apos;1&apos;</span>:
+                <span class="hljs-keyword">print</span> (i)
+            start_tmp = i
+            end_tmp = i+win
+            region_chr = region[chr]
+            <span class="hljs-keyword">for</span> start, end <span class="hljs-keyword">in</span> region_chr:
+                mid = (start + end)/<span class="hljs-number">2</span>
+                start_mid = mid - (overlap/<span class="hljs-number">2</span>)
+                end_mid = mid + (overlap/<span class="hljs-number">2</span>)
+                <span class="hljs-keyword">if</span> end_tmp &lt; start_mid + threshold * overlap :
+                    bin = <span class="hljs-number">0</span>
+                    <span class="hljs-keyword">break</span>
+                <span class="hljs-keyword">elif</span> start_tmp &lt; start_mid <span class="hljs-keyword">and</span> end_tmp &gt; end_mid:
+                    bin = <span class="hljs-number">1</span>
+                    <span class="hljs-keyword">break</span> 
+                <span class="hljs-keyword">elif</span> start_mid&lt;=start_tmp&lt;=end_mid:
+                    <span class="hljs-keyword">if</span> end_mid-start_tmp&gt;threshold * overlap:
+                        bin = <span class="hljs-number">1</span>
+                    <span class="hljs-keyword">else</span>:
+                        bin = <span class="hljs-number">0</span>
+                        <span class="hljs-keyword">break</span>
+                <span class="hljs-keyword">elif</span> start_tmp&gt;=end_mid:
+                    region[chr].remove((start, end))
+            out_file.write(f<span class="hljs-string">&apos;{chr}\t{i}\t{bin}\t{start}\t{end}\n&apos;</span>)
+    out_file.close()
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    parser = argparse.ArgumentParser(description=<span class="hljs-string">&quot;bin data out&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-f&quot;</span>, <span class="hljs-string">&quot;--fai&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;reference index file in fai&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-b&quot;</span>, <span class="hljs-string">&quot;--bed&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;bed file&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-o&quot;</span>, <span class="hljs-string">&quot;--output&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;output file&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-w&quot;</span>, <span class="hljs-string">&quot;--window&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, default=<span class="hljs-number">500</span>, type=int, help=<span class="hljs-string">&quot;window size&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-l&quot;</span>, <span class="hljs-string">&quot;--overlap&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, default=<span class="hljs-number">250</span>, type=int, help=<span class="hljs-string">&quot;overlap size&quot;</span>)
+    args = parser.parse_args()
+    <span class="hljs-comment"># &#x89E3;&#x6790;&#x7D22;&#x5F15;&#x6587;&#x4EF6;</span>
+    reflen = getRefLen(args.fai)
+    <span class="hljs-comment"># &#x89E3;&#x6790;bed&#x6587;&#x4EF6;</span>
+    region = bedParse(args.bed)
+    <span class="hljs-comment"># &#x8F93;&#x51FA;bin&#x7ED3;&#x679C;</span>
+    binCal(region, reflen, args.output, args.window, args.overlap)
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment">#target_mark4.0.py</span>
+<span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> argparse
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> defaultdict
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getRefLen</span><span class="hljs-params">(fai)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x8BFB;&#x53D6;fai&#x6587;&#x4EF6;&#xFF0C;&#x83B7;&#x53D6;&#x57FA;&#x56E0;&#x7EC4;&#x957F;&#x5EA6;
+    &apos;&apos;&apos;</span>
+    fai_file = open(fai, <span class="hljs-string">&apos;r&apos;</span>)
+    ref_Length = {}
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> fai_file:
+        chr_id, seq_len, *other = line.strip().split(<span class="hljs-string">&apos;\t&apos;</span>)
+        ref_Length[re.sub(<span class="hljs-string">&apos;chr0|chr&apos;</span>,<span class="hljs-string">&apos;&apos;</span>,chr_id)] = int(seq_len)
+    <span class="hljs-keyword">return</span> ref_Length
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bedParse</span><span class="hljs-params">(bed)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x89E3;&#x6790;bed&#x6587;&#x4EF6;&#xFF0C;&#x5206;&#x67D3;&#x8272;&#x4F53;&#x8FD4;&#x56DE;&#x9884;&#x8BBE;&#x533A;&#x95F4;&#x4FE1;&#x606F;
+    &apos;&apos;&apos;</span>
+    region = defaultdict(list)
+    bed_info = open(bed, <span class="hljs-string">&apos;r&apos;</span>)
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> bed_info:
+        chr_id, start, end = re.split(<span class="hljs-string">&apos;\s&apos;</span>, line.strip())
+        chr_id = re.sub(<span class="hljs-string">&apos;chr0|chr&apos;</span>, <span class="hljs-string">&apos;&apos;</span>, chr_id)
+        region[chr_id].append((int(start), int(end)))
+    bed_info.close()
+    <span class="hljs-keyword">return</span> region
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">binCal</span><span class="hljs-params">(region, reflen, species, histone, out, win=<span class="hljs-number">500</span>, overlap=<span class="hljs-number">250</span>,threshold = <span class="hljs-number">0.1</span>)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x6839;&#x636E;&#x9884;&#x8BBE;&#x7684;region&#xFF0C;&#x904D;&#x5386;&#x57FA;&#x56E0;&#x7EC4;&#xFF0C;&#x7EDF;&#x8BA1;&#x6BCF;&#x7A97;&#x53E3;win&#x5185;&#x7684;&#x4EA4;&#x96C6;&#x7247;&#x6BB5;&#x5927;&#x5C0F;&#xFF0C;overlap&#x8D85;&#x8FC7;&#x4E00;&#x5B9A;&#x8303;&#x56F4;&#x540E;&#x8F93;&#x51FA;1&#xFF0C;&#x5426;&#x5219;&#x8F93;&#x51FA;0
+    &apos;&apos;&apos;</span>
+    out_file = open(out, <span class="hljs-string">&apos;w&apos;</span>)
+    bin = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> chr <span class="hljs-keyword">in</span> reflen:
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, reflen[chr], <span class="hljs-number">500</span>):
+            <span class="hljs-keyword">if</span> chr == <span class="hljs-string">&apos;1&apos;</span>:
+                <span class="hljs-keyword">print</span> (i)
+            start_tmp = i
+            end_tmp = i+win
+            region_chr = region[chr]
+            name = f<span class="hljs-string">&apos;{species}_{histone}_{chr}_{start_tmp}_{end_tmp}&apos;</span>
+            <span class="hljs-keyword">for</span> start, end <span class="hljs-keyword">in</span> region_chr:
+                mid = (start + end)/<span class="hljs-number">2</span>
+                start_mid = mid - (overlap/<span class="hljs-number">2</span>)
+                end_mid = mid + (overlap/<span class="hljs-number">2</span>)
+                <span class="hljs-keyword">if</span> end_tmp &lt; start_mid + threshold * overlap :
+                    bin = <span class="hljs-number">0</span>
+                    <span class="hljs-keyword">break</span>
+                <span class="hljs-keyword">elif</span> start_tmp &lt; start_mid <span class="hljs-keyword">and</span> end_tmp &gt; end_mid:
+                    bin = <span class="hljs-number">1</span>
+                    <span class="hljs-keyword">break</span> 
+                <span class="hljs-keyword">elif</span> start_mid&lt;=start_tmp&lt;=end_mid:
+                    <span class="hljs-keyword">if</span> end_mid-start_tmp&gt;threshold * overlap:
+                        bin = <span class="hljs-number">1</span>
+                    <span class="hljs-keyword">else</span>:
+                        bin = <span class="hljs-number">0</span>
+                        <span class="hljs-keyword">break</span>
+                <span class="hljs-keyword">elif</span> start_tmp&gt;=end_mid:
+                    region[chr].remove((start, end))
+            out_file.write(f<span class="hljs-string">&apos;{name}\t{bin}\n&apos;</span>)
+    out_file.close()
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    parser = argparse.ArgumentParser(description=<span class="hljs-string">&quot;bin data out&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-f&quot;</span>, <span class="hljs-string">&quot;--fai&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;reference index file in fai&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-b&quot;</span>, <span class="hljs-string">&quot;--bed&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;bed file&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-o&quot;</span>, <span class="hljs-string">&quot;--output&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;output file&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-w&quot;</span>, <span class="hljs-string">&quot;--window&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, default=<span class="hljs-number">500</span>, type=int, help=<span class="hljs-string">&quot;window size&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-l&quot;</span>, <span class="hljs-string">&quot;--overlap&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, default=<span class="hljs-number">250</span>, type=int, help=<span class="hljs-string">&quot;overlap size&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-s&quot;</span>, <span class="hljs-string">&quot;--species&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, help=<span class="hljs-string">&quot;rice species&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-m&quot;</span>, <span class="hljs-string">&quot;--histone&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, help=<span class="hljs-string">&quot;histone modifications&quot;</span>)
+    args = parser.parse_args()
+    <span class="hljs-comment"># &#x89E3;&#x6790;&#x7D22;&#x5F15;&#x6587;&#x4EF6;</span>
+    reflen = getRefLen(args.fai)
+    <span class="hljs-comment"># &#x89E3;&#x6790;bed&#x6587;&#x4EF6;</span>
+    region = bedParse(args.bed)
+    <span class="hljs-comment"># &#x8F93;&#x51FA;bin&#x7ED3;&#x679C;</span>
+    binCal(region, reflen, args.species, args.histone, args.output, args.window, args.overlap)
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment">#target_mark5.0.py</span>
+<span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> argparse
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> defaultdict
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getRefLen</span><span class="hljs-params">(fai)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x8BFB;&#x53D6;fai&#x6587;&#x4EF6;&#xFF0C;&#x83B7;&#x53D6;&#x57FA;&#x56E0;&#x7EC4;&#x957F;&#x5EA6;
+    &apos;&apos;&apos;</span>
+    fai_file = open(fai, <span class="hljs-string">&apos;r&apos;</span>)
+    ref_Length = {}
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> fai_file:
+        chr_id, seq_len, *other = line.strip().split(<span class="hljs-string">&apos;\t&apos;</span>)
+        ref_Length[re.sub(<span class="hljs-string">&apos;chr0|chr&apos;</span>,<span class="hljs-string">&apos;&apos;</span>,chr_id)] = int(seq_len)
+    <span class="hljs-keyword">return</span> ref_Length
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bedParse</span><span class="hljs-params">(bed)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x89E3;&#x6790;bed&#x6587;&#x4EF6;&#xFF0C;&#x5206;&#x67D3;&#x8272;&#x4F53;&#x8FD4;&#x56DE;&#x9884;&#x8BBE;&#x533A;&#x95F4;&#x4FE1;&#x606F;
+    &apos;&apos;&apos;</span>
+    region = defaultdict(list)
+    bed_info = open(bed, <span class="hljs-string">&apos;r&apos;</span>)
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> bed_info:
+        chr_id, start, end = re.split(<span class="hljs-string">&apos;\s&apos;</span>, line.strip())
+        chr_id = re.sub(<span class="hljs-string">&apos;chr0|chr&apos;</span>, <span class="hljs-string">&apos;&apos;</span>, chr_id)
+        region[chr_id].append((int(start), int(end)))
+    bed_info.close()
+    <span class="hljs-keyword">return</span> region
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">binCal</span><span class="hljs-params">(region, reflen, species, histone, tar, out, win=<span class="hljs-number">500</span>, overlap=<span class="hljs-number">250</span>,threshold = <span class="hljs-number">0.1</span>)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    &#x6839;&#x636E;&#x9884;&#x8BBE;&#x7684;region&#xFF0C;&#x904D;&#x5386;&#x57FA;&#x56E0;&#x7EC4;&#xFF0C;&#x7EDF;&#x8BA1;&#x6BCF;&#x7A97;&#x53E3;win&#x5185;&#x7684;&#x4EA4;&#x96C6;&#x7247;&#x6BB5;&#x5927;&#x5C0F;&#xFF0C;overlap&#x8D85;&#x8FC7;&#x4E00;&#x5B9A;&#x8303;&#x56F4;&#x540E;&#x8F93;&#x51FA;1&#xFF0C;&#x5426;&#x5219;&#x8F93;&#x51FA;0
+    &apos;&apos;&apos;</span>
+    out_file = open(out, <span class="hljs-string">&apos;w&apos;</span>)
+    bin = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> chr <span class="hljs-keyword">in</span> reflen:
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">0</span>, reflen[chr], <span class="hljs-number">500</span>):
+            <span class="hljs-keyword">if</span> chr == <span class="hljs-string">&apos;1&apos;</span>:
+                <span class="hljs-keyword">print</span> (i)
+            start_tmp = i
+            end_tmp = i+win
+            region_chr = region[chr]
+            name = f<span class="hljs-string">&apos;{species}_{histone}_{chr}_{start_tmp}_{end_tmp}&apos;</span>
+            <span class="hljs-keyword">for</span> start, end <span class="hljs-keyword">in</span> region_chr:
+                mid = (start + end)/<span class="hljs-number">2</span>
+                start_mid = mid - (overlap/<span class="hljs-number">2</span>)
+                end_mid = mid + (overlap/<span class="hljs-number">2</span>)
+                <span class="hljs-keyword">if</span> end_tmp &lt; start_mid + threshold * overlap :
+                    bin = <span class="hljs-number">0</span>
+                    <span class="hljs-keyword">break</span>
+                <span class="hljs-keyword">elif</span> start_tmp &lt; start_mid <span class="hljs-keyword">and</span> end_tmp &gt; end_mid:
+                    bin = tar
+                    <span class="hljs-keyword">break</span> 
+                <span class="hljs-keyword">elif</span> start_mid&lt;=start_tmp&lt;=end_mid:
+                    <span class="hljs-keyword">if</span> end_mid-start_tmp&gt;threshold * overlap:
+                        bin = tar
+                    <span class="hljs-keyword">else</span>:
+                        bin = <span class="hljs-number">0</span>
+                        <span class="hljs-keyword">break</span>
+                <span class="hljs-keyword">elif</span> start_tmp&gt;=end_mid:
+                    region[chr].remove((start, end))
+            out_file.write(f<span class="hljs-string">&apos;{name}\t{bin}\n&apos;</span>)
+    out_file.close()
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    parser = argparse.ArgumentParser(description=<span class="hljs-string">&quot;bin data out&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-f&quot;</span>, <span class="hljs-string">&quot;--fai&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;reference index file in fai&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-b&quot;</span>, <span class="hljs-string">&quot;--bed&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;bed file&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-o&quot;</span>, <span class="hljs-string">&quot;--output&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;output file&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-w&quot;</span>, <span class="hljs-string">&quot;--window&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, default=<span class="hljs-number">500</span>, type=int, help=<span class="hljs-string">&quot;window size&quot;</span>)
+    <span class="hljs-comment">#parser.add_argument(&quot;-l&quot;, &quot;--overlap&quot;, metavar=&quot;&quot;, default=250, type=int, help=&quot;overlap size&quot;)</span>
+    parser.add_argument(<span class="hljs-string">&quot;-s&quot;</span>, <span class="hljs-string">&quot;--species&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, help=<span class="hljs-string">&quot;rice species&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-m&quot;</span>, <span class="hljs-string">&quot;--histone&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, help=<span class="hljs-string">&quot;histone modifications&quot;</span>)
+    args = parser.parse_args()
+    <span class="hljs-comment"># &#x89E3;&#x6790;&#x7D22;&#x5F15;&#x6587;&#x4EF6;</span>
+    reflen = getRefLen(args.fai)
+    <span class="hljs-comment"># &#x89E3;&#x6790;bed&#x6587;&#x4EF6;</span>
+    region = bedParse(args.bed)
+    <span class="hljs-comment"># &#x8F93;&#x51FA;bin&#x7ED3;&#x679C;</span>
+    tar = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">if</span> args.histone == <span class="hljs-string">&apos;H3K4me3&apos;</span>:
+        tar = <span class="hljs-number">1</span> 
+        overlap = <span class="hljs-number">250</span>
+    <span class="hljs-keyword">elif</span> args.histone == <span class="hljs-string">&apos;H3K27ac&apos;</span>:
+        tar = <span class="hljs-number">2</span>
+        overlap = <span class="hljs-number">250</span>
+    <span class="hljs-keyword">elif</span> args.histone == <span class="hljs-string">&apos;H3K4me1&apos;</span>:
+        tar = <span class="hljs-number">3</span>
+        overlap = <span class="hljs-number">750</span>
+    <span class="hljs-keyword">elif</span> args.histone == <span class="hljs-string">&apos;H3K27me3&apos;</span>:
+        tar = <span class="hljs-number">4</span> 
+        overlap = <span class="hljs-number">750</span>
+    <span class="hljs-keyword">elif</span> args.histone == <span class="hljs-string">&apos;H3K9me2&apos;</span>:
+        tar = <span class="hljs-number">5</span>
+        overlap = <span class="hljs-number">1000</span>
+
+    binCal(region, reflen, args.species, args.histone, tar, args.output, args.window, overlap)
+</code></pre>
+<p><strong>&#x63D0;&#x53D6;bin&#x5217;&#x4F5C;&#x4E3A;&#x6807;&#x7B7E;</strong></p>
+<pre><code class="lang-shell">awk &apos;{print $3}&apos; target_C^^^.bed  &gt;&gt; data/target/target_C^^^.txt
+rm -f target_C^^^.bed
+</code></pre>
+<p><strong>&#x5220;&#x9664;fasta&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x67D3;&#x8272;&#x4F53;&#x884C;</strong></p>
+<pre><code class="lang-shell">sed -i &apos;/&gt;/d&apos; C^^^_C^^^.
+</code></pre>
+<h4 id="&#x5408;&#x6210;&#x6570;&#x636E;&#x96C6;">&#x5408;&#x6210;&#x6570;&#x636E;&#x96C6;</h4>
+<table>
+<thead>
+<tr>
+<th>data</th>
+<th>target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>500bp sequence</td>
+<td>1 for &#x7EC4;&#x86CB;&#x767D;&#x4FEE;&#x9970; 0 for &#x65E0;&#x4FEE;&#x9970;</td>
+</tr>
+<tr>
+<td>one-hot&#x7F16;&#x7801; [nums, 500, 4 ]</td>
+<td>[1,0]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x5C06;&#x6570;&#x636E;&#x5BFC;&#x5165;excel&#x6587;&#x4EF6;</strong>&#xFF08;data_C^^^.xlxs)</p>
+<p><img src="https://img.imgdb.cn/item/604b63d65aedab222cd6247b.png" alt="image-20210309164729766"></p>
+<p><strong>&#x6570;&#x636E;&#x5206;&#x5E03;</strong>(C019)</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>478680</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>267802</td>
+</tr>
+<tr>
+<td>&#x603B;&#x8BA1;</td>
+<td>746483</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x5408;&#x6210;&#x6807;&#x7B7E;&#x5747;&#x8861;&#xFF0C;&#x968F;&#x673A;&#x5206;&#x5E03;&#x7684;&#x6570;&#x636E;&#x96C6;</strong></p>
+<pre><code class="lang-shell">paste data/sequence/C^^^.fasta data/target/target_C^^^.txt &gt; data/dataset/C^^^.csv
+</code></pre>
+<pre><code class="lang-shell">#!/bin/bash
+for n in $(cat histone)
+do  
+    mkdir ${n}
+    for i in $(cat id.txt)
+    do
+       paste data/seq/${i}.fasta data/target/target_${i}_${n}.txt &gt; data/dataset/${n}/${i}_${n}.csv &amp;&amp; sed -i &apos;/&gt;/d&apos;data/dataset/${n}/${i}_${n}.csv
+    done
+done
+</code></pre>
+<p><strong>&#x8F93;&#x5165;&#x6570;&#x636E;</strong></p>
+<p>&#x4EE5;onehot&#xFF08;[4,500]&#xFF09;&#x7684;&#x5F62;&#x5F0F;&#x8F93;&#x5165;</p>
+<p><img src="https://img.imgdb.cn/item/604b63e25aedab222cd62b39.png" alt="image-20210309165331885"></p>
+<p><strong>OneHotEncoder.py</strong></p>
+<p>&#x6CE8;&#x610F;&#x5C06;excel&#x4E2D;&#x542B;&#x6709;N(n)&#x7684;&#x5E8F;&#x5217;&#x5220;&#x53BB;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x5F15;&#x8D77;&#x7EF4;&#x5EA6;&#x4E0D;&#x7EDF;&#x4E00;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> torch
+
+np.set_printoptions(threshold= np.inf)
+
+<span class="hljs-comment"># function to convert a DNA sequence string to a numpy array</span>
+<span class="hljs-comment"># converts to lower case, changes any non &apos;acgt&apos; characters to &apos;n&apos;</span>
+<span class="hljs-keyword">import</span> re
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">string_to_array</span><span class="hljs-params">(my_string)</span>:</span>
+    my_string = my_string.lower()
+    my_string = re.sub(<span class="hljs-string">&apos;[^acgt]&apos;</span>, <span class="hljs-string">&apos;z&apos;</span>, my_string)
+    my_array = np.array(list(my_string))
+    <span class="hljs-keyword">return</span> my_array
+<span class="hljs-comment"># create a label encoder with &apos;acgtn&apos; alphabet</span>
+<span class="hljs-keyword">from</span> sklearn.preprocessing <span class="hljs-keyword">import</span> LabelEncoder
+label_encoder = LabelEncoder()
+label_encoder.fit(np.array([<span class="hljs-string">&apos;a&apos;</span>,<span class="hljs-string">&apos;c&apos;</span>,<span class="hljs-string">&apos;g&apos;</span>,<span class="hljs-string">&apos;t&apos;</span>,<span class="hljs-string">&apos;z&apos;</span>]))
+
+<span class="hljs-comment"># function to one-hot encode a DNA sequence string</span>
+<span class="hljs-comment"># non &apos;acgt&apos; bases (n) are 0000</span>
+<span class="hljs-comment"># returns a L x 4 numpy array</span>
+<span class="hljs-keyword">from</span> sklearn.preprocessing <span class="hljs-keyword">import</span> OneHotEncoder
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">one_hot_encoder</span><span class="hljs-params">(my_array)</span>:</span>
+    integer_encoded = label_encoder.transform(my_array)
+    onehot_encoder = OneHotEncoder(sparse=<span class="hljs-keyword">False</span>, dtype=int)
+    integer_encoded = integer_encoded.reshape(len(integer_encoded), <span class="hljs-number">1</span>)
+    onehot_encoded = onehot_encoder.fit_transform(integer_encoded)
+    <span class="hljs-keyword">return</span> onehot_encoded
+
+data = pd.read_excel(<span class="hljs-string">r&apos;./data_bal.xlsx&apos;</span>,header = <span class="hljs-keyword">None</span>)
+
+one_hot_matrix = []
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">10000</span>):
+    one_hot_matrix.append(one_hot_encoder(string_to_array(data[<span class="hljs-number">0</span>][i])))
+
+np.save(<span class="hljs-string">&apos;one_hot&apos;</span>,one_hot_matrix)
+one = np.load(<span class="hljs-string">&apos;./one_hot.npy&apos;</span>,allow_pickle=<span class="hljs-keyword">True</span>)
+one.shape
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment">#OneHotEncoder2.0.py</span>
+<span class="hljs-comment">#coding: utf-8</span>
+
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> argparse
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> defaultdict
+
+<span class="hljs-comment"># function to convert a DNA sequence string to a numpy array</span>
+<span class="hljs-comment"># converts to lower case, changes any non &apos;acgt&apos; characters to &apos;n&apos;</span>
+<span class="hljs-keyword">import</span> re
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">string_to_array</span><span class="hljs-params">(my_string)</span>:</span>
+    my_string = my_string.lower()
+    my_string = re.sub(<span class="hljs-string">&apos;[^acgt]&apos;</span>, <span class="hljs-string">&apos;z&apos;</span>, my_string)
+    my_array = np.array(list(my_string))
+    <span class="hljs-keyword">return</span> my_array
+
+<span class="hljs-comment"># create a label encoder with &apos;acgtn&apos; alphabet</span>
+<span class="hljs-keyword">from</span> sklearn.preprocessing <span class="hljs-keyword">import</span> LabelEncoder
+label_encoder = LabelEncoder()
+label_encoder.fit(np.array([<span class="hljs-string">&apos;a&apos;</span>,<span class="hljs-string">&apos;c&apos;</span>,<span class="hljs-string">&apos;g&apos;</span>,<span class="hljs-string">&apos;t&apos;</span>,<span class="hljs-string">&apos;z&apos;</span>]))
+
+
+
+
+<span class="hljs-comment"># function to one-hot encode a DNA sequence string</span>
+<span class="hljs-comment"># non &apos;acgt&apos; bases (n) are 0000</span>
+<span class="hljs-comment"># returns a L x 4 numpy array</span>
+<span class="hljs-keyword">from</span> sklearn.preprocessing <span class="hljs-keyword">import</span> OneHotEncoder
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">one_hot_encoder</span><span class="hljs-params">(my_array)</span>:</span>
+    integer_encoded = label_encoder.transform(my_array)
+    onehot_encoder = OneHotEncoder(sparse=<span class="hljs-keyword">False</span>, dtype=int)
+    integer_encoded = integer_encoded.reshape(len(integer_encoded), <span class="hljs-number">1</span>)
+    onehot_encoded = onehot_encoder.fit_transform(integer_encoded)
+    <span class="hljs-keyword">return</span> onehot_encoded
+
+
+<span class="hljs-keyword">global</span> one_hot_matrix
+<span class="hljs-keyword">global</span> index_to_delete
+one_hot_matrix = []
+index_to_delete = []
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">encoder</span><span class="hljs-params">(data)</span>:</span>
+    one_hot_matrix = []
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(data)):
+        one_hot_matrix.append(one_hot_encoder(string_to_array(data[<span class="hljs-number">0</span>][i])))
+    <span class="hljs-keyword">return</span> one_hot_matrix
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">delete</span><span class="hljs-params">(one_hot_matrix)</span>:</span>
+
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(data)):
+        <span class="hljs-keyword">if</span> one_hot_matrix[i].shape != (<span class="hljs-number">500</span>,<span class="hljs-number">4</span>):
+            index_to_delete.append(i)
+    <span class="hljs-comment">#one_hot_matrix = [one_hot_matrix[i] for i in range(0, len(one_hot_matrix),1) if i not in index_to_delete]</span>
+    <span class="hljs-keyword">return</span> index_to_delete
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">labels_marker</span><span class="hljs-params">(histone, nums)</span>:</span>
+
+    labels = data.iloc[:len(data),<span class="hljs-number">1</span>]
+    <span class="hljs-comment">#labels.drop(index = index_to_delete, axis = 0, inplace = True)</span>
+    labels.to_csv(<span class="hljs-string">&apos;labels_{a}_{b}.txt&apos;</span>.format(a=histone, b=nums),sep = <span class="hljs-string">&apos;\t&apos;</span>,index = <span class="hljs-keyword">False</span>)
+    print(labels.shape)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dataset</span><span class="hljs-params">(histone,nums)</span>:</span>
+    <span class="hljs-keyword">global</span> index_to_delete
+    data.drop(index = index_to_delete, axis = <span class="hljs-number">0</span>,inplace = <span class="hljs-keyword">True</span>)
+    data.to_csv(<span class="hljs-string">&apos;dataset_{a}_{b}.txt&apos;</span>.format(a=histone, b=nums),sep = <span class="hljs-string">&apos;\t&apos;</span>,index = <span class="hljs-keyword">False</span>)
+   <span class="hljs-comment">#os.system(&quot;sed -i &apos;1d&apos; &apos;dataset_{a}_{b}.txt&apos;.format(a=histone, b=nums)&quot;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">save</span><span class="hljs-params">(histone,nums)</span>:</span>
+    <span class="hljs-keyword">global</span> one_hot_matrix
+    np.save(<span class="hljs-string">&apos;onehot_{a}_{b}&apos;</span>.format(a=histone, b=nums),one_hot_matrix)
+    one = np.load(<span class="hljs-string">&apos;onehot_{a}_{b}.npy&apos;</span>.format(a=histone, b=nums),allow_pickle=<span class="hljs-keyword">True</span>)
+    print(one.shape)
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    parser = argparse.ArgumentParser(description=<span class="hljs-string">&quot;data choice out&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-i&quot;</span>, <span class="hljs-string">&quot;--dataset&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;dataset&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-c&quot;</span>, <span class="hljs-string">&quot;--choice&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>,default=<span class="hljs-string">&apos;make&apos;</span>, help=<span class="hljs-string">&quot;make or check&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-m&quot;</span>, <span class="hljs-string">&quot;--histone&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span> , help=<span class="hljs-string">&quot;hitone modifications&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-n&quot;</span>, <span class="hljs-string">&quot;--nums&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, help=<span class="hljs-string">&quot;number of samples&quot;</span>)
+    args = parser.parse_args()
+    <span class="hljs-comment"># &#x8BFB;&#x53D6;&#x6570;&#x636E;&#x96C6;</span>
+    data = pd.read_csv(<span class="hljs-string">&apos;%s&apos;</span>%(args.dataset) ,sep = <span class="hljs-string">&apos;\t&apos;</span>,header = <span class="hljs-keyword">None</span>)
+    <span class="hljs-comment"># &#x7F16;&#x7801;</span>
+
+    one_hot_matrix = encoder(data)
+
+    <span class="hljs-keyword">if</span> args.choice == <span class="hljs-string">&apos;check&apos;</span>:
+        index_to_delete = delete(one_hot_matrix)
+        dataset(args.histone, args.nums)
+    <span class="hljs-keyword">elif</span> args.choice == <span class="hljs-string">&apos;make&apos;</span>:
+        labels_marker(args.histone, args.nums)
+        save(args.histone, args.nums)
+    <span class="hljs-keyword">else</span>:
+        print(<span class="hljs-string">&apos;There is no choice&apos;</span>)
+</code></pre>
+<p>OneHotEncoder3.0</p>
+<p>1.&#x8F93;&#x51FA;npz&#x6587;&#x4EF6;&#x5305;&#x542B;[&apos;keys&apos;, &apos;DNAseq&apos;, &apos;labels&apos;]  --make save() ,&#x4FDD;&#x8BC1;&#x4E09;&#x8005;&#x7684;shape&#xFF0C;&#x5E76;&#x4E14;&#x80FD;&#x591F;&#x8F93;&#x51FA;&#x68C0;&#x67E5;</p>
+<ol>
+<li>labels&#x7684;onehot &#x7F16;&#x7801;&#x51FD;&#x6570;&#xFF0C;&#x6309;&#x7167;&#x6570;&#x5B57;&#x8FDB;&#x884C;&#x7F16;&#x7801;</li>
+</ol>
+<p>3.&#x5BFC;&#x5165;target&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;keys&#x548C;labels&#x5206;&#x5F00;</p>
+<p>4.np.delete(labels,0,2)&#x5220;&#x9664;&#x6807;&#x7B7E;onehot&#x7B2C;&#x4E00;&#x5217;&#xFF08;0&#xFF09;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># coding: utf-8</span>
+
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">import</span> argparse
+<span class="hljs-keyword">from</span> collections <span class="hljs-keyword">import</span> defaultdict
+
+<span class="hljs-comment"># function to convert a DNA sequence string to a numpy array</span>
+<span class="hljs-comment"># converts to lower case, changes any non &apos;acgt&apos; characters to &apos;n&apos;</span>
+<span class="hljs-keyword">import</span> re
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">string_to_array</span><span class="hljs-params">(my_string)</span>:</span>
+    my_string = my_string.lower()
+    my_string = re.sub(<span class="hljs-string">&apos;[^acgt]&apos;</span>, <span class="hljs-string">&apos;z&apos;</span>, my_string)
+    my_array = np.array(list(my_string))
+    <span class="hljs-keyword">return</span> my_array
+
+<span class="hljs-comment"># create a label encoder with &apos;acgtn&apos; alphabet</span>
+<span class="hljs-keyword">from</span> sklearn.preprocessing <span class="hljs-keyword">import</span> LabelEncoder
+label_encoder = LabelEncoder()
+label_encoder.fit(np.array([<span class="hljs-string">&apos;a&apos;</span>,<span class="hljs-string">&apos;c&apos;</span>,<span class="hljs-string">&apos;g&apos;</span>,<span class="hljs-string">&apos;t&apos;</span>,<span class="hljs-string">&apos;z&apos;</span>]))
+
+
+
+
+<span class="hljs-comment"># function to one-hot encode a DNA sequence string</span>
+<span class="hljs-comment"># non &apos;acgt&apos; bases (n) are 0000</span>
+<span class="hljs-comment"># returns a L x 4 numpy array</span>
+<span class="hljs-keyword">from</span> sklearn.preprocessing <span class="hljs-keyword">import</span> OneHotEncoder
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">one_hot_encoder</span><span class="hljs-params">(my_array)</span>:</span>
+    integer_encoded = label_encoder.transform(my_array)
+    onehot_encoder = OneHotEncoder(sparse=<span class="hljs-keyword">False</span>, dtype=int)
+    integer_encoded = integer_encoded.reshape(len(integer_encoded), <span class="hljs-number">1</span>)
+    onehot_encoded = onehot_encoder.fit_transform(integer_encoded)
+    <span class="hljs-keyword">return</span> onehot_encoded
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dense_to_one_hot</span><span class="hljs-params">(labels_dense, num_classes)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;Convert class labels from scalars to one-hot vectors.&quot;&quot;&quot;</span>
+    num_labels = labels_dense.shape[<span class="hljs-number">0</span>]
+    index_offset = np.arange(num_labels) * num_classes
+    labels_one_hot = np.zeros((num_labels, num_classes))
+    labels_one_hot.flat[index_offset+labels_dense.ravel()] = <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> labels_one_hot
+
+
+<span class="hljs-keyword">global</span> one_hot_matrix
+<span class="hljs-keyword">global</span> index_to_delete
+one_hot_matrix = []
+index_to_delete = []
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">encoder</span><span class="hljs-params">(data)</span>:</span>
+    one_hot_matrix = []
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(data)):
+        one_hot_matrix.append(one_hot_encoder(string_to_array(data[<span class="hljs-number">0</span>][i])))
+
+    <span class="hljs-keyword">return</span> one_hot_matrix
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">delete</span><span class="hljs-params">(one_hot_matrix)</span>:</span>
+
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(data)):
+        <span class="hljs-keyword">if</span> one_hot_matrix[i].shape != (<span class="hljs-number">500</span>,<span class="hljs-number">4</span>):
+            index_to_delete.append(i)
+    <span class="hljs-comment">#one_hot_matrix = [one_hot_matrix[i] for i in range(0, len(one_hot_matrix),1) if i not in index_to_delete]</span>
+    <span class="hljs-keyword">return</span> index_to_delete
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">labels_marker</span><span class="hljs-params">()</span>:</span>
+
+    <span class="hljs-comment">#labels = data.iloc[:len(data),1]</span>
+    labels_dense = np.array(data[<span class="hljs-number">2</span>].tolist())
+    num_classes = <span class="hljs-number">6</span>
+    labels = dense_to_one_hot(labels_dense, num_classes)
+    labels = labels.reshape(len(data), <span class="hljs-number">1</span>,<span class="hljs-number">6</span>)
+    labels = np.delete(labels,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>)  
+    <span class="hljs-keyword">return</span> labels
+
+    <span class="hljs-comment">#labels.drop(index = index_to_delete, axis = 0, inplace = True)</span>
+    <span class="hljs-comment">#labels.to_csv(&apos;labels_{a}_{b}.txt&apos;.format(a=histone, b=nums),sep = &apos;\t&apos;,index = False)</span>
+    <span class="hljs-comment">#print(labels.shape)</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dataset</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">global</span> index_to_delete
+    data.drop(index = index_to_delete, axis = <span class="hljs-number">0</span>,inplace = <span class="hljs-keyword">True</span>)
+    data.to_csv(<span class="hljs-string">&apos;dataset_rice_all.txt&apos;</span>,sep = <span class="hljs-string">&apos;\t&apos;</span>,index = <span class="hljs-keyword">False</span>)
+
+    dataset = open(<span class="hljs-string">&apos;dataset_rice_all.txt&apos;</span>).readlines()
+    dataset[<span class="hljs-number">1</span>] = <span class="hljs-string">&apos;&apos;</span>
+    <span class="hljs-keyword">with</span> open(<span class="hljs-string">&apos;dataset_rice_all.txt&apos;</span>,<span class="hljs-string">&apos;w&apos;</span>) <span class="hljs-keyword">as</span> f:
+        f.writelines(dataset)
+
+    <span class="hljs-comment">#os.system(&quot;sed -i &apos;1d&apos; &apos;dataset_{a}_{b}.txt&apos;.format(a=histone, b=nums)&quot;)</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">save</span><span class="hljs-params">(labels)</span>:</span>
+    <span class="hljs-keyword">global</span> one_hot_matrix
+    one_hot_matrix = np.array(one_hot_matrix)
+    print(one_hot_matrix.shape)
+    one_hot_matrix = one_hot_matrix.reshape(len(data),<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">500</span>)
+    keys = np.array(data[<span class="hljs-number">1</span>].tolist())
+    np.savez(<span class="hljs-string">&apos;./onehot_rice.npz&apos;</span>,keys = keys, DNAseq = one_hot_matrix, labels = labels)
+    <span class="hljs-keyword">with</span> np.load(<span class="hljs-string">&apos;onehot_rice.npz&apos;</span>) <span class="hljs-keyword">as</span> f:
+        indexs = f[<span class="hljs-string">&apos;keys&apos;</span>]
+        dna = f[<span class="hljs-string">&apos;DNAseq&apos;</span>]
+        labels = f[<span class="hljs-string">&apos;labels&apos;</span>]
+    print(indexs.shape, dna.shape, labels.shape)
+
+
+    <span class="hljs-comment">#one = np.load(&apos;onehot_{a}_{b}.npy&apos;.format(a=histone, b=nums),allow_pickle=True)</span>
+    <span class="hljs-comment">#print(one.shape)</span>
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    parser = argparse.ArgumentParser(description=<span class="hljs-string">&quot;data choice out&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-i&quot;</span>, <span class="hljs-string">&quot;--dataset&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>, help=<span class="hljs-string">&quot;dataset&quot;</span>)
+    parser.add_argument(<span class="hljs-string">&quot;-c&quot;</span>, <span class="hljs-string">&quot;--choice&quot;</span>, metavar=<span class="hljs-string">&quot;&quot;</span>, required=<span class="hljs-keyword">True</span>,default=<span class="hljs-string">&apos;make&apos;</span>, help=<span class="hljs-string">&quot;make or check&quot;</span>)
+
+    args = parser.parse_args()
+    <span class="hljs-comment"># &#x8BFB;&#x53D6;&#x6570;&#x636E;&#x96C6;</span>
+    data = pd.read_csv(<span class="hljs-string">&apos;%s&apos;</span>%(args.dataset) ,sep = <span class="hljs-string">&apos;\t&apos;</span>,header = <span class="hljs-keyword">None</span>)
+    <span class="hljs-comment"># &#x7F16;&#x7801;</span>
+
+    one_hot_matrix = encoder(data)
+
+    <span class="hljs-keyword">if</span> args.choice == <span class="hljs-string">&apos;check&apos;</span>:
+        index_to_delete = delete(one_hot_matrix)
+        dataset()
+    <span class="hljs-keyword">elif</span> args.choice == <span class="hljs-string">&apos;make&apos;</span>:
+        labels = labels_marker()
+        save(labels)
+    <span class="hljs-keyword">else</span>:
+        print(<span class="hljs-string">&apos;There is no choice&apos;</span>)
+</code></pre>
+<h4 id="&#x751F;&#x6210;&#x6570;&#x636E;&#x96C6;&#x603B;&#x6D41;&#x7A0B;&#xFF08;bash&#x811A;&#x672C;&#xFF09;">&#x751F;&#x6210;&#x6570;&#x636E;&#x96C6;&#x603B;&#x6D41;&#x7A0B;&#xFF08;bash&#x811A;&#x672C;&#xFF09;</h4>
+<p>rice/scripts/sh_scripts</p>
+<p>id_geno</p>
+<pre><code class="lang-txt">C019
+C051
+C135
+C139
+C145
+C146
+C147
+C148
+C151
+W081
+W105
+W125
+W128
+W161
+W169
+W257
+W261
+W286
+W294
+W306
+</code></pre>
+<p>id_sp</p>
+<pre><code>C019
+C051
+C135
+C139
+ZS97
+Nip
+MH63
+C148
+C151
+W081
+W105
+W125
+W128
+W161
+W169
+W257
+W261
+W286
+W294
+W306
+</code></pre><h5 id="&#x751F;&#x6210;&#x54C1;&#x79CD;&#x57FA;&#x56E0;&#x578B;">&#x751F;&#x6210;&#x54C1;&#x79CD;&#x57FA;&#x56E0;&#x578B;</h5>
+<pre><code class="lang-bash"><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-comment">#&#x751F;&#x6210;&#x54C1;&#x79CD;&#x57FA;&#x56E0;&#x578B;&#xFF0C;&#x53C2;&#x8003;&#x57FA;&#x56E0;&#x7EC4;&#x65E5;&#x672C;&#x6674;&#x7B2C;&#x4E03;&#x7248;</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> $(cat id_geno)
+<span class="hljs-keyword">do</span>
+    bsub -q high <span class="hljs-_">-e</span> <span class="hljs-variable">${i}</span>.err -o <span class="hljs-variable">${i}</span>.out <span class="hljs-string">&quot;python3 scripts/py_scripts/geno_sub2.0.py -s data/vcf/sort.total.vcf -n <span class="hljs-variable">${i}</span> -r data/ref/IRGSP-1.0_genome.fasta -l 500&quot;</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<h5 id="samtools">samtools</h5>
+<pre><code class="lang-bash"><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-comment">#&#x4F7F;&#x7528;samtools&#x5BF9;&#x57FA;&#x56E0;&#x578B;&#x8FDB;&#x884C;&#x6CE8;&#x91CA;</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> $(cat id_geno)
+    <span class="hljs-keyword">do</span>
+    samtools faidx <span class="hljs-variable">${i}</span>.fasta
+<span class="hljs-keyword">done</span>
+</code></pre>
+<pre><code class="lang-bash"><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-comment">#&#x5C06;&#x539F;&#x59CB;&#x57FA;&#x56E0;&#x578B;&#x7684;&#x540D;&#x5B57;&#x6539;&#x4E3A;&#x54C1;&#x79CD;&#x540D;</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> $(cat id_geno)
+   <span class="hljs-keyword">do</span>
+   <span class="hljs-keyword">if</span> <span class="hljs-variable">${i}</span>.fasta.fai == C145.fasta.fai
+       <span class="hljs-keyword">do</span>
+       mv <span class="hljs-variable">${i}</span>.fasta.fai ZS97.fasta.fai
+   <span class="hljs-keyword">elif</span> <span class="hljs-variable">${i}</span>.fasta.fai == C146.fasta.fai
+       <span class="hljs-keyword">do</span> 
+       mv <span class="hljs-variable">${i}</span>.fasta.fai Nip.fasta.fai
+   <span class="hljs-keyword">elif</span> <span class="hljs-variable">${i}</span>.fasta.fai == C147.fasta.fai
+       <span class="hljs-keyword">do</span> 
+       mv <span class="hljs-variable">${i}</span>.fasta.fai MH63.fasta.fai
+<span class="hljs-keyword">done</span>
+</code></pre>
+<h5 id="&#x63D0;&#x53D6;peak&#x8303;&#x56F4;">&#x63D0;&#x53D6;peak&#x8303;&#x56F4;</h5>
+<pre><code class="lang-bash"><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> $(cat histone)
+<span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> $(cat id_sp)
+    <span class="hljs-keyword">do</span>
+      awk <span class="hljs-string">&apos;{print $1,$2,$3}&apos;</span> mapto*/<span class="hljs-variable">${n}</span>_seedlings/*<span class="hljs-variable">${i}</span>_peaks.*Peak | sort -t <span class="hljs-string">&apos; &apos;</span> -k1.4nr | sort -k1,1V -k2,2n -k3,3n &gt; data/signal_area/sort_<span class="hljs-variable">${i}</span>_<span class="hljs-variable">${n}</span>.bed
+      <span class="hljs-keyword">done</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<h5 id="&#x751F;&#x6210;&#x7EC4;&#x86CB;&#x767D;&#x4FEE;&#x9970;&#x6807;&#x7B7E;">&#x751F;&#x6210;&#x7EC4;&#x86CB;&#x767D;&#x4FEE;&#x9970;&#x6807;&#x7B7E;</h5>
+<pre><code class="lang-bash"><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-keyword">for</span> n <span class="hljs-keyword">in</span> $(cat histone)
+<span class="hljs-keyword">do</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> $(cat id_sp)
+    <span class="hljs-keyword">do</span>
+    python3 scripts/py_scripts/target_mark5.0.py <span class="hljs-_">-f</span> data/sequence/<span class="hljs-variable">${i}</span>.fasta.fai -b data/signal_area/sort_<span class="hljs-variable">${i}</span>_<span class="hljs-variable">${n}</span>.bed -o target_<span class="hljs-variable">${i}</span>_<span class="hljs-variable">${n}</span>_2.bed <span class="hljs-_">-s</span> <span class="hljs-variable">${i}</span> -m <span class="hljs-variable">${n}</span> &amp;&amp; paste data/seq/<span class="hljs-variable">${i}</span>_2.fasta target_<span class="hljs-variable">${i}</span>_<span class="hljs-variable">${n}</span>_2.bed |  awk <span class="hljs-string">&apos;$3 != 0 {print}&apos;</span>  &gt;&gt; dataset_rice_raw.csv | awk <span class="hljs-string">&apos;{print $3}&apos;</span> | uniq -c
+    <span class="hljs-keyword">done</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<p>seq&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x65E0;&quot;&gt;&quot;</p>
+<h5 id="&#x6570;&#x636E;&#x9884;&#x5904;&#x7406;check">&#x6570;&#x636E;&#x9884;&#x5904;&#x7406;(check)</h5>
+<pre><code class="lang-bash">bsub -q high <span class="hljs-_">-e</span> check.err -o check.out <span class="hljs-string">&apos;python3 scripts/py_scripts/OneHotEncoder3.0.py -i dataset_rice_raw -c check&apos;</span>
+awk <span class="hljs-string">&apos;{print $1,$3}&apos;</span> 
+sed -i <span class="hljs-string">&apos;/N/d&apos;</span> 
+awk <span class="hljs-string">&apos;$2 == 2 {print}&apos;</span> ../dataset_all_90w.txt | awk -v OFS=<span class="hljs-string">&quot;\t&quot;</span> <span class="hljs-string">&apos;{if ($2 != 0) $3 = 1}1&apos;</span> &gt;&gt; H3K27ac.txt
+bsub -q high <span class="hljs-string">&apos;shuf -n243105 dataset_0.txt &gt;&gt; H3K4me3.txt&apos;</span>
+</code></pre>
+<h5 id="&#x7F16;&#x7801;onehot">&#x7F16;&#x7801;onehot</h5>
+<pre><code class="lang-shell">bsub -q high -e make.err -o make.out &apos;python3 OneHotEncoder3.0.py -i dataset_rice_all -c make&apos;
+</code></pre>
+<h5 id="&#x751F;&#x6210;transformer&#x6570;&#x636E;&#x96C6;">&#x751F;&#x6210;Transformer&#x6570;&#x636E;&#x96C6;</h5>
+
                                 
                                 </section>
                             
@@ -345,7 +1858,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据获取与预处理","level":"1.2.2","depth":2,"next":{"title":"构建模型","level":"1.2.3","depth":2,"path":"实验流程/构建模型.md","ref":"实验流程/构建模型.md","articles":[]},"previous":{"title":"实验流程概述","level":"1.2.1","depth":2,"path":"实验流程/实验流程概述.md","ref":"实验流程/实验流程概述.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"实验流程/数据获取与预处理.md","mtime":"2021-05-05T07:00:56.576Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-05T08:25:46.586Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数据获取与预处理","level":"1.2.2","depth":2,"next":{"title":"构建模型","level":"1.2.3","depth":2,"path":"实验流程/构建模型.md","ref":"实验流程/构建模型.md","articles":[]},"previous":{"title":"实验流程概述","level":"1.2.1","depth":2,"path":"实验流程/实验流程概述.md","ref":"实验流程/实验流程概述.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"实验流程/数据获取与预处理.md","mtime":"2021-05-05T08:34:41.206Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-05T08:36:40.018Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

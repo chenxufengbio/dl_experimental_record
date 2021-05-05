@@ -302,7 +302,304 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h2 id="&#x7279;&#x5F81;&#x63D0;&#x53D6;">&#x7279;&#x5F81;&#x63D0;&#x53D6;</h2>
+<p><strong>&#x5177;&#x4F53;&#x5B9E;&#x73B0;</strong></p>
+<p><a href="https://github.com/bakirillov/deepmotif4pytorch" target="_blank">https://github.com/bakirillov/deepmotif4pytorch</a></p>
+<p>&#x53C2;&#x8003;&#x6587;&#x732E;&#xFF1A;Deep Learning for Genomics: A Concise Overview 3.1Model Interpretation</p>
+<p>&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;</p>
+<p> Zeiler and Fergus (2014) gave insights into the function of intermediate features by mapping hidden layers back
+to input through deconvolution</p>
+<p>Matthew D Zeiler and Rob Fergus. Visualizing and understanding convolutional networks. In European conference on computer vision, pages 818&#x2013;833. Springer, 2014.</p>
+<p>&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;</p>
+<p> Simonyan et al. (2013) linearly approximate the network by first-order Taylor expansion and obtained Saliency Maps from a ConvNet by projecting back from the dense layers of the network. People also searched for an understanding of genes by deep networks</p>
+<p>Karen Simonyan, Andrea Vedaldi, and Andrew Zisserman. Deep inside convolutionalnetworks: Visualising image classification models and saliency maps. arXiv preprint arXiv:1312.6034, 2013.</p>
+<p>&#x65B9;&#x6CD5;&#x4E09;&#xFF1A;</p>
+<p> Denas and Taylor (2013) managed to pass the model knowledge back into the input space through the inverse of the activa-
+tion function, so that biologically-meaningful patterns can be highlighted.</p>
+<p>Olgert Denas and James Taylor. Deep modeling of gene expression regulation in an ery-thropoiesis model. In Representation Learning, ICML Workshop, 2013.</p>
+<p>&#x65B9;&#x6CD5;&#x56DB;&#xFF1A;<strong>saliency map</strong>(&#x663E;&#x8457;&#x6027;&#x56FE;)</p>
+<p><a href="https://zhuanlan.zhihu.com/p/82757193" target="_blank">&#x4E00;&#x9636;&#x6CF0;&#x52D2;&#x5C55;&#x5F00;&#x548C;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x7684;&#x63A8;&#x5BFC;</a></p>
+<p><a href="https://mathpretty.com/10683.html" target="_blank">https://mathpretty.com/10683.html</a></p>
+<p> Lanchantin et al. (2016b, Dashboard) adopted Saliency Maps to measure nucleotide importance. Their work provided a series of visualization techniques to detect motifs, or sequence patterns from deep learning models, and went further to discuss about the features extracted by CNNs and RNNs</p>
+<p>Jack Lanchantin, Ritambhara Singh, Beilun Wang, and Yanjun Qi. Deep gdashboard: Visualizing and understanding genomic sequences using deep neural networks. CoRR, abs/1608.03644, 2016b. URL <a href="http://arxiv.org/abs/1608.03644" target="_blank">http://arxiv.org/abs/1608.03644</a>.</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210322175439956.png" alt="image-20210322175439956"></p>
+<p><strong>which which parts of the sequence are most influential for the classification?</strong></p>
+<p>sequence&#xFF1A;X0  </p>
+<p>length&#xFF1A;|X0|</p>
+<p>class : c</p>
+<p>score: Sc(X0) &#x8861;&#x91CF;&#x78B1;&#x57FA;&#x91CD;&#x8981;&#x6027;&#x7684;&#x6307;&#x6807;&#xFF0C;&#x6839;&#x636E;&#x78B1;&#x57FA;&#x53D8;&#x5316;&#x5BF9;Sc&#x7684;&#x5F71;&#x54CD;&#x6765;&#x8868;&#x793A;&#x91CD;&#x8981;&#x6027;</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210322190357603.png" alt="image-20210322190357603"></p>
+<p>w&#x662F;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#x7684;&#x4E00;&#x6B65;</p>
+<p>This derivative is simply one step of backpropagation in the DNN model, and is therefore easy to compute.</p>
+<p> We do a pointwise multiplication of the saliency map with the one-hot encoded sequence to get the derivative values for the actual nucleotide characters of the sequence (A,T,C, or G) so we can see the influence of the character at each position on the output score.</p>
+<p> Finally, we take the element-wise magnitude of the resulting derivative vector to visualize how important each character is regardless of derivative direction.</p>
+<p>&#x65B9;&#x6CD5;&#x4E94;&#xFF1A;<strong>Mutation Map</strong></p>
+<p> Alipanahi et al. (2015) visualized the sequence specificities deter- mined by DeepBind through mutation maps that indicate the effect of variations on bound sequences.</p>
+<p>Babak Alipanahi, Andrew Delong, Matthew T. Weirauch, and Brendan J. Frey. Predicting the sequence specificities of dna- and rna-binding proteins by deep learning. Nat Biotech, 33(8):831&#x2013;838, Aug 2015.  ISSN 1087-0156.  URL <a href="http://dx.doi.org/10.1038/nbt.3300" target="_blank">http://dx.doi.org/10.1038/nbt.3300</a>. Computational Biology</p>
+<p><strong>Mutation map</strong></p>
+<p>1.&#x901A;&#x8FC7;&#x7ED9;&#x5B9A;&#x5E8F;&#x5217;&#x78B1;&#x57FA;&#x7684;&#x9AD8;&#x5EA6;&#x6765;&#x8868;&#x793A;&#x5728;DeepBind&#x5206;&#x6790;&#x4E2D;&#x7684;&#x91CD;&#x8981;&#x6027;</p>
+<p>2.heat map &#xFF08;4 * n&#xFF09;&#xFF08;n&#x662F;&#x5E8F;&#x5217;&#x957F;&#x5EA6;&#xFF09;&#x8868;&#x793A;&#x6BCF;&#x4E2A;&#x53EF;&#x80FD;&#x51FA;&#x73B0;&#x7684;&#x7A81;&#x53D8;&#x5BF9;&#x7ED3;&#x5408;&#x80FD;&#x529B;&#x7684;&#x5F71;&#x54CD;</p>
+<p><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fnbt.3300/MediaObjects/41587_2015_Article_BFnbt3300_Fig4_HTML.jpg" alt="Figure 4"></p>
+<p><strong>&#x7ED8;&#x5236;&#x65B9;&#x6CD5;</strong></p>
+<p>&#x901A;&#x8FC7;&#x8BA1;&#x7B97;&#x539F;&#x59CB;&#x5E8F;&#x5217;&#xFF08;&#x53C2;&#x8003;&#x57FA;&#x56E0;&#x7EC4;&#xFF09;&#x7684;binding score p(s) &#x7136;&#x540E;&#x4F9D;&#x6B21;&#x8BA9;&#x6BCF;&#x4E2A;&#x4F4D;&#x70B9;&#x90FD;&#x53D1;&#x751F;&#x7A81;&#x53D8;&#x751F;&#x6210;&#x65B0;&#x7684;&#x5E8F;&#x5217;&#xFF0C;&#x8BA1;&#x7B97;p(s)^ </p>
+<p>&#x394;Sij = &#xFF08;p(s)^ - p(s)) * max(0,p(s),p(s)^)</p>
+<p>&#x65B9;&#x6CD5;&#x4E03;&#xFF1A;<a href="file:///D:/Zotero%E6%96%87%E7%8C%AE/Deepmotif.pdf" target="_blank">Deepmotif</a></p>
+<p>Method for motif generation via class optimization. We find the input matrix which corresponds to the highest locally optimum TFBS probability via backpropagation, and generate a PWM from the matrix.</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210406202019253.png" alt=""></p>
+<p>1.500bp&#x7684;&#x957F;&#x5EA6;&#x4E2D;&#x63D0;&#x53D6;&#x591A;&#x4E2A;motif&#xFF0C;&#x591A;&#x4E2A;TF&#x7ED3;&#x5408;&#x4F4D;&#x70B9;</p>
+<p>2.&#x52A0;&#x5165;chromatin accessibility &#x4FE1;&#x606F;&#xFF0C;&#x63D0;&#x53D6;&#x5F00;&#x653E;&#x67D3;&#x8272;&#x8D28;&#x533A;&#x57DF;&#x7684;motif</p>
+<p>Saliency.py</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">from</span> sklearn.preprocessing <span class="hljs-keyword">import</span> LabelEncoder,OneHotEncoder
+<span class="hljs-keyword">import</span> torchvision
+<span class="hljs-keyword">from</span> model_dna <span class="hljs-keyword">import</span> NetDeepHistone
+
+model= NetDeepHistone()
+model.load_state_dict(torch.load(<span class="hljs-string">&apos;D:/&#x684C;&#x9762;/model.txt&apos;</span>,map_location=torch.device(<span class="hljs-string">&apos;cpu&apos;</span>)))
+
+
+
+<span class="hljs-comment">#&#x505C;&#x6B62;&#x68AF;&#x5EA6;&#x66F4;&#x65B0;</span>
+<span class="hljs-keyword">for</span> param <span class="hljs-keyword">in</span> model.parameters():
+    param.requires_grad = <span class="hljs-keyword">False</span>
+
+
+<span class="hljs-comment">#&#x8BFB;&#x5165;X&#xFF0C;y</span>
+X = pd.read_csv(<span class="hljs-string">&apos;D:/&#x684C;&#x9762;/data_motif.txt&apos;</span>,header = <span class="hljs-keyword">None</span>)
+Y = pd.read_csv(<span class="hljs-string">&apos;D:/&#x684C;&#x9762;/target_motif.txt&apos;</span>,header = <span class="hljs-keyword">None</span>)
+
+
+
+<span class="hljs-comment">#&#x8F6C;&#x6210;onehot</span>
+<span class="hljs-comment"># function to convert a DNA sequence string to a numpy array</span>
+<span class="hljs-comment"># converts to lower case, changes any non &apos;acgt&apos; characters to &apos;n&apos;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">string_to_array</span><span class="hljs-params">(my_string)</span>:</span>
+    my_string = my_string.lower()
+    my_string = re.sub(<span class="hljs-string">&apos;[^acgt]&apos;</span>, <span class="hljs-string">&apos;z&apos;</span>, my_string)
+    my_array = np.array(list(my_string))
+    <span class="hljs-keyword">return</span> my_array
+
+label_encoder = LabelEncoder()
+label_encoder.fit(np.array([<span class="hljs-string">&apos;a&apos;</span>,<span class="hljs-string">&apos;c&apos;</span>,<span class="hljs-string">&apos;g&apos;</span>,<span class="hljs-string">&apos;t&apos;</span>,<span class="hljs-string">&apos;z&apos;</span>]))
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">one_hot_encoder</span><span class="hljs-params">(my_array)</span>:</span>
+    integer_encoded = label_encoder.transform(my_array)
+    onehot_encoder = OneHotEncoder(sparse=<span class="hljs-keyword">False</span>, dtype=int)
+    integer_encoded = integer_encoded.reshape(len(integer_encoded), <span class="hljs-number">1</span>)
+    onehot_encoded = onehot_encoder.fit_transform(integer_encoded)
+    <span class="hljs-keyword">return</span> onehot_encoded
+
+one_hot_matrix = []
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">2</span>):
+    one_hot_matrix.append(one_hot_encoder(string_to_array(X[<span class="hljs-number">0</span>][i])))
+
+print(one_hot_matrix)
+
+X_tensor = torch.Tensor(one_hot_matrix)
+X_tensor = X_tensor.reshape(len(X),<span class="hljs-number">4</span>,<span class="hljs-number">500</span>)
+print(X_tensor.shape)
+
+
+<span class="hljs-comment">#&#x5F00;&#x542F;&#x6D4B;&#x8BD5;&#x6A21;&#x5F0F;</span>
+model.eval()
+
+<span class="hljs-comment">#&#x786E;&#x5B9A;&#x68AF;&#x5EA6;</span>
+X_tensor.requires_grad_()
+
+y_tensor = torch.LongTensor([<span class="hljs-number">1</span>,<span class="hljs-number">1</span>])
+print(y_tensor.shape)
+
+saliency = <span class="hljs-keyword">None</span>
+
+logits = model.forward(X_tensor)
+
+print(logits)
+
+logits = logits.gather(<span class="hljs-number">1</span>, y_tensor.view(<span class="hljs-number">-1</span>, <span class="hljs-number">1</span>)).squeeze()
+
+logits.backward(torch.FloatTensor([<span class="hljs-number">1.</span>, <span class="hljs-number">1.</span>]))
+
+saliency = abs(X_tensor.grad.data)
+
+print(saliency[<span class="hljs-number">0</span>])
+
+PWM = pd.DataFrame(saliency[<span class="hljs-number">0</span>].numpy())
+
+print(PWM)
+
+PWM.to_csv(<span class="hljs-string">&apos;C:/Users/DELL/Documents/PWM1.txt&apos;</span>,sep=<span class="hljs-string">&apos;\t&apos;</span>,index=<span class="hljs-keyword">False</span>)
+</code></pre>
+<p>ggseqlogo</p>
+<pre><code class="lang-R">&gt; <span class="hljs-keyword">library</span>(ggseqlogo)
+&gt; matrix &lt;- read.table(<span class="hljs-string">&quot;./PWM.txt&quot;</span>,header = <span class="hljs-literal">T</span>)
+&gt; row.names(matrix) &lt;- c(<span class="hljs-string">&quot;A&quot;</span>,<span class="hljs-string">&quot;T&quot;</span>,<span class="hljs-string">&quot;G&quot;</span>,<span class="hljs-string">&quot;C&quot;</span>)
+&gt; matrix &lt;- as.matrix(matrix)
+&gt; motif &lt;- matrix[,<span class="hljs-number">245</span>:<span class="hljs-number">254</span>]
+&gt; ggseqlogo(motif)
+</code></pre>
+<p>&#x5229;&#x7528;Transformer&#x7684;self-attention&#x673A;&#x5236;</p>
+<p><img src="C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210422115919537.png" alt=""></p>
+<pre><code>head -50000 dataset_all_90w &gt;&gt; dataset_rice_10w.csv
+tail -50000 dataset_all_90w &gt;&gt; dataset_rice_10w.csv
+awk -v OFS=&quot;\t&quot; &apos;{if ($3 == 5) $3 = 0}1&apos; dataset_rice_10w.csv &gt; dataset3.csv
+</code></pre><p>get_PWM.py</p>
+<p>&#x53C2;&#x8003;&#x6587;&#x732E;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">from</span> model_dna <span class="hljs-keyword">import</span> NetDeepHistone
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">NUMPY2STRING</span><span class="hljs-params">(input_array)</span>:</span>
+
+    <span class="hljs-comment"># convert numpy to string for 2 dimension numpy array.</span>
+
+    output_str = <span class="hljs-string">&quot;&quot;</span>
+
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(input_array.shape[<span class="hljs-number">0</span>]):
+        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(input_array.shape[<span class="hljs-number">1</span>]):
+            output_str = output_str + str(input_array[i, j]) + <span class="hljs-string">&quot;\t&quot;</span>
+        output_str += <span class="hljs-string">&quot;\n&quot;</span>
+
+    <span class="hljs-keyword">return</span> output_str
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">matrix2meme</span><span class="hljs-params">(pwm_txt_name, pwm_meme_name, pwm_len)</span>:</span>
+
+    <span class="hljs-comment"># convert PWM to meme format used in tomtom.</span>
+
+    write_ofl = open(pwm_meme_name, <span class="hljs-string">&quot;w&quot;</span>)  <span class="hljs-comment">#####</span>
+
+    write_ofl.write(<span class="hljs-string">&quot;MEME version 5.0.4\n\n&quot;</span>)
+    write_ofl.write(<span class="hljs-string">&quot;ALPHABET= ACGT\n\n&quot;</span>)
+    write_ofl.write(<span class="hljs-string">&quot;strands: + -\n\n&quot;</span>)
+    write_ofl.write(<span class="hljs-string">&quot;Background letter frequencies\n&quot;</span>)
+    write_ofl.write(<span class="hljs-string">&quot;A 0.25 C 0.25 G 0.25 T 0.25\n\n&quot;</span>)
+
+    read_ofl = open(pwm_txt_name)  <span class="hljs-comment">#####</span>
+    oflst = read_ofl.readlines()
+    read_ofl.close()
+
+    count = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> oflst:
+        line = line.strip()
+        <span class="hljs-keyword">if</span> re.search(<span class="hljs-string">&quot;&gt;&quot;</span>, line):
+            write_ofl.write(<span class="hljs-string">&quot;\n&quot;</span>)
+            write_ofl.write(<span class="hljs-string">&quot;MOTIF&quot;</span> + <span class="hljs-string">&quot;\t&quot;</span> + <span class="hljs-string">&quot;filter&quot;</span> + str(count + <span class="hljs-number">1</span>) + <span class="hljs-string">&quot;\n&quot;</span>)
+            write_ofl.write(<span class="hljs-string">&quot;letter-probability matrix: alength= 4 w= &quot;</span> +
+                            str(pwm_len) + <span class="hljs-string">&quot;\n&quot;</span>)  <span class="hljs-comment">#######</span>
+            count += <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            write_ofl.write(line + <span class="hljs-string">&quot;\n&quot;</span>)
+    write_ofl.close()
+
+<span class="hljs-comment"># &#x7528;&#x4E8E;&#x5B58;&#x50A8;pwm&#x77E9;&#x9635;&#x7684;&#x6587;&#x4EF6;</span>
+input_path = <span class="hljs-string">&quot;onehot_test.npy&quot;</span> <span class="hljs-comment"># DNA one-hot encoding with .npy foramt.</span>
+model_path = <span class="hljs-string">&quot;D:/&#x684C;&#x9762;/model.txt&quot;</span> <span class="hljs-comment"># trained model path</span>
+X = np.load(input_path) 
+X = torch.Tensor(X).reshape(len(X),<span class="hljs-number">4</span>,<span class="hljs-number">500</span>)
+
+pwm_meme_name = <span class="hljs-string">&quot;pwm.meme&quot;</span>
+pwm_txt_name = <span class="hljs-string">&quot;pwm.txt&quot;</span>
+model = NetDeepHistone()
+model.load_state_dict(torch.load(model_path,map_location=torch.device(<span class="hljs-string">&apos;cpu&apos;</span>)))
+ <span class="hljs-comment"># check out the name of first conv_layer</span>
+
+
+
+parm = {}
+<span class="hljs-keyword">for</span> name,parameters <span class="hljs-keyword">in</span> model.seq_map.named_parameters():
+    print(name,<span class="hljs-string">&apos;:&apos;</span>,parameters.size())
+    parm[name]=parameters.detach().numpy()
+
+
+
+<span class="hljs-string">&apos;&apos;&apos;According to your model, return the output of first conv_layer. 
+    please change the &quot;outputs&quot; para according to your model construction.
+    And the bias and weights of first conv_layer.&apos;&apos;&apos;</span>
+WEIGHTS, BIAS = parm[<span class="hljs-string">&apos;conv1.0.weight&apos;</span>],parm[<span class="hljs-string">&apos;conv1.0.bias&apos;</span>]
+WEIGHTS = WEIGHTS.squeeze()
+INSTANCE_LENGTH = WEIGHTS.shape[<span class="hljs-number">2</span>] <span class="hljs-comment"># return the length of filter</span>
+print(WEIGHTS.shape)
+
+conv_out = model.seq_map.get_conv1(X)
+conv_out = conv_out.squeeze()
+
+print(conv_out.shape)
+
+
+
+<span class="hljs-string">&apos;&apos;&apos;
+layer_output = Model(inputs=model.input, outputs=model.layers[1].output)
+conv_out = layer_output.predict(X)
+conv_out = conv_out.squeeze()# &#x6839;&#x636E;&#x6A21;&#x578B;&#x5377;&#x79EF;&#x6838;&#x6570;&#x76EE;&#x8C03;&#x6574;&#x6700;&#x540E;&#x4E00;&#x4F4D;
+print(conv_out.shape)
+&apos;&apos;&apos;</span>
+
+
+<span class="hljs-comment"># &#x7528;&#x4E8E;&#x63D0;&#x53D6;pwm&#x77E9;&#x9635;</span>
+<span class="hljs-string">&apos;&apos;&apos;
+WEIGHTS(128,4,9)(Kernels_num,(width,length))
+BIAS(128)
+THRESHOLD
+INSTANCE_FILTERED_NUMBER
+INSTANCE_FILTERED
+INSTANCE_LENGTH
+
+&apos;&apos;&apos;</span>
+motif_ofl = open(pwm_txt_name, <span class="hljs-string">&quot;w&quot;</span>)
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(WEIGHTS.shape[<span class="hljs-number">0</span>]):
+    one_filter_weight = WEIGHTS[i,: ,: ]
+    THRESHOLD = (np.sum(np.max(one_filter_weight, <span class="hljs-number">1</span>))+ BIAS[i]) * <span class="hljs-number">0.9</span>
+    <span class="hljs-comment">#&#x9608;&#x503C;&#x53EF;&#x4EE5;&#x8C03;&#x6574;0.5-1.0</span>
+
+    model_c = conv_out[:,i,:] - BIAS[i]
+
+    position_m = np.where(model_c &gt;= THRESHOLD)
+    print(position_m[<span class="hljs-number">1</span>].shape[<span class="hljs-number">0</span>])
+    <span class="hljs-comment">#(samples,position)</span>
+    INSTANCE_FILTERED_NUMBER = position_m[<span class="hljs-number">1</span>].shape[<span class="hljs-number">0</span>]
+    print(INSTANCE_FILTERED_NUMBER)
+    INSTANCE_FILTERED = np.zeros(
+        [INSTANCE_FILTERED_NUMBER, <span class="hljs-number">4</span>, INSTANCE_LENGTH])
+    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(INSTANCE_FILTERED_NUMBER):
+        <span class="hljs-keyword">if</span> position_m[<span class="hljs-number">1</span>][j] &lt;= <span class="hljs-number">491</span>:
+            INSTANCE_FILTERED[j] = X[position_m[<span class="hljs-number">0</span>][j], : , 
+                                 (position_m[<span class="hljs-number">1</span>][j]):(position_m[<span class="hljs-number">1</span>][j] +
+                                                   INSTANCE_LENGTH)]
+    pwm_matrix = np.mean(INSTANCE_FILTERED, <span class="hljs-number">0</span>)
+    print(pwm_matrix.shape)
+    pwm_sum = np.sum(pwm_matrix, <span class="hljs-number">0</span>)
+    <span class="hljs-keyword">for</span> col <span class="hljs-keyword">in</span> range(pwm_matrix.shape[<span class="hljs-number">0</span>]):
+        pwm_matrix[col,:]  = pwm_matrix[col ,:] / pwm_sum
+    outline = <span class="hljs-string">&quot;&gt;MOTIF&quot;</span> + str(i + <span class="hljs-number">1</span>) + <span class="hljs-string">&quot;\n&quot;</span>
+    motif_ofl.write(outline)
+    outline = NUMPY2STRING(pwm_matrix.T)
+    motif_ofl.write(outline)
+    motif_ofl.flush()
+motif_ofl.close()
+print(<span class="hljs-string">&quot;PWM-txt Done&quot;</span>)
+
+
+
+matrix2meme(pwm_txt_name, pwm_meme_name, INSTANCE_LENGTH)
+print(<span class="hljs-string">&quot;PWM-meme Done&quot;</span>)
+</code></pre>
+<h4 id="&#x8BC4;&#x4F30;&#x6307;&#x6807;">&#x8BC4;&#x4F30;&#x6307;&#x6807;</h4>
+<p>AUC</p>
+<p>auPRC</p>
+<p>MCC</p>
+<p>Specificity</p>
+<p>Sensitivity</p>
+<h4 id="origin&#x4F5C;&#x56FE;">Origin&#x4F5C;&#x56FE;</h4>
+<p>&#x628A;&#x9884;&#x6D4B;&#x96C6;&#x5206;&#x6210;&#x4E94;&#x90E8;&#x5206;&#x9884;&#x6D4B;&#x4E94;&#x6B21;</p>
+<h3 id=""> </h3>
+
                                 
                                 </section>
                             
@@ -345,7 +642,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"特征提取","level":"1.2.5","depth":2,"next":{"title":"结果分析","level":"1.3","depth":1,"path":"结果分析.md","ref":"结果分析.md","articles":[]},"previous":{"title":"模型评估","level":"1.2.4","depth":2,"path":"实验流程/模型评估.md","ref":"实验流程/模型评估.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"实验流程/特征提取.md","mtime":"2021-05-05T07:01:36.708Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-05T08:25:46.586Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"特征提取","level":"1.2.5","depth":2,"next":{"title":"结果分析","level":"1.3","depth":1,"path":"结果分析.md","ref":"结果分析.md","articles":[]},"previous":{"title":"模型评估","level":"1.2.4","depth":2,"path":"实验流程/模型评估.md","ref":"实验流程/模型评估.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"实验流程/特征提取.md","mtime":"2021-05-05T08:35:57.867Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-05T08:36:40.018Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
