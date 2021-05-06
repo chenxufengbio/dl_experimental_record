@@ -17,6 +17,10 @@
     
             
                 
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
                 
             
@@ -41,7 +45,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-treeview/style.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-page-toc-button/plugin.css">
                 
             
                 
@@ -85,6 +89,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="多模态学习.html" />
+    
     
     <link rel="prev" href="CNN.html" />
     
@@ -96,6 +102,10 @@
     <div class="book-summary">
         
             
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
             
                 <nav role="navigation">
                 
@@ -116,7 +126,7 @@
                 <a href="../../">
             
                     
-                    Introduction
+                    首页
             
                 </a>
             
@@ -234,9 +244,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../READ.html">
+        <li class="chapter " data-level="1.5" data-path="../">
             
-                <a href="../READ.html">
+                <a href="../">
             
                     
                     背景知识
@@ -280,7 +290,20 @@
                 <a href="../生物学/表观遗传.html">
             
                     
-                    表观遗传
+                    表观遗传基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="../生物学/文献笔记.html">
+            
+                <a href="../生物学/文献笔记.html">
+            
+                    
+                    文献笔记
             
                 </a>
             
@@ -346,6 +369,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.2.4" data-path="多模态学习.html">
+            
+                <a href="多模态学习.html">
+            
+                    
+                    多模态学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.5" data-path="文献笔记.html">
+            
+                <a href="文献笔记.html">
+            
+                    
+                    文献笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -396,39 +445,12 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
+<div id="book-search-results">
+    <div class="search-noresults">
+    
                                 <section class="normal markdown-section">
                                 
-                                <div class="treeview__container"><ul>
-<li><div><a href="#transformer">Transformer</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
-<ul>
-<li><div><a href="#encoder">Encoder</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
-<ul>
-<li><div><a href="#1-&#x8F93;&#x5165;&#x90E8;&#x5206;">1 &#x8F93;&#x5165;&#x90E8;&#x5206;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
-<ul>
-<li><div><a href="#embedding">Embedding</a><i></i></div></li>
-<li><div><a href="#&#x4F4D;&#x7F6E;&#x7F16;&#x7801;">&#x4F4D;&#x7F6E;&#x7F16;&#x7801;</a><i></i></div></li>
-</ul></li>
-<li><div><a href="#2-&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;">2 &#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
-<ul>
-<li><div><a href="#&#x57FA;&#x672C;&#x7684;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;">&#x57FA;&#x672C;&#x7684;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;</a><i></i></div></li>
-<li><div><a href="#transformer&#x4E2D;&#x7684;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;">Transformer&#x4E2D;&#x7684;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;</a><i></i></div></li>
-</ul></li>
-<li><div><a href="#&#x6B8B;&#x5DEE;&#x548C;laynorm">&#x6B8B;&#x5DEE;&#x548C;LayNorm</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
-<ul>
-<li><div><a href="#layer-normalization">Layer Normalization</a><i></i></div></li>
-</ul></li>
-<li><div><a href="#3-feed-forward&#x524D;&#x9988;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;">3 Feed Forward&#x524D;&#x9988;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;</a><i></i></div></li>
-</ul></li>
-<li><div><a href="#decoder">Decoder</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
-<ul>
-<li><div><a href="#1-masked-multi-head-attention">1 Masked Multi-Head Attention</a><i></i></div></li>
-<li><div><a href="#2-&#x4EA4;&#x4E92;&#x5C42;">2 &#x4EA4;&#x4E92;&#x5C42;</a><i></i></div></li>
-</ul></li>
-</ul></li>
-</ul>
-</div>
-
-<h1 id="transformer">Transformer</h1>
+                                <h1 id="transformer">Transformer</h1>
 <p><img src="https://img.imgdb.cn/item/60938111d1a9ae528ff3d666.png" alt="image-20210501192731840"></p>
 <h2 id="encoder">Encoder</h2>
 <p><img src="https://img.imgdb.cn/item/60938121d1a9ae528ff4a71f.png" alt="1"></p>
@@ -515,6 +537,22 @@
                                 
                                 </section>
                             
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
                         </div>
                     </div>
                 
@@ -522,10 +560,14 @@
 
             
                 
-                <a href="CNN.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: CNN">
+                <a href="CNN.html" class="navigation navigation-prev " aria-label="Previous page: CNN">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="多模态学习.html" class="navigation navigation-next " aria-label="Next page: 多模态学习">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -534,7 +576,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Transformer","level":"1.5.2.3","depth":3,"previous":{"title":"CNN","level":"1.5.2.2","depth":3,"path":"背景知识/深度学习/CNN.md","ref":"背景知识/深度学习/CNN.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","back-to-top-button","chapter-fold","expandable-chapters-small","code","sectionx","page-treeview","sharing","highlight","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"page-treeview":{"collapsed":false,"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"chapter-fold":{},"splitter":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"xfchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Experimental Record","language":"zh-hans","gitbook":"*","description":"Prediction of histone modifications in rice genome by deep learning"},"file":{"path":"背景知识/深度学习/Transformer.md","mtime":"2021-05-06T05:46:10.314Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-06T06:35:32.051Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Transformer","level":"1.5.2.3","depth":3,"next":{"title":"多模态学习","level":"1.5.2.4","depth":3,"path":"背景知识/深度学习/多模态学习.md","ref":"背景知识/深度学习/多模态学习.md","articles":[]},"previous":{"title":"CNN","level":"1.5.2.2","depth":3,"path":"背景知识/深度学习/CNN.md","ref":"背景知识/深度学习/CNN.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","back-to-top-button","chapter-fold","expandable-chapters-small","code","sectionx","page-toc-button","sharing","highlight","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":2},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"xfchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Experimental Record","language":"zh-hans","gitbook":"*","description":"Prediction of histone modifications in rice genome by deep learning"},"file":{"path":"背景知识/深度学习/Transformer.md","mtime":"2021-05-06T05:46:10.314Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-06T14:13:42.975Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -542,6 +584,14 @@
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
     
         
         <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
@@ -565,6 +615,10 @@
     
         
         <script src="../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
         
     
         
