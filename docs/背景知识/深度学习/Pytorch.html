@@ -60,6 +60,10 @@
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
         
 
     
@@ -218,33 +222,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../../结果分析.html">
-            
-                <a href="../../结果分析.html">
-            
-                    
-                    结果分析
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" data-path="../../训练日志.html">
-            
-                <a href="../../训练日志.html">
-            
-                    
-                    训练日志
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="../">
+        <li class="chapter " data-level="1.3" data-path="../">
             
                 <a href="../">
             
@@ -258,7 +236,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../生物学/">
+        <li class="chapter " data-level="1.3.1" data-path="../生物学/">
             
                 <a href="../生物学/">
             
@@ -272,7 +250,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1.1" data-path="../生物学/数据来源.html">
+        <li class="chapter " data-level="1.3.1.1" data-path="../生物学/数据来源.html">
             
                 <a href="../生物学/数据来源.html">
             
@@ -285,7 +263,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.1.2" data-path="../生物学/表观遗传.html">
+        <li class="chapter " data-level="1.3.1.2" data-path="../生物学/表观遗传.html">
             
                 <a href="../生物学/表观遗传.html">
             
@@ -298,25 +276,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.1.3" data-path="../生物学/文献笔记.html">
-            
-                <a href="../生物学/文献笔记.html">
-            
-                    
-                    文献笔记
-            
-                </a>
-            
-
-            
-        </li>
-    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="./">
+        <li class="chapter " data-level="1.3.2" data-path="./">
             
                 <a href="./">
             
@@ -330,7 +295,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.5.2.1" data-path="Pytorch.html">
+        <li class="chapter active" data-level="1.3.2.1" data-path="Pytorch.html">
             
                 <a href="Pytorch.html">
             
@@ -343,7 +308,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2.2" data-path="CNN.html">
+        <li class="chapter " data-level="1.3.2.2" data-path="CNN.html">
             
                 <a href="CNN.html">
             
@@ -356,7 +321,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2.3" data-path="Transformer.html">
+        <li class="chapter " data-level="1.3.2.3" data-path="Transformer.html">
             
                 <a href="Transformer.html">
             
@@ -369,7 +334,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2.4" data-path="多模态学习.html">
+        <li class="chapter " data-level="1.3.2.4" data-path="多模态学习.html">
             
                 <a href="多模态学习.html">
             
@@ -382,12 +347,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2.5" data-path="文献笔记.html">
+        <li class="chapter " data-level="1.3.2.5" data-path="迁移学习.html">
             
-                <a href="文献笔记.html">
+                <a href="迁移学习.html">
             
                     
-                    文献笔记
+                    迁移学习
             
                 </a>
             
@@ -450,7 +415,20 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="pytorch">Pytorch</h1>
+                                <p><img src="https://pic.imgdb.cn/item/60952af8d1a9ae528f62969c.jpg" alt=""></p>
+<h1 id="pytorch">Pytorch</h1>
+<p>PyTorch&#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;Torch&#x7684;Python&#x5F00;&#x6E90;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5E93;&#xFF0C;&#x7528;&#x4E8E;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;&#x7B49;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;&#x5B83;&#x4E3B;&#x8981;&#x7531;Facebookd&#x7684;&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x5C0F;&#x7EC4;&#x5F00;&#x53D1;&#xFF0C;&#x4E0D;&#x4EC5;&#x80FD;&#x591F; &#x5B9E;&#x73B0;&#x5F3A;&#x5927;&#x7684;<strong>GPU&#x52A0;&#x901F;</strong>&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x652F;&#x6301;&#x52A8;&#x6001;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF0C;&#x8FD9;&#x4E00;&#x70B9;&#x662F;&#x73B0;&#x5728;&#x5F88;&#x591A;&#x4E3B;&#x6D41;&#x6846;&#x67B6;&#x5982;TensorFlow&#x90FD;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x3002; </p>
+<p>PyTorch&#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x4E2A;&#x9AD8;&#x7EA7;&#x529F;&#x80FD;&#xFF1A;</p>
+<p> 1.&#x5177;&#x6709;&#x5F3A;&#x5927;&#x7684;GPU&#x52A0;&#x901F;&#x7684;&#x5F20;&#x91CF;&#x8BA1;&#x7B97;&#xFF08;&#x5982;Numpy&#xFF09; </p>
+<p>2.&#x5305;&#x542B;&#x81EA;&#x52A8;&#x6C42;&#x5BFC;&#x7CFB;&#x7EDF;&#x7684;&#x6DF1;&#x5EA6;&#x795E;&#x7ECF;&#x7F51;&#x7EDC; &#x9664;&#x4E86;Facebook&#x4E4B;&#x5916;&#xFF0C;Twitter&#x3001;GMU&#x548C;Salesforce&#x7B49;&#x673A;&#x6784;&#x90FD;&#x91C7;&#x7528;&#x4E86;PyTorch&#x3002;</p>
+<h2 id="&#x57FA;&#x672C;&#x6982;&#x5FF5;"><strong>&#x57FA;&#x672C;&#x6982;&#x5FF5;</strong></h2>
+<p><strong>&#x53C2;&#x8003;&#x8D44;&#x6599;&#xFF1A;</strong></p>
+<p><a href="https://pytorch.org/docs/stable/index.html" target="_blank">Pytorch&#x5B98;&#x65B9;&#x6587;&#x6863;&#xFF08;&#x82F1;&#x6587;&#x6700;&#x65B0;&#x7248;&#xFF09;</a></p>
+<p><a href="http://pytorch.panchuang.net/" target="_blank">Pytorch&#x5B98;&#x65B9;&#x6559;&#x7A0B;&#xFF08;&#x4E2D;&#x6587;&#x7248;&#xFF09;</a></p>
+<p><a href="https://pytorch.apachecn.org/docs/1.7/" target="_blank">Pytorch1.7&#x4E2D;&#x6587;&#x6587;&#x6863;&amp;&#x6559;&#x7A0B;</a></p>
+<h2 id="&#x5E94;&#x7528;&#x5B9E;&#x6218;">&#x5E94;&#x7528;&#x5B9E;&#x6218;</h2>
+<p><a href="https://tangshusen.me/Dive-into-DL-PyTorch/#/" target="_blank">&#x52A8;&#x624B;&#x5B66;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#xFF08;Pytorch&#x7248;&#xFF09;</a></p>
+<p><a href="https://www.bilibili.com/video/av95213930/" target="_blank">Deeplizard&#x300A;Pytorch&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x9AD8;&#x6548;&#x5165;&#x95E8;&#x6559;&#x7A0B;&#x300B;&#x4E2D;&#x6587;&#x5B57;&#x5E55;&#x7248;</a></p>
 
                                 
                                 </section>
@@ -494,7 +472,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Pytorch","level":"1.5.2.1","depth":3,"next":{"title":"CNN","level":"1.5.2.2","depth":3,"path":"背景知识/深度学习/CNN.md","ref":"背景知识/深度学习/CNN.md","articles":[]},"previous":{"title":"深度学习","level":"1.5.2","depth":2,"path":"背景知识/深度学习/README.md","ref":"背景知识/深度学习/README.md","articles":[{"title":"Pytorch","level":"1.5.2.1","depth":3,"path":"背景知识/深度学习/Pytorch.md","ref":"背景知识/深度学习/Pytorch.md","articles":[]},{"title":"CNN","level":"1.5.2.2","depth":3,"path":"背景知识/深度学习/CNN.md","ref":"背景知识/深度学习/CNN.md","articles":[]},{"title":"Transformer","level":"1.5.2.3","depth":3,"path":"背景知识/深度学习/Transformer.md","ref":"背景知识/深度学习/Transformer.md","articles":[]},{"title":"多模态学习","level":"1.5.2.4","depth":3,"path":"背景知识/深度学习/多模态学习.md","ref":"背景知识/深度学习/多模态学习.md","articles":[]},{"title":"文献笔记","level":"1.5.2.5","depth":3,"path":"背景知识/深度学习/文献笔记.md","ref":"背景知识/深度学习/文献笔记.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","back-to-top-button","chapter-fold","expandable-chapters-small","code","sectionx","page-toc-button","sharing","highlight","splitter","fontsettings"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"family":"sans","size":2,"theme":"white"},"sectionx":{},"highlight":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":3},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"xfchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Experimental Record","language":"zh-hans","gitbook":"*","description":"Prediction of histone modifications in rice genome by deep learning"},"file":{"path":"背景知识/深度学习/Pytorch.md","mtime":"2021-05-06T05:37:07.253Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-06T14:32:05.146Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Pytorch","level":"1.3.2.1","depth":3,"next":{"title":"CNN","level":"1.3.2.2","depth":3,"path":"背景知识/深度学习/CNN.md","ref":"背景知识/深度学习/CNN.md","articles":[]},"previous":{"title":"深度学习","level":"1.3.2","depth":2,"path":"背景知识/深度学习/README.md","ref":"背景知识/深度学习/README.md","articles":[{"title":"Pytorch","level":"1.3.2.1","depth":3,"path":"背景知识/深度学习/Pytorch.md","ref":"背景知识/深度学习/Pytorch.md","articles":[]},{"title":"CNN","level":"1.3.2.2","depth":3,"path":"背景知识/深度学习/CNN.md","ref":"背景知识/深度学习/CNN.md","articles":[]},{"title":"Transformer","level":"1.3.2.3","depth":3,"path":"背景知识/深度学习/Transformer.md","ref":"背景知识/深度学习/Transformer.md","articles":[]},{"title":"多模态学习","level":"1.3.2.4","depth":3,"path":"背景知识/深度学习/多模态学习.md","ref":"背景知识/深度学习/多模态学习.md","articles":[]},{"title":"迁移学习","level":"1.3.2.5","depth":3,"path":"背景知识/深度学习/迁移学习.md","ref":"背景知识/深度学习/迁移学习.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","back-to-top-button","chapter-fold","expandable-chapters-small","code","sectionx","page-toc-button","sharing","highlight","splitter","fontsettings","insert-logo"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"family":"sans","size":2,"theme":"white"},"sectionx":{},"highlight":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":3},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background:none;max-height:100px","url":"https://pic.imgdb.cn/item/60978a3ed1a9ae528f565046.jpg"}},"theme":"default","author":"xfchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Experimental Record","language":"zh-hans","gitbook":"*","description":"Prediction of histone modifications in rice genome by deep learning"},"file":{"path":"背景知识/深度学习/Pytorch.md","mtime":"2021-05-09T06:50:51.171Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T09:35:43.001Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -549,6 +527,10 @@
     
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
         
     
         

@@ -60,6 +60,10 @@
                 <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
                 
             
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
         
 
     
@@ -218,33 +222,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../../结果分析.html">
-            
-                <a href="../../结果分析.html">
-            
-                    
-                    结果分析
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" data-path="../../训练日志.html">
-            
-                <a href="../../训练日志.html">
-            
-                    
-                    训练日志
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="../">
+        <li class="chapter " data-level="1.3" data-path="../">
             
                 <a href="../">
             
@@ -258,7 +236,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../生物学/">
+        <li class="chapter " data-level="1.3.1" data-path="../生物学/">
             
                 <a href="../生物学/">
             
@@ -272,7 +250,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1.1" data-path="../生物学/数据来源.html">
+        <li class="chapter " data-level="1.3.1.1" data-path="../生物学/数据来源.html">
             
                 <a href="../生物学/数据来源.html">
             
@@ -285,7 +263,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.1.2" data-path="../生物学/表观遗传.html">
+        <li class="chapter " data-level="1.3.1.2" data-path="../生物学/表观遗传.html">
             
                 <a href="../生物学/表观遗传.html">
             
@@ -298,25 +276,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.1.3" data-path="../生物学/文献笔记.html">
-            
-                <a href="../生物学/文献笔记.html">
-            
-                    
-                    文献笔记
-            
-                </a>
-            
-
-            
-        </li>
-    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="./">
+        <li class="chapter " data-level="1.3.2" data-path="./">
             
                 <a href="./">
             
@@ -330,7 +295,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.2.1" data-path="Pytorch.html">
+        <li class="chapter " data-level="1.3.2.1" data-path="Pytorch.html">
             
                 <a href="Pytorch.html">
             
@@ -343,7 +308,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2.2" data-path="CNN.html">
+        <li class="chapter " data-level="1.3.2.2" data-path="CNN.html">
             
                 <a href="CNN.html">
             
@@ -356,7 +321,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.2.3" data-path="Transformer.html">
+        <li class="chapter active" data-level="1.3.2.3" data-path="Transformer.html">
             
                 <a href="Transformer.html">
             
@@ -369,7 +334,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2.4" data-path="多模态学习.html">
+        <li class="chapter " data-level="1.3.2.4" data-path="多模态学习.html">
             
                 <a href="多模态学习.html">
             
@@ -382,12 +347,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2.5" data-path="文献笔记.html">
+        <li class="chapter " data-level="1.3.2.5" data-path="迁移学习.html">
             
-                <a href="文献笔记.html">
+                <a href="迁移学习.html">
             
                     
-                    文献笔记
+                    迁移学习
             
                 </a>
             
@@ -533,6 +498,166 @@
 <p>&#x6240;&#x6709;&#x7684;Encoder&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#xFF0C;&#x7136;&#x540E;&#x8FD9;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#x5BF9;&#x6BCF;&#x4E2A;Decoder&#x8FDB;&#x884C;&#x4EA4;&#x4E92;</p>
 <p><img src="https://img.imgdb.cn/item/6093825fd1a9ae528f048ad1.png" alt="image-20210501223154302"></p>
 <p>Encoder&#x751F;&#x6210;KV&#x77E9;&#x9635;&#xFF0C;Decoder&#x751F;&#x6210;Q&#x77E9;&#x9635;&#xFF0C;&#x4EA4;&#x4E92;&#x5C42;Q&#x77E9;&#x9635;&#x6765;&#x81EA;&#x4E8E;&#x672C;&#x8EAB;&#xFF0C;KV&#x77E9;&#x9635;&#x6765;&#x81EA;&#x4E8E;Encoders&#xFF0C;&#x8FDB;&#x884C;&#x591A;&#x5934;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;</p>
+<h1 id="nttransformer">Nt_Transformer</h1>
+<p><img src="https://pic.imgdb.cn/item/609787f6d1a9ae528f3bf721.jpg" alt=""></p>
+<h2 id="k-mers-with-1-d-convolutions">K-mers with 1-D convolutions</h2>
+<p>&#x751F;&#x7269;&#x4FE1;&#x606F;&#x5B66;&#x5904;&#x7406;DNA&#x5E8F;&#x5217;&#x5E38;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;K-mers&#xFF0C;&#x5C31;&#x662F;&#x5C06;&#x4E00;&#x6761;&#x5B8C;&#x6574;&#x7684;DNA&#x5E8F;&#x5217;&#xFF0C;&#x8F6C;&#x5316;&#x4E3A;&#x957F;&#x5EA6;&#x4E3A;k&#x7684;&#x5C0F;&#x7247;&#x6BB5;&#xFF0C;&#x548C;1-D&#x5377;&#x79EF;&#x5C42;&#x5229;&#x7528;slide window&#x63D0;&#x53D6;&#x4FE1;&#x606F;&#x7684;&#x65B9;&#x6CD5;&#x7C7B;&#x4F3C;</p>
+<p><img src="https://pic.imgdb.cn/item/60978bfcd1a9ae528f6de419.png" alt=""></p>
+<p>S &#xFF1A;sequence vector(length = l) </p>
+<p>K : convolution kernel (size  = 3)  </p>
+<p>O: output of vector dot&#xFF08;&#x70B9;&#x4E58;&#xFF09; </p>
+<p>p&#xFF1A;position</p>
+<p>stride = 1 &#x6B65;&#x957F;&#x4E3A;1 &#xFF0C;&#x6BCF;&#x6B21;&#x79FB;&#x52A8;&#x4E00;&#x4E2A;&#x5355;&#x4F4D;</p>
+<p>&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x957F;&#x4E3A;3&#x7684;&#x4E00;&#x7EF4;&#x5377;&#x79EF;&#x6838;&#x5BF9;&#x5E8F;&#x5217;S&#x505A;&#x70B9;&#x4E58;&#xFF08;&#x5377;&#x79EF;&#xFF09;&#xFF0C;&#x4ECE;&#x4E00;&#x6761;DNA&#x5E8F;&#x5217;&#x4E2D;&#x63D0;&#x53D6;3-mers&#x7684;&#x6709;&#x6548;&#x4FE1;&#x606F;</p>
+<p><strong>&#x6838;&#x82F7;&#x9178;&#x7F16;&#x7801;</strong>&#xFF1A;&#x9996;&#x5148;&#x5C06;&#x6BCF;&#x4E2A;&#x6838;&#x82F7;&#x9178;&#x8F6C;&#x5316;&#x4E3A;embeddings&#x5D4C;&#x5165;&#x5C42;&#xFF08;fixed size = dmodel&#xFF09;&#x8BCD;&#x5411;&#x91CF;&#xFF0C;&#x5BF9;&#x4E8E;&#x6BCF;&#x6761;DNA&#x5E8F;&#x5217;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;tensor &#xFF08;l&#xFF0C;dmodel&#xFF09;</p>
+<p><strong>&#x4F4D;&#x7F6E;&#x7F16;&#x7801;</strong>&#xFF1A;&#x91C7;&#x7528;Transformer&#x4E2D;&#x5BF9;&#x4E8E;&#x8BCD;&#x5411;&#x91CF;&#x7684;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#xFF0C;&#x5947;&#x6570;&#x4F7F;&#x7528;cos&#xFF0C;&#x5076;&#x6570;&#x4F7F;&#x7528;sin&#xFF0C;&#x751F;&#x6210;K&#x4F5C;&#x4E3A;&#x6574;&#x4F53;&#x8F93;&#x5165;&#xFF0C;&#x65E2;&#x5305;&#x542B;&#x6838;&#x82F7;&#x9178;&#x7F16;&#x7801;&#x7684;&#x4FE1;&#x606F;&#x53C8;&#x5305;&#x542B;&#x76F8;&#x5BF9;&#x4F4D;&#x7F6E;&#x4FE1;&#x606F;</p>
+<p><img src="https://pic.imgdb.cn/item/60978c0dd1a9ae528f6eeac7.png" alt=""></p>
+<p><img src="https://pic.imgdb.cn/item/60978c1cd1a9ae528f6fb17f.png" alt=""></p>
+<p><strong>&#x4F20;&#x7EDF;k-mers&#x7684;&#x7F3A;&#x70B9;&#xFF1A;</strong></p>
+<p>&#x6CDB;&#x5316;&#x80FD;&#x529B;&#x5DEE;&#xFF0C;&#x53EA;&#x80FD;&#x5BF9;&#x751F;&#x6210;&#x7684;k-mers&#x7EC4;&#x5408;&#x8FDB;&#x884C;&#x5B66;&#x4E60;&#xFF0C;&#x4F46;&#x662F;&#x751F;&#x6210;&#x7684;k-mers&#x6570;&#x91CF;&#x6709;&#x9650;&#xFF0C;&#x6BD4;&#x5982;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x6709;promoter motif TATAAT &#x4F46;&#x662F;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x76F8;&#x4F3C;&#x7684;motif TATATT&#x4E0D;&#x5728;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x5C31;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x5B66;&#x4E60;</p>
+<p><strong>&#x514B;&#x670D;&#x65B9;&#x6CD5;&#xFF1A;</strong></p>
+<ul>
+<li><p>&#x4F7F;&#x7528;convolutions&#x5BF9;&#x5E8F;&#x5217;&#x8FDB;&#x884C;&#x7279;&#x5F81;&#x63D0;&#x53D6;&#xFF0C;&#x80FD;&#x591F;&#x5BF9;TATAAT&#x548C;TATATT&#x7684;&#x76F8;&#x4F3C;&#x5EA6;&#x8FDB;&#x884C;&#x91CF;&#x5316;&#xFF0C;&#x4ECE;&#x800C;&#x66F4;&#x597D;&#x5730;&#x8FDB;&#x884C;&#x6CDB;&#x5316;</p>
+</li>
+<li><p>&#x5927;&#x91CF;&#x7684;&#x53C2;&#x6570;&#xFF1A;4&#x7684;k&#x6B21;&#x65B9;</p>
+</li>
+</ul>
+<h2 id="transformer-encoder">Transformer encoder</h2>
+<p><strong>multi-head self-attention mechanism</strong></p>
+<ul>
+<li><p>&#x591A;&#x5934;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;&#x80FD;&#x5076;&#x7EBF;&#x6027;&#x5730;&#x5C06;dmodel&#x7EF4;&#x5EA6;&#x7684;K&#xFF0C;Q&#xFF0C;V&#x6295;&#x5C04;&#x5230;&#x4F4E;&#x7EF4;&#x5EA6;&#x4E2D;&#x8FDB;&#x884C;&#x8868;&#x793A;</p>
+</li>
+<li><p>&#x591A;&#x5934;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;&#x80FD;&#x591F;&#x76F4;&#x63A5;&#x5728;&#x6574;&#x6761;&#x5E8F;&#x5217;&#x4E0A;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;</p>
+</li>
+<li><p>&#x591A;&#x5934;&#x6CE8;&#x610F;&#x529B;&#x673A;&#x5236;&#x5141;&#x8BB8;&#x4E0D;&#x540C;&#x7684;head&#x5B66;&#x4E60;&#x8F93;&#x5165;&#x6570;&#x636E;&#x4E0D;&#x540C;&#x7684;&#x9690;&#x85CF;&#x6A21;&#x5F0F;&#xFF0C;&#x4ECE;&#x800C;&#x63D0;&#x5347;&#x6027;&#x80FD;</p>
+</li>
+</ul>
+<p><img src="https://pic.imgdb.cn/item/60978c2ad1a9ae528f707aae.png" alt=""></p>
+<p><strong>&#x8BE6;&#x89C1;Transformer</strong></p>
+<ul>
+<li><p>self-attention&#x673A;&#x5236;&#x80FD;&#x591F;&#x8BA1;&#x7B97;&#x51FA;&#x6BCF;&#x4E2A;k-mers&#x5176;&#x4ED6;&#x6240;&#x6709;k-mers&#xFF08;&#x5305;&#x62EC;&#x81EA;&#x8EAB;&#xFF09;&#x7684;&#x8054;&#x7CFB;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x80FD;&#x5EFA;&#x7ACB;&#x5168;&#x5C40;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF08;global dependencies&#xFF09; </p>
+</li>
+<li><p>&#x4E0E;CNN&#x548C;RNN&#x52A0;&#x5F3A;&#x6A21;&#x578B;&#x5BF9;&#x4E8E;&#x5C40;&#x90E8;&#x533A;&#x57DF;&#x7684;&#x4FDD;&#x5B88;&#x6027;&#xFF08;sparse local connectivity&#xFF09;&#x5B66;&#x4E60;&#x7684;&#x7279;&#x70B9;&#x4E0D;&#x540C;&#xFF0C;Transformer&#x5BF9;&#x4E8E;&#x6574;&#x4F53;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x6709;&#x7740;&#x66F4;&#x597D;&#x7684;&#x8868;&#x73B0;</p>
+</li>
+</ul>
+<p><strong>position-wise feedforward network</strong> </p>
+<p><img src="https://pic.imgdb.cn/item/60978c37d1a9ae528f712e79.png" alt=""></p>
+<ul>
+<li><p>transformer encoder layer&#xFF1A;&#x4E24;&#x4E2A;transforms&#x4E2D;&#x95F4;&#x5939;&#x6742;&#x7740;&#x4E00;&#x4E2A;ReLU&#x6FC0;&#x6D3B;&#x51FD;&#x6570;</p>
+</li>
+<li><p>&#x591A;&#x4E2A;layers&#x5806;&#x53E0;&#x6210;&#x4E00;&#x4E2A;encoder</p>
+</li>
+</ul>
+<pre><code class="lang-python"> model=NucleicTransformer(opts.ntoken, opts.nclass, opts.ninp, opts.nhead, opts.nhid,
+                           opts.nlayers, opts.kmer_aggregation, kmers=opts.kmers,
+                           dropout=opts.dropout).to(device)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameters</th>
+<th>default</th>
+<th>explain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gpu_id</td>
+<td>0</td>
+<td>&#x9009;&#x62E9;&#x4F7F;&#x7528;&#x7684;gpu</td>
+</tr>
+<tr>
+<td>path</td>
+<td></td>
+<td>&#x6570;&#x636E;&#x96C6;&#x5B58;&#x653E;&#x8DEF;&#x5F84;&#xFF08;DNA seq &#x548C;labels&#xFF09;</td>
+</tr>
+<tr>
+<td>epochs</td>
+<td>150</td>
+<td></td>
+</tr>
+<tr>
+<td>batch_size</td>
+<td>24</td>
+<td>&#x4E00;&#x6B21;&#x8BAD;&#x7EC3;&#x6240;&#x6293;&#x53D6;&#x7684;&#x6570;&#x636E;&#x6837;&#x672C;&#x6570;&#x91CF;</td>
+</tr>
+<tr>
+<td>weight_decay</td>
+<td>0</td>
+<td>&#x6743;&#x91CD;&#x8870;&#x51CF;&#xFF08;L2&#x6B63;&#x5219;&#x5316;&#xFF0C;&#x9632;&#x6B62;&#x8FC7;&#x62DF;&#x5408;&#xFF09;</td>
+</tr>
+<tr>
+<td>ntoken</td>
+<td>4</td>
+<td>&#x8868;&#x793A;&#x6838;&#x82F7;&#x9178;&#x6240;&#x9700;&#x8981;&#x7684;&#x7EF4;&#x5EA6;&#xFF08;&#x56FA;&#x5B9A;&#x503C;&#x4E3A;4&#xFF09;</td>
+</tr>
+<tr>
+<td>nclass</td>
+<td>2</td>
+<td>&#x5206;&#x7C7B;&#x6570;</td>
+</tr>
+<tr>
+<td>ninp</td>
+<td>512</td>
+<td></td>
+</tr>
+<tr>
+<td>nhead</td>
+<td>8</td>
+<td>multi-head self-attention</td>
+</tr>
+<tr>
+<td>bhid</td>
+<td>1048</td>
+<td></td>
+</tr>
+<tr>
+<td>mlayers</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr>
+<td>save_freq</td>
+<td>1</td>
+<td>&#x6BCF;&#x8BAD;&#x7EC3;&#x591A;&#x5C11;&#x6279;&#x5B58;&#x50A8;&#x4E00;&#x6B21;&#x7ED3;&#x679C;</td>
+</tr>
+<tr>
+<td>dropout</td>
+<td>0.1</td>
+<td>&#x4E22;&#x5F03;&#x6982;&#x7387;&#x9632;&#x6B62;&#x8FC7;&#x62DF;&#x5408;</td>
+</tr>
+<tr>
+<td>warmup_steps</td>
+<td>3200</td>
+<td></td>
+</tr>
+<tr>
+<td>lr_scale</td>
+<td>0.1</td>
+<td>&#x5B66;&#x4E60;&#x7387;</td>
+</tr>
+<tr>
+<td>nmute</td>
+<td>18</td>
+<td>&#x7A81;&#x53D8;&#x6570;</td>
+</tr>
+<tr>
+<td>kmers</td>
+<td>[2&#xFF0C;3&#xFF0C;4&#xFF0C;5&#xFF0C;6]</td>
+<td></td>
+</tr>
+<tr>
+<td>n_fold</td>
+<td>5</td>
+<td>&#x4EA4;&#x53C9;&#x9A8C;&#x8BC1;</td>
+</tr>
+<tr>
+<td>fold</td>
+<td>0</td>
+<td>&#x9009;&#x62E9;&#x54EA;&#x4E00;&#x4E2A;fold&#x8FDB;&#x884C;&#x8BAD;&#x7EC3;</td>
+</tr>
+</tbody>
+</table>
 
                                 
                                 </section>
@@ -576,7 +701,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Transformer","level":"1.5.2.3","depth":3,"next":{"title":"多模态学习","level":"1.5.2.4","depth":3,"path":"背景知识/深度学习/多模态学习.md","ref":"背景知识/深度学习/多模态学习.md","articles":[]},"previous":{"title":"CNN","level":"1.5.2.2","depth":3,"path":"背景知识/深度学习/CNN.md","ref":"背景知识/深度学习/CNN.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","back-to-top-button","chapter-fold","expandable-chapters-small","code","sectionx","page-toc-button","sharing","highlight","splitter","fontsettings"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"family":"sans","size":2,"theme":"white"},"sectionx":{},"highlight":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":3},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"xfchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Experimental Record","language":"zh-hans","gitbook":"*","description":"Prediction of histone modifications in rice genome by deep learning"},"file":{"path":"背景知识/深度学习/Transformer.md","mtime":"2021-05-06T05:46:10.314Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-06T14:32:05.146Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Transformer","level":"1.3.2.3","depth":3,"next":{"title":"多模态学习","level":"1.3.2.4","depth":3,"path":"背景知识/深度学习/多模态学习.md","ref":"背景知识/深度学习/多模态学习.md","articles":[]},"previous":{"title":"CNN","level":"1.3.2.2","depth":3,"path":"背景知识/深度学习/CNN.md","ref":"背景知识/深度学习/CNN.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-search","search-pro","back-to-top-button","chapter-fold","expandable-chapters-small","code","sectionx","page-toc-button","sharing","highlight","splitter","fontsettings","insert-logo"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search-pro":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"family":"sans","size":2,"theme":"white"},"sectionx":{},"highlight":{},"page-toc-button":{"maxTocDepth":2,"minTocSize":3},"back-to-top-button":{},"expandable-chapters-small":{},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background:none;max-height:100px","url":"https://pic.imgdb.cn/item/60978a3ed1a9ae528f565046.jpg"}},"theme":"default","author":"xfchen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Experimental Record","language":"zh-hans","gitbook":"*","description":"Prediction of histone modifications in rice genome by deep learning"},"file":{"path":"背景知识/深度学习/Transformer.md","mtime":"2021-05-09T07:17:49.363Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-09T09:35:43.001Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -631,6 +756,10 @@
     
         
         <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
         
     
         

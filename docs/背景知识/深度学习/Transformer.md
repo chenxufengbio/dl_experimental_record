@@ -197,3 +197,112 @@ Encoder生成KV矩阵，Decoder生成Q矩阵，交互层Q矩阵来自于本身�
 
 
 
+# Nt_Transformer
+
+![](https://pic.imgdb.cn/item/609787f6d1a9ae528f3bf721.jpg)
+
+## K-mers with 1-D convolutions
+
+生物信息学处理DNA序列常用方法：K-mers，就是将一条完整的DNA序列，转化为长度为k的小片段，和1-D卷积层利用slide window提取信息的方法类似
+
+![](https://pic.imgdb.cn/item/60978bfcd1a9ae528f6de419.png)
+
+S ：sequence vector(length = l) 
+
+K : convolution kernel (size  = 3)  
+
+O: output of vector dot（点乘） 
+
+p：position
+
+stride = 1 步长为1 ，每次移动一个单位
+
+使用一个长为3的一维卷积核对序列S做点乘（卷积），从一条DNA序列中提取3-mers的有效信息
+
+
+
+
+
+**核苷酸编码**：首先将每个核苷酸转化为embeddings嵌入层（fixed size = dmodel）词向量，对于每条DNA序列产生一个tensor （l，dmodel）
+
+**位置编码**：采用Transformer中对于词向量的编码方式，奇数使用cos，偶数使用sin，生成K作为整体输入，既包含核苷酸编码的信息又包含相对位置信息
+
+![](https://pic.imgdb.cn/item/60978c0dd1a9ae528f6eeac7.png)
+
+
+
+![](https://pic.imgdb.cn/item/60978c1cd1a9ae528f6fb17f.png)
+
+
+
+**传统k-mers的缺点：**
+
+泛化能力差，只能对生成的k-mers组合进行学习，但是生成的k-mers数量有限，比如数据集中有promoter motif TATAAT 但是如果一个相似的motif TATATT不在数据集中就无法进行学习
+
+**克服方法：**
+
+- 使用convolutions对序列进行特征提取，能够对TATAAT和TATATT的相似度进行量化，从而更好地进行泛化
+
+- 大量的参数：4的k次方
+
+
+## Transformer encoder
+
+**multi-head self-attention mechanism**
+
+- 多头注意力机制能偶线性地将dmodel维度的K，Q，V投射到低维度中进行表示
+
+- 多头注意力机制能够直接在整条序列上进行操作
+
+- 多头注意力机制允许不同的head学习输入数据不同的隐藏模式，从而提升性能
+
+
+![](https://pic.imgdb.cn/item/60978c2ad1a9ae528f707aae.png)
+
+**详见Transformer**
+
+- self-attention机制能够计算出每个k-mers其他所有k-mers（包括自身）的联系，这样就能建立全局依赖关系（global dependencies） 
+
+- 与CNN和RNN加强模型对于局部区域的保守性（sparse local connectivity）学习的特点不同，Transformer对于整体的依赖关系有着更好的表现
+
+
+
+
+**position-wise feedforward network** 
+
+![](https://pic.imgdb.cn/item/60978c37d1a9ae528f712e79.png)
+
+- transformer encoder layer：两个transforms中间夹杂着一个ReLU激活函数
+
+- 多个layers堆叠成一个encoder
+
+
+
+```python
+ model=NucleicTransformer(opts.ntoken, opts.nclass, opts.ninp, opts.nhead, opts.nhid,
+                           opts.nlayers, opts.kmer_aggregation, kmers=opts.kmers,
+                           dropout=opts.dropout).to(device)
+```
+
+| Parameters   | default         | explain                             |
+| ------------ | --------------- | ----------------------------------- |
+| gpu_id       | 0               | 选择使用的gpu                       |
+| path         |                 | 数据集存放路径（DNA seq 和labels）  |
+| epochs       | 150             |                                     |
+| batch_size   | 24              | 一次训练所抓取的数据样本数量        |
+| weight_decay | 0               | 权重衰减（L2正则化，防止过拟合）    |
+| ntoken       | 4               | 表示核苷酸所需要的维度（固定值为4） |
+| nclass       | 2               | 分类数                              |
+| ninp         | 512             |                                     |
+| nhead        | 8               | multi-head self-attention           |
+| bhid         | 1048            |                                     |
+| mlayers      | 6               |                                     |
+| save_freq    | 1               | 每训练多少批存储一次结果            |
+| dropout      | 0.1             | 丢弃概率防止过拟合                  |
+| warmup_steps | 3200            |                                     |
+| lr_scale     | 0.1             | 学习率                              |
+| nmute        | 18              | 突变数                              |
+| kmers        | [2，3，4，5，6] |                                     |
+| n_fold       | 5               | 交叉验证                            |
+| fold         | 0               | 选择哪一个fold进行训练              |
+
