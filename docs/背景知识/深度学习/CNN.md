@@ -99,13 +99,15 @@
 * 可训练池化。训练函数 ff ，接受4个点为输入，出入1个点。不常用。
 
 最常见的池化层是规模为2*2， 步幅为2，对输入的每个深度切片进行下采样。每个MAX操作对四个数进行，如下图所示：
-![image-20210508215239802](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210508215239802.png)
+![](https://pic.imgdb.cn/item/6097ebc3d1a9ae528f254e6a.png)
+
+
 
 池化操作将保存**深度大小不变**。
 
 如果池化层的输入单元大小不是二的整数倍，一般采取边缘补零（zero-padding）的方式补成2的倍数，然后再池化。
 
-![image-20210508215322237](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20210508215322237.png)
+![](https://pic.imgdb.cn/item/6097ebdbd1a9ae528f268ac4.png)
 
 
 
@@ -593,9 +595,9 @@ class   torch.nn.Conv2d(in_channels,out_channels,kernel_size,stride=1,padding=0,
 
 - padding = 0:Pytorch与Tensorflow在卷积层实现上最大的差别就在于padding上。
     Padding即所谓的图像填充，后面的int型常数代表填充的多少（行数、列数），默认为0。需要注意的是这里的填充包括图像的上下左右，以padding = 1为例，若原始图像大小为32x32，那么padding后的图像大小就变成了34x34，而不是33x33。
-    Pytorch不同于Tensorflow的地方在于，Tensorflow提供的是padding的模式，比如same、valid，且不同模式对应了不同的输出图像尺寸计算公式。而Pytorch则需要手动输入padding的数量，当然，Pytorch这种实现好处就在于输出图像尺寸计算公式是唯一的，即
+      Pytorch不同于Tensorflow的地方在于，Tensorflow提供的是padding的模式，比如same、valid，且不同模式对应了不同的输出图像尺寸计算公式。而Pytorch则需要手动输入padding的数量，当然，Pytorch这种实现好处就在于输出图像尺寸计算公式是唯一的，即
 
-    ![](https://pic.imgdb.cn/item/60977fe7d1a9ae528fd8cdcd.jpg)
+      ![](https://pic.imgdb.cn/item/60977fe7d1a9ae528fd8cdcd.jpg)
 
    当然，上面的公式过于复杂难以记忆。大多数情况下的kernel_size、padding左右两数均相同，且不采用空洞卷积（dilation默认为1），因此只需要记 O = （I - K + 2P）/ S +1这种在深度学习课程里学过的公式就好了。
 
@@ -606,7 +608,6 @@ class   torch.nn.Conv2d(in_channels,out_channels,kernel_size,stride=1,padding=0,
 - bias = True:即是否要添加偏置参数作为可学习参数的一个，默认为True。
 
 - padding_mode = ‘zeros’:即padding的模式，默认采用零填充。
-  
 
 ##### Dense block
 
